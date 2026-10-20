@@ -1,3 +1,7 @@
+# FOR PROJECT
+First create a python `venv` and install `requirements.txt`.
+Then create a `github-token.txt` and paste your github token with public repo access in.
+
 # Replication package for EMSE article: *"Does Microservice Adoption Impact the Velocity? A Cohort Study"*
 
 This replication package contains all the Python code to conduct the data collection, preprocessing and analysis of this study.
