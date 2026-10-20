@@ -1,0 +1,114 @@
+{
+    "url": "https://github.com/amazeeio/lagoon",
+    "name": "amazeeio/lagoon",
+    "dockers": [
+        {
+            "path": "/tests/Dockerfile",
+            "cmd": "exec /bin/bash -c \"trap : TERM INT; sleep infinity & wait\"",
+            "cmd_keywords": [
+                "exec",
+                "bin",
+                "bash",
+                "trap",
+                "term"
+            ],
+            "from": "williamyeh/ansible",
+            "from_full": "williamyeh/ansible:centos7",
+            "keywords": [
+                "git",
+                "yum",
+                "config",
+                "global",
+                "user"
+            ],
+            "dbs": [
+                "infinity"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/tests/files/node8/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/files/node6/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/files/node6_subfolder/subfolder/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "infinity"
+    ],
+    "servers": [
+        "express",
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "williamyeh/ansible"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

@@ -1,0 +1,279 @@
+{
+    "url": "https://github.com/zavada-sergey/TradeUnionCommittee.Web.App",
+    "name": "zavada-sergey/TradeUnionCommittee.Web.App",
+    "dockers": [
+        {
+            "path": "/src/TradeUnionCommittee.Api/src/TradeUnionCommittee.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "api",
+                "src",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/TradeUnionCommittee.DataAnalysis.Api/src/TradeUnionCommittee.DataAnalysis.Api/Dockerfile",
+            "cmd": "flask run",
+            "cmd_keywords": [
+                "flask",
+                "run"
+            ],
+            "from": "python",
+            "from_full": "python:3.7.5",
+            "keywords": [
+                "tradeunioncommittee",
+                "dataanalysis",
+                "api",
+                "pip",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/TradeUnionCommittee.Razor.Web.GUI/src/TradeUnionCommittee.Razor.Web.GUI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "razor",
+                "web",
+                "gui",
+                "src"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/blob/Orchestration/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "postgres",
+                "image": "postgres",
+                "image_full": "postgres:latest",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "pgAdmin4",
+                "image": "dpage/pgadmin4",
+                "image_full": "dpage/pgadmin4:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "elasticsearch",
+                "image": "docker.elastic.co/elasticsearch/elasticsearch",
+                "image_full": "docker.elastic.co/elasticsearch/elasticsearch:6.2.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kibana",
+                "image": "docker.elastic.co/kibana/kibana",
+                "image_full": "docker.elastic.co/kibana/kibana:6.2.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "elasticsearch"
+                ]
+            },
+            {
+                "name": "minio-node-1",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-09-25T18-25-51Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-2",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-09-25T18-25-51Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-3",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-09-25T18-25-51Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-4",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-09-25T18-25-51Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "haproxy",
+                "image": "haproxy",
+                "image_full": "haproxy:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "minio-node-1",
+                    "minio-node-2",
+                    "minio-node-3",
+                    "minio-node-4"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "postgres"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 6,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 8,
+            "edges": 5,
+            "avg_deps_per_service": 0.625,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 8
+    },
+    "files": [
+        {
+            "path": "/src/TradeUnionCommittee.DataAnalysis.Api/src/TradeUnionCommittee.DataAnalysis.Api/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/TradeUnionCommittee.React.Web.GUI/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [
+        "node",
+        "flask"
+    ],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 9,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "python",
+        "base"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

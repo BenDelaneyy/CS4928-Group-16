@@ -1,0 +1,182 @@
+{
+    "url": "https://github.com/OpenCodeFoundation/eSchool",
+    "name": "OpenCodeFoundation/eSchool",
+    "dockers": [
+        {
+            "path": "/src/Services/Enrolling/Enrolling.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "eschool"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Services/Identity/Identity.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "build",
+                "release",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Web/WebStatus/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "eschool"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "seq",
+                "image": "datalust/seq",
+                "image_full": "datalust/seq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sql.data",
+                "image": "microsoft/mssql-server-linux",
+                "image_full": "microsoft/mssql-server-linux:2017-latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "enrolling.api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eschool}/enrolling.api:${PLATFORM:-linux}-${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sql.data"
+                ]
+            },
+            {
+                "name": "identity.api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eschool}/identity.api:${PLATFORM:-linux}-${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sql.data"
+                ]
+            },
+            {
+                "name": "webstatus",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eschool}/webstatus:${PLATFORM:-linux}-${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 2,
+            "avg_deps_per_service": 0.4,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 2,
+            "avg_deps_per_service": 0.4,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

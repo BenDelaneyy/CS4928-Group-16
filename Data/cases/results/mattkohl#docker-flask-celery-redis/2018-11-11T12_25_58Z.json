@@ -1,0 +1,202 @@
+{
+    "url": "https://github.com/mattkohl/docker-flask-celery-redis",
+    "name": "mattkohl/docker-flask-celery-redis",
+    "dockers": [
+        {
+            "path": "/api/Dockerfile",
+            "cmd": "gunicorn --bind 0.0.0.0:5000 --workers 3 app:app",
+            "cmd_keywords": [
+                "app",
+                "gunicorn",
+                "bind",
+                "workers"
+            ],
+            "from": "python",
+            "from_full": "python:3.6-alpine",
+            "keywords": [
+                "pip",
+                "install",
+                "requirements",
+                "txt",
+                "gunicorn"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/celery-queue/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3.6-alpine",
+            "keywords": [
+                "pip",
+                "install",
+                "requirements",
+                "txt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "web",
+                "image": "./api",
+                "image_full": "./api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "worker",
+                "image": "celery-queue",
+                "image_full": "celery-queue",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "monitor",
+                "image": "celery-queue",
+                "image_full": "celery-queue",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/api/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "flask"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/celery-queue/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "flask"
+    ],
+    "buses": [
+        "amqp"
+    ],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": true,
+    "num_dockers": 2,
+    "images": [
+        "python"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

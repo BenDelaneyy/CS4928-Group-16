@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Dockerfile,432,0,13,13,0,0,0,1,0,[]
+INI,6129,0,145,16,100,29,0,1,0,[]
+Markdown,208,0,14,9,0,5,0,1,0,[]
+Shell,343,0,20,20,0,0,2,1,0,[]
+YAML,3703,0,188,171,1,16,0,1,0,[]
+Total,10815,0,380,229,101,50,2,5,0,

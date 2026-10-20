@@ -1,0 +1,730 @@
+{
+    "url": "https://github.com/adorsys/xs2a",
+    "name": "adorsys/xs2a",
+    "dockers": [
+        {
+            "path": "/xs2a-embedded-starter/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/xs2a-embedded-starter/xs2a-embedded-starter.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "embedded",
+                "starter",
+                "exec"
+            ],
+            "from": "adorsys/java",
+            "from_full": "adorsys/java:8",
+            "keywords": [
+                "opt",
+                "embedded",
+                "starter",
+                "logs",
+                "mkdir"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/aspsp-profile-server/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/profile/aspsp-profile.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "profile",
+                "exec",
+                "home"
+            ],
+            "from": "adorsys/java",
+            "from_full": "adorsys/java:8",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/cms-standalone-service/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/consents/consent-management.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "exec",
+                "home",
+                "bin"
+            ],
+            "from": "adorsys/java",
+            "from_full": "adorsys/java:8",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-standalone-starter/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/xs2a-starter/xs2a-standalone-starter.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "starter",
+                "exec",
+                "home"
+            ],
+            "from": "adorsys/java",
+            "from_full": "adorsys/java:8",
+            "keywords": [
+                "opt",
+                "starter",
+                "logs",
+                "mkdir",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "xs2a-standalone-starter",
+                "image": "adorsys/xs2a-standalone-starter",
+                "image_full": "adorsys/xs2a-standalone-starter",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "aspsp-profile",
+                    "consent-management"
+                ]
+            },
+            {
+                "name": "aspsp-profile",
+                "image": "adorsys/xs2a-aspsp-profile",
+                "image_full": "adorsys/xs2a-aspsp-profile",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "consent-management",
+                "image": "adorsys/xs2a-consent-management",
+                "image_full": "adorsys/xs2a-consent-management",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consent-management-postgres"
+                ]
+            },
+            {
+                "name": "consent-management-postgres",
+                "image": "centos/postgresql-95-centos7",
+                "image_full": "centos/postgresql-95-centos7",
+                "dbs": [
+                    "postgresql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgresql"
+            ],
+            "services": [
+                "consent-management-postgres"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "postgresql",
+                "nexus",
+                "mongodb",
+                "mariadb"
+            ],
+            "servers": [
+                "glassfish",
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/psd2-validator/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-object-mapper/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-embedded-starter/pom.xml",
+            "dbs": [
+                "postgresql",
+                "mariadb"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/aspsp-profile-remote/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/aspsp-profile-lib/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/aspsp-profile-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/aspsp-profile-server/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-xs2a-web/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-psu-web/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-psu-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-aspsp-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-xs2a-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-aspsp-web/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/cms-scheduler-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-management-lib/pom.xml",
+            "dbs": [
+                "postgresql",
+                "mariadb"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-core-web/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-xs2a-client/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/cms-standalone-service/pom.xml",
+            "dbs": [
+                "postgresql",
+                "mariadb"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/cms-db-schema/pom.xml",
+            "dbs": [
+                "postgresql",
+                "oracle",
+                "mariadb"
+            ],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management/consent-core-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/json-reader/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-standalone-starter/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-xs2a-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-persist-log-impl/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-rest-client/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-aspsp-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-xs2a-impl/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-aspsp-impl/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-core/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-db-report-impl/pom.xml",
+            "dbs": [
+                "postgresql",
+                "mariadb"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-persist-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/event-service/event-service-persist-db-impl/pom.xml",
+            "dbs": [
+                "postgresql",
+                "mariadb"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-server-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-impl/pom.xml",
+            "dbs": [],
+            "servers": [
+                "glassfish",
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-core/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spi-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spi-stub/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "oracle",
+        "postgresql",
+        "nexus"
+    ],
+    "servers": [
+        "express",
+        "glassfish",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 4,
+    "images": [
+        "adorsys/java"
+    ],
+    "num_dbs": 3,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 46
+}

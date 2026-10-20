@@ -1,0 +1,9 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+JSON,1265947,0,34848,34848,0,0,0,5,0,[]
+Markdown,2708,0,87,65,0,22,0,3,0,[]
+YAML,4211,0,188,187,0,1,0,3,0,[]
+Docker ignore,51,0,7,7,0,0,0,1,0,[]
+Dockerfile,147,0,7,7,0,0,0,1,0,[]
+License,1067,0,21,17,0,4,0,1,0,[]
+gitignore,62,0,7,7,0,0,0,1,0,[]
+Total,1274193,0,35165,35138,0,27,0,15,0,

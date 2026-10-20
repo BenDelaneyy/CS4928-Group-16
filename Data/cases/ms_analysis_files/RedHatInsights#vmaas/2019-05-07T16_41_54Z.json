@@ -1,0 +1,155 @@
+{
+    "url": "https://github.com/RedHatInsights/vmaas",
+    "name": "RedHatInsights/vmaas",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "vmaas_database",
+                "image": "vmaas/database",
+                "image_full": "vmaas/database:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_websocket",
+                "image": "vmaas/websocket",
+                "image_full": "vmaas/websocket:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_reposcan",
+                "image": "vmaas/reposcan",
+                "image_full": "vmaas/reposcan:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_database"
+                ]
+            },
+            {
+                "name": "vmaas_webapp",
+                "image": "vmaas/webapp",
+                "image_full": "vmaas/webapp:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_reposcan"
+                ]
+            },
+            {
+                "name": "vmaas_apidoc",
+                "image": "vmaas/apidoc",
+                "image_full": "vmaas/apidoc:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_reposcan",
+                    "vmaas_webapp"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 6,
+            "avg_deps_per_service": 1.2,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 6,
+            "avg_deps_per_service": 1.2,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/reposcan/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/websocket/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webapp/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 0,
+    "num_files": 4
+}

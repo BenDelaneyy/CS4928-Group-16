@@ -1,0 +1,5 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Shell,1283,0,49,30,4,15,4,3,0,[]
+Markdown,2111,0,45,35,0,10,0,1,0,[]
+gitignore,86,0,5,5,0,0,0,1,0,[]
+Total,3480,0,99,70,4,25,4,5,0,

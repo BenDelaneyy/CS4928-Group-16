@@ -1,0 +1,8 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+YAML,1399,0,52,50,0,2,0,3,0,[]
+Dockerfile,1294,0,37,26,5,6,12,2,0,[]
+Markdown,9713,0,214,133,0,81,0,2,0,[]
+License,11356,0,201,169,0,32,0,1,0,[]
+SQL,24,0,1,1,0,0,0,1,0,[]
+Shell,409,0,17,8,5,4,0,1,0,[]
+Total,24195,0,522,387,10,125,12,10,0,

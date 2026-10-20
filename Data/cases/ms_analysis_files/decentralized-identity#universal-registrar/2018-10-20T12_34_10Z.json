@@ -1,0 +1,166 @@
+{
+    "url": "https://github.com/decentralized-identity/universal-registrar",
+    "name": "decentralized-identity/universal-registrar",
+    "dockers": [
+        {
+            "path": "/drivers/v1/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-v1/docker/run-driver-did-v1.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "opt",
+                "docker",
+                "run"
+            ],
+            "from": "universalregistrar/driver",
+            "from_full": "universalregistrar/driver",
+            "keywords": [
+                "did",
+                "install",
+                "apt",
+                "veres",
+                "one"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/sov/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-sov/docker/run-driver-did-sov.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "sov",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/driver",
+            "from_full": "universalregistrar/driver",
+            "keywords": [
+                "opt",
+                "indy",
+                "sdk",
+                "install",
+                "dev"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-btcr/docker/run-driver-did-btcr.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "btcr",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/driver",
+            "from_full": "universalregistrar/driver",
+            "keywords": [
+                "opt",
+                "driver",
+                "did",
+                "btcr",
+                "git"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/drivers/v1/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/sov/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "jetty"
+    ],
+    "buses": [],
+    "langs": [
+        "cmake",
+        "java",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "universalregistrar/driver"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 3,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

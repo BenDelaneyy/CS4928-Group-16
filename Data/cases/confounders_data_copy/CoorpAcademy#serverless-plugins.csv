@@ -1,0 +1,9 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+JSON,413445,0,12131,12131,0,0,0,13,0,[]
+JavaScript,41961,0,1472,1242,44,186,116,12,0,[]
+Markdown,14727,0,413,314,0,99,0,10,0,[]
+YAML,2642,0,121,113,0,8,0,7,0,[]
+Shell,3665,0,95,71,6,18,3,6,0,[]
+CloudFormation (YAML),3518,0,162,147,0,15,6,3,0,[]
+gitignore,167,0,16,8,4,4,0,1,0,[]
+Total,480125,0,14410,14026,54,330,125,52,0,

@@ -1,0 +1,262 @@
+{
+    "url": "https://github.com/MuizMahdi/EHR-Route",
+    "name": "MuizMahdi/EHR-Route",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "config",
+                "image": "./config-server",
+                "image_full": "./config-server",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "discovery",
+                "image": "./discovery-service",
+                "image_full": "./discovery-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config"
+                ]
+            },
+            {
+                "name": "gateway",
+                "image": "./gateway-service",
+                "image_full": "./gateway-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config",
+                    "discovery"
+                ]
+            },
+            {
+                "name": "auth",
+                "image": "./auth-service",
+                "image_full": "./auth-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config",
+                    "discovery",
+                    "gateway"
+                ]
+            },
+            {
+                "name": "patient",
+                "image": "./patient-service",
+                "image_full": "./patient-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config",
+                    "discovery",
+                    "gateway",
+                    "auth"
+                ]
+            },
+            {
+                "name": "provider",
+                "image": "./provider-service",
+                "image_full": "./provider-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config",
+                    "discovery",
+                    "gateway",
+                    "auth"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 14,
+            "avg_deps_per_service": 2.3333333333333335,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 9,
+            "avg_deps_per_service": 1.8,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/gateway-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/patient-service/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/admin-server/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/identity-service/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/config-server/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/provider-service/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/discovery-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        }
+    ],
+    "dbs": [
+        "postgresql"
+    ],
+    "servers": [
+        "tomcat",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "gateway"
+    ],
+    "monitors": [],
+    "discos": [
+        "eureka"
+    ],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 9
+}

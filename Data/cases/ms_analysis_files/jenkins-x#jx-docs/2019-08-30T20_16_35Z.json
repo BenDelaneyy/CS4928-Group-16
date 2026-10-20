@@ -1,0 +1,195 @@
+{
+    "url": "https://github.com/jenkins-x/jx-docs",
+    "name": "jenkins-x/jx-docs",
+    "dockers": [],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/userguide/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/free-solid-svg-icons/package.json",
+            "dbs": [
+                "solid"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-free/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/free-brands-svg-icons/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-svg-core/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-free-webfonts/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-free-brands/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/free-regular-svg-icons/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-free-regular/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-free-solid/package.json",
+            "dbs": [
+                "solid"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/Font-Awesome/advanced-options/use-with-node-js/fontawesome-common-types/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/docsy/assets/vendor/bootstrap/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "solid"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 15
+}

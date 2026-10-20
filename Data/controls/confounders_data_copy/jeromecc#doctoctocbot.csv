@@ -1,0 +1,8 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,13140,0,438,347,38,53,23,11,0,[]
+JSON,1606,0,61,55,0,6,0,1,0,[]
+License,15921,0,362,265,0,97,0,1,0,[]
+Markdown,2365,0,63,41,0,22,0,1,0,[]
+Plain Text,53,0,3,3,0,0,0,1,0,[]
+gitignore,181,0,23,15,4,4,0,1,0,[]
+Total,33266,0,950,726,42,182,23,16,0,

@@ -1,0 +1,177 @@
+{
+    "url": "https://github.com/wellcometrust/wellcomecollection.org",
+    "name": "wellcometrust/wellcomecollection.org",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "npm run app:docker",
+            "cmd_keywords": [
+                "npm",
+                "run",
+                "app",
+                "docker"
+            ],
+            "from": "node",
+            "from_full": "node:8-alpine",
+            "keywords": [
+                "adduser",
+                "wellcomecollection"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/nginx-proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 1,
+        "services": [
+            {
+                "name": "wellcomecollection",
+                "image": "node",
+                "image_full": "node:6.1",
+                "dbs": [],
+                "servers": [
+                    "node"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 0,
+            "edges": 0,
+            "avg_deps_per_service": 0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 0
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/client/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/config/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/infra/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/server/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cardigan/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 1,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "nginx",
+        "node"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 9
+}

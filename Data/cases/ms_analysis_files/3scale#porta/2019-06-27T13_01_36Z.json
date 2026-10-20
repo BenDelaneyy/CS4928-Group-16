@@ -1,0 +1,227 @@
+{
+    "url": "https://github.com/3scale/porta",
+    "name": "3scale/porta",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "script/jenkins.sh",
+            "cmd_keywords": [
+                "script",
+                "jenkins"
+            ],
+            "from": "quay.io/3scale/docker",
+            "from_full": "quay.io/3scale/docker:ci-2.3.1-3",
+            "keywords": [
+                "ubuntu",
+                "deb",
+                "apt",
+                "oracle",
+                "com"
+            ],
+            "dbs": [
+                "universe"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/openshift/system/Dockerfile",
+            "cmd": "unicorn -c config/unicorn.rb -E ${RAILS_ENV} config.ru",
+            "cmd_keywords": [
+                "unicorn",
+                "config",
+                "rails",
+                "env"
+            ],
+            "from": "centos/ruby-24-centos7",
+            "from_full": "centos/ruby-24-centos7",
+            "keywords": [
+                "install",
+                "tmp",
+                "opt",
+                "system",
+                "yum"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "rails"
+            ],
+            "buses": [],
+            "langs": [
+                "ruby"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "keycloak",
+                "image": "jboss/keycloak",
+                "image_full": "jboss/keycloak:3.0.0.Final",
+                "dbs": [],
+                "servers": [
+                    "jboss"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "backend",
+                "image": "quay.io/3scale/amp",
+                "image_full": "quay.io/3scale/amp:backend-2.1.0-ER1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "backend-listener",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "backend-worker"
+                ]
+            },
+            {
+                "name": "backend-worker",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:3.2.5-alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "apicast",
+                "image": "quay.io/3scale/apicast",
+                "image_full": "quay.io/3scale/apicast:3.3-stable",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "backend-listener"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 4,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 2,
+            "avg_deps_per_service": 0.5,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "rails"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "universe",
+        "mysql",
+        "redis"
+    ],
+    "servers": [
+        "jboss",
+        "node",
+        "rails"
+    ],
+    "buses": [],
+    "langs": [
+        "bash",
+        "ruby"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": true,
+    "num_dockers": 2,
+    "images": [
+        "quay.io/3scale/docker",
+        "centos/ruby-24-centos7"
+    ],
+    "num_dbs": 3,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

@@ -1,0 +1,730 @@
+{
+    "url": "https://github.com/oktadev/java-microservices-examples",
+    "name": "oktadev/java-microservices-examples",
+    "dockers": [],
+    "structure": {
+        "path": "/jhipster/docker-compose/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "gateway-app",
+                "image": "gateway",
+                "image_full": "gateway",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gateway-postgresql",
+                "image": "postgres",
+                "image_full": "postgres:11.2",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "blog-app",
+                "image": "blog",
+                "image_full": "blog",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "blog-postgresql",
+                "image": "postgres",
+                "image_full": "postgres:11.2",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "store-app",
+                "image": "store",
+                "image_full": "store",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "store-mongodb",
+                "image": "mongo",
+                "image_full": "mongo:4.0.9",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "jhipster-registry",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "keycloak",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 3,
+            "names": [
+                "mongo",
+                "postgres"
+            ],
+            "services": [
+                "gateway-postgresql",
+                "blog-postgresql",
+                "store-mongodb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/reactive-jhipster/store/settings.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/build.gradle",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "node",
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/war.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/settings.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/build.gradle",
+            "dbs": [],
+            "servers": [
+                "node",
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/war.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/settings.gradle",
+            "dbs": [],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/build.gradle",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "node",
+                "tomcat",
+                "spring",
+                "glassfish"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/war.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/jhipster/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/jhipster/store/pom.xml",
+            "dbs": [
+                "mongo",
+                "mongodb",
+                "hazelcast"
+            ],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/jhipster/blog/pom.xml",
+            "dbs": [
+                "postgresql",
+                "hazelcast"
+            ],
+            "servers": [
+                "node",
+                "glassfish",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/jhipster/gateway/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "node",
+                "glassfish",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway",
+                "zuul"
+            ],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-cloud-gateway/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spring-cloud-gateway/api-gateway/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-cloud-gateway/car-service/pom.xml",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-cloud-gateway/discovery-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-boot+cloud/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spring-boot+cloud/api-gateway/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway",
+                "zuul"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-boot+cloud/car-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/spring-boot+cloud/discovery-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/jhipster/store/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/jhipster/blog/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/jhipster/gateway/package.json",
+            "dbs": [
+                "max",
+                "solid"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/store/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/blog/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reactive-jhipster/gateway/package.json",
+            "dbs": [
+                "max",
+                "postgresql",
+                "solid"
+            ],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo",
+        "postgres",
+        "solid",
+        "max",
+        "postgresql",
+        "hazelcast"
+    ],
+    "servers": [
+        "node",
+        "tomcat",
+        "spring",
+        "glassfish"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "zuul"
+    ],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [
+        "eureka"
+    ],
+    "num_services": 8,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 6,
+    "num_servers": 4,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 43
+}

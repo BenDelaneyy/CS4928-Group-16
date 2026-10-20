@@ -1,0 +1,64 @@
+{
+    "url": "https://github.com/datakaveri/iudx-catalogue-server",
+    "name": "datakaveri/iudx-catalogue-server",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "max",
+                "zookeeper",
+                "postgresql",
+                "hazelcast"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "zookeeper"
+            ]
+        }
+    ],
+    "dbs": [
+        "max",
+        "zookeeper",
+        "postgresql",
+        "hazelcast"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 4,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 2
+}

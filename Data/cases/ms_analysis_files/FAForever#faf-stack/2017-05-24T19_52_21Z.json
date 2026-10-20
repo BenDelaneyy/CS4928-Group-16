@@ -1,0 +1,433 @@
+{
+    "url": "https://github.com/FAForever/faf-stack",
+    "name": "FAForever/faf-stack",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 27,
+        "services": [
+            {
+                "name": "faf-db",
+                "image": "git://github.com/FAForever/db.git#v35",
+                "image_full": "git://github.com/FAForever/db.git#v35",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-python-server",
+                "image": "git://github.com/FAForever/server.git#v0.5.2",
+                "image_full": "git://github.com/FAForever/server.git#v0.5.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-java-server",
+                "image": "faforever/faf-java-server",
+                "image_full": "faforever/faf-java-server::0.9.7",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-java-api",
+                "image": "faforever/faf-java-api",
+                "image_full": "faforever/faf-java-api:0.5.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-python-api",
+                "image": "git://github.com/FAForever/api.git#v0.5.3",
+                "image_full": "git://github.com/FAForever/api.git#v0.5.3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-website",
+                "image": "git://github.com/FAForever/website.git#v1.1.1.4",
+                "image_full": "git://github.com/FAForever/website.git#v1.1.1.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-spring-boot-admin",
+                "image": "aetas/spring-boot-admin-docker",
+                "image_full": "aetas/spring-boot-admin-docker:1.4.1",
+                "dbs": [],
+                "servers": [
+                    "spring"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-influxdb",
+                "image": "influxdb",
+                "image_full": "influxdb:1.1.1-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "influxdb"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-telegraf",
+                "image": "telegraf",
+                "image_full": "telegraf:1.1.2-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-grafana",
+                "image": "grafana/grafana",
+                "image_full": "grafana/grafana:4.1.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "grafana"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-unrealircd",
+                "image": "git://github.com/FAForever/docker-unrealircd#f16e9ce",
+                "image_full": "git://github.com/FAForever/docker-unrealircd#f16e9ce",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-murmur",
+                "image": "git://github.com/FAForever/murmur#259b597",
+                "image_full": "git://github.com/FAForever/murmur#259b597",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-legacy-apps",
+                "image": "richarvey/nginx-php-fpm",
+                "image_full": "richarvey/nginx-php-fpm:php5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-wordpress",
+                "image": "richarvey/nginx-php-fpm",
+                "image_full": "richarvey/nginx-php-fpm:php5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-clanapp",
+                "image": "dragonfire/clans",
+                "image_full": "dragonfire/clans:1.0.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-softvote",
+                "image": "git://github.com/FAForever/softvote.git#c5a5983",
+                "image_full": "git://github.com/FAForever/softvote.git#c5a5983",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-phpbb3",
+                "image": "richarvey/nginx-php-fpm",
+                "image_full": "richarvey/nginx-php-fpm:php5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-content",
+                "image": "richarvey/nginx-php-fpm",
+                "image_full": "richarvey/nginx-php-fpm:php5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-mediawiki",
+                "image": "richarvey/nginx-php-fpm",
+                "image_full": "richarvey/nginx-php-fpm:php5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-legacy-updater",
+                "image": "git://github.com/FAForever/legacy-updater.git#059e147",
+                "image_full": "git://github.com/FAForever/legacy-updater.git#059e147",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-legacy-live-replay-server",
+                "image": "git://github.com/FAForever/legacy-replay-server.git#f699255",
+                "image_full": "git://github.com/FAForever/legacy-replay-server.git#f699255",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-legacy-secondary-server",
+                "image": "git://github.com/FAForever/legacy-secondaryServer.git#61cd426",
+                "image_full": "git://github.com/FAForever/legacy-secondaryServer.git#61cd426",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-slack-invite-automation",
+                "image": "git://github.com/outsideris/slack-invite-automation.git#49798f6",
+                "image_full": "git://github.com/outsideris/slack-invite-automation.git#49798f6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-discord-irc",
+                "image": "git://github.com/FAForever/faf-discord-irc.git#e370282",
+                "image_full": "git://github.com/FAForever/faf-discord-irc.git#e370282",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-nginx",
+                "image": "jwilder/nginx-proxy",
+                "image_full": "jwilder/nginx-proxy:0.5.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-nginx-certs",
+                "image": "jrcs/letsencrypt-nginx-proxy-companion#v1.5",
+                "image_full": "jrcs/letsencrypt-nginx-proxy-companion#v1.5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "jeremy",
+                "image": "git://github.com/FAForever/Jeremy.git#130c347",
+                "image_full": "git://github.com/FAForever/Jeremy.git#130c347",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 27,
+            "edges": 15,
+            "avg_deps_per_service": 0.5555555555555556,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 17,
+            "edges": 12,
+            "avg_deps_per_service": 0.7058823529411765,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 17
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [
+        "spring"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [
+        "influxdb",
+        "grafana"
+    ],
+    "discos": [],
+    "num_services": 27,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 2,
+    "num_discos": 0,
+    "num_files": 1
+}

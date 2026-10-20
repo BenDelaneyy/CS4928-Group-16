@@ -1,0 +1,8 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+BASH,33906,0,1011,830,116,65,14,3,0,[]
+Markdown,68205,0,1140,795,0,345,0,2,0,[]
+License,1079,0,21,17,0,4,0,1,0,[]
+Plain Text,6,0,1,1,0,0,0,1,0,[]
+SQL,37969,0,785,555,137,93,0,1,0,[]
+YAML,8933,0,268,240,2,26,0,1,0,[]
+Total,150098,0,3226,2438,255,533,14,9,0,

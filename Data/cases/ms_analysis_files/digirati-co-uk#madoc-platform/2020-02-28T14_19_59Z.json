@@ -1,0 +1,304 @@
+{
+    "url": "https://github.com/digirati-co-uk/madoc-platform",
+    "name": "digirati-co-uk/madoc-platform",
+    "dockers": [
+        {
+            "path": "/services/sorting-room/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:stable-alpine",
+            "keywords": [
+                "yarn",
+                "install",
+                "grunt",
+                "dist"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "digirati/madoc-omeka-s",
+            "from_full": "digirati/madoc-omeka-s:latest",
+            "keywords": [
+                "madoc",
+                "installer"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/gateway/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "tykio/tyk-gateway",
+            "from_full": "tykio/tyk-gateway:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "tyk"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc-database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mysql",
+            "from_full": "mysql:5.7",
+            "keywords": [],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 10,
+        "services": [
+            {
+                "name": "gateway",
+                "image": "services/gateway",
+                "image_full": "services/gateway",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sorting-room",
+                    "madoc",
+                    "gateway-redis"
+                ]
+            },
+            {
+                "name": "madoc",
+                "image": "services/madoc",
+                "image_full": "services/madoc",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "madoc-database"
+                ]
+            },
+            {
+                "name": "sorting-room",
+                "image": "services/sorting-room",
+                "image_full": "services/sorting-room",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gateway-redis",
+                "image": "redis",
+                "image_full": "redis:4.0-alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "madoc-database",
+                "image": "services/madoc-database",
+                "image_full": "services/madoc-database",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "annotation-server",
+                "image": "garyttierneydi/elucidate-server",
+                "image_full": "garyttierneydi/elucidate-server:1.4.3-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "annotation-database:database"
+                ]
+            },
+            {
+                "name": "annotation-database",
+                "image": "garyttierneydi/elucidate-database",
+                "image_full": "garyttierneydi/elucidate-database:1.4.3-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "search-elasticsearch",
+                "image": "docker.elastic.co/elasticsearch/elasticsearch",
+                "image_full": "docker.elastic.co/elasticsearch/elasticsearch:6.7.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "search-founda",
+                "image": "digirati/jane-founda",
+                "image_full": "digirati/jane-founda:d0e7610dc15073e85fce20ee42215e192b16907b",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "search-elasticsearch"
+                ]
+            },
+            {
+                "name": "search-indexer",
+                "image": "digirati/madoc-indexer",
+                "image_full": "digirati/madoc-indexer:c26e42ad8b8e721d20d254e5214679498868518d",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "madoc",
+                    "annotation-server",
+                    "search-elasticsearch",
+                    "search-founda"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "gateway-redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 10,
+            "avg_deps_per_service": 0.9090909090909091,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 9,
+            "edges": 7,
+            "avg_deps_per_service": 0.7777777777777778,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 9
+    },
+    "files": [
+        {
+            "path": "/services/sorting-room/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc/packages/default-theme/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql",
+        "redis"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "tyk",
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 10,
+    "shared_dbs": false,
+    "num_dockers": 4,
+    "images": [
+        "nginx",
+        "mysql",
+        "digirati/madoc-omeka-s",
+        "tykio/tyk-gateway"
+    ],
+    "num_dbs": 2,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 2,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

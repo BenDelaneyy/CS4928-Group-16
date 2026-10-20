@@ -1,0 +1,153 @@
+{
+    "url": "https://github.com/akka/alpakka",
+    "name": "akka/alpakka",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "cassandra",
+                "image": "cassandra",
+                "image_full": "cassandra:3.0.15",
+                "dbs": [
+                    "cassandra"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt",
+                "image": "toke/mosquitto",
+                "image_full": "toke/mosquitto",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mosquitto"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dynamodb",
+                "image": "deangiberson/aws-dynamodb-local",
+                "image_full": "deangiberson/aws-dynamodb-local",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "geode",
+                "image": "apachegeode/geode",
+                "image_full": "apachegeode/geode:1.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ironauth",
+                "image": "iron/auth",
+                "image_full": "iron/auth",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ironmq",
+                "image": "iron/mq",
+                "image_full": "iron/mq",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ironauth:ironauth"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "cassandra"
+            ],
+            "services": [
+                "cassandra"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 1,
+            "avg_deps_per_service": 0.125,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 1,
+            "avg_deps_per_service": 0.2,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [
+        "cassandra"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq",
+        "mosquitto"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

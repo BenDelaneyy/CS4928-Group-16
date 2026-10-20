@@ -1,0 +1,86 @@
+{
+    "url": "https://github.com/jenkins-x/jx-docs",
+    "name": "jenkins-x/jx-docs",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "abiosoft/caddy",
+            "from_full": "abiosoft/caddy",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "caddy"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/themes/gohugoioTheme/src/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "caddy"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "abiosoft/caddy"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

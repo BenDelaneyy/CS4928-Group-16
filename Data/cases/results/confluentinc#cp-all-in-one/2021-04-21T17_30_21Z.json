@@ -1,0 +1,160 @@
+{
+    "url": "https://github.com/confluentinc/cp-all-in-one",
+    "name": "confluentinc/cp-all-in-one",
+    "dockers": [
+        {
+            "path": "/Docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "confluentinc/cp-server-connect-base",
+            "from_full": "confluentinc/cp-server-connect-base:5.5.4",
+            "keywords": [
+                "confluent",
+                "hub",
+                "install",
+                "prompt",
+                "confluentinc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/cp-all-in-one-cloud/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "schema-registry",
+                "image": "confluentinc/cp-schema-registry",
+                "image_full": "confluentinc/cp-schema-registry:5.5.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ksqldb-server",
+                "image": "confluentinc/cp-ksqldb-server",
+                "image_full": "confluentinc/cp-ksqldb-server:5.5.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ksqldb-cli",
+                "image": "confluentinc/cp-ksqldb-cli",
+                "image_full": "confluentinc/cp-ksqldb-cli:5.5.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "control-center",
+                "image": "confluentinc/cp-enterprise-control-center",
+                "image_full": "confluentinc/cp-enterprise-control-center:5.5.4",
+                "dbs": [
+                    "enterprise"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "connect",
+                "image": "cnfldemos/cp-server-connect-datagen",
+                "image_full": "cnfldemos/cp-server-connect-datagen:0.3.2-5.5.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rest-proxy",
+                "image": "confluentinc/cp-kafka-rest",
+                "image_full": "confluentinc/cp-kafka-rest:5.5.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "enterprise"
+            ],
+            "services": [
+                "control-center"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [],
+    "dbs": [
+        "enterprise"
+    ],
+    "servers": [],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "confluentinc/cp-server-connect-base"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

@@ -1,0 +1,114 @@
+{
+    "url": "https://github.com/creativesoftwarefdn/weaviate",
+    "name": "creativesoftwarefdn/weaviate",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "weaviate",
+                "var",
+                "zip",
+                "pip",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 2,
+        "services": [
+            {
+                "name": "db_cassandra",
+                "image": "cassandra",
+                "image_full": "cassandra:3",
+                "dbs": [
+                    "cassandra"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "weaviate",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db_cassandra"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "cassandra"
+            ],
+            "services": [
+                "db_cassandra"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 2,
+            "edges": 1,
+            "avg_deps_per_service": 0.5,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [],
+    "dbs": [
+        "cassandra"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 2,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

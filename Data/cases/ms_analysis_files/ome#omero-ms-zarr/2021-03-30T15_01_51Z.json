@@ -1,0 +1,83 @@
+{
+    "url": "https://github.com/ome/omero-ms-zarr",
+    "name": "ome/omero-ms-zarr",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "adoptopenjdk/openjdk11",
+            "from_full": "adoptopenjdk/openjdk11:jre-11.0.7_10-alpine",
+            "keywords": [
+                "omero",
+                "zarr",
+                "shadow",
+                "build",
+                "gradle"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "adoptopenjdk/openjdk11"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

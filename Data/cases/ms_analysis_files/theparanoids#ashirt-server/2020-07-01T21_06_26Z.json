@@ -1,0 +1,228 @@
+{
+    "url": "https://github.com/theparanoids/ashirt-server",
+    "name": "theparanoids/ashirt-server",
+    "dockers": [
+        {
+            "path": "/backend/bin/api/Dockerfile",
+            "cmd": "/home/ashirt/private-api",
+            "cmd_keywords": [
+                "home",
+                "ashirt",
+                "private",
+                "api"
+            ],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "ashirt",
+                "apk",
+                "add",
+                "cache",
+                "certificates"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/backend/bin/web/Dockerfile",
+            "cmd": "/home/ashirt/public-api",
+            "cmd_keywords": [
+                "home",
+                "ashirt",
+                "public",
+                "api"
+            ],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "ashirt",
+                "apk",
+                "add",
+                "cache",
+                "certificates"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/backend/bin/dev/Dockerfile",
+            "cmd": "backend/run-dev.sh",
+            "cmd_keywords": [
+                "backend",
+                "run",
+                "dev"
+            ],
+            "from": "golang",
+            "from_full": "golang:1.14.4-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "mkdir",
+                "add",
+                "git"
+            ],
+            "dbs": [
+                "sql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/frontend/Dockerfile",
+            "cmd": "nginx -g \"daemon off;\"",
+            "cmd_keywords": [
+                "nginx",
+                "daemon",
+                "off"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:stable",
+            "keywords": [
+                "nginx",
+                "var",
+                "pid",
+                "sed",
+                "run"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "backend",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "frontend",
+                "image": "frontend",
+                "image_full": "frontend",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "db",
+                "image": "mysql",
+                "image_full": "mysql:8.0",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mysql"
+            ],
+            "services": [
+                "db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 2
+    },
+    "files": [
+        {
+            "path": "/frontend/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "sql",
+        "mysql"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "golang"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 4,
+    "images": [
+        "nginx",
+        "golang",
+        "alpine"
+    ],
+    "num_dbs": 2,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

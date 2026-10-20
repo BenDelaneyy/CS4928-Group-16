@@ -1,0 +1,12 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+XML Schema,48828,0,1281,1281,0,0,0,22,0,[]
+CSV,3882135,0,79306,79306,0,0,0,20,0,[]
+Python,43718,0,1227,863,152,212,38,13,0,[]
+Extensible Stylesheet Language Transformations,203675,0,6008,5988,0,20,0,10,0,[]
+gitignore,1310,0,106,62,21,23,0,6,0,[]
+INI,221,0,11,9,0,2,0,1,0,[]
+License,1335,0,25,20,0,5,0,1,0,[]
+Markdown,3388,0,119,89,0,30,0,1,0,[]
+Plain Text,31,0,2,2,0,0,0,1,0,[]
+SQL,32708,0,352,263,50,39,0,1,0,[]
+Total,4217349,0,88437,87883,223,331,38,76,0,

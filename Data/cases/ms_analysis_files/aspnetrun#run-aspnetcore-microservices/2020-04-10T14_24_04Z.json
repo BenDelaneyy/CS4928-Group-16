@@ -1,0 +1,108 @@
+{
+    "url": "https://github.com/aspnetrun/run-aspnetcore-microservices",
+    "name": "aspnetrun/run-aspnetcore-microservices",
+    "dockers": [
+        {
+            "path": "/src/Catalog/Catalog.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "catalog",
+                "api",
+                "dotnet",
+                "csproj",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 2,
+        "services": [
+            {
+                "name": "catalogdb",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "catalog.api",
+                "image": "${DOCKER_REGISTRY-}catalogapi",
+                "image_full": "${DOCKER_REGISTRY-}catalogapi",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "catalogdb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 2,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

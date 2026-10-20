@@ -1,0 +1,390 @@
+{
+    "url": "https://github.com/dojot/docker-compose",
+    "name": "dojot/docker-compose",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 22,
+        "services": [
+            {
+                "name": "sth",
+                "image": "telefonicaiot/fiware-sth-comet",
+                "image_full": "telefonicaiot/fiware-sth-comet",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "mongodb",
+                "image": "mongo",
+                "image_full": "mongo:3.2",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt",
+                "image": "ansi/mosquitto",
+                "image_full": "ansi/mosquitto",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mosquitto"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "iotagent",
+                "image": "dojot/iotagent-json",
+                "image_full": "dojot/iotagent-json:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb",
+                    "mqtt"
+                ]
+            },
+            {
+                "name": "coap",
+                "image": "telefonicaiot/lightweightm2m-iotagent",
+                "image_full": "telefonicaiot/lightweightm2m-iotagent:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "gui",
+                "image": "dojot/gui",
+                "image_full": "dojot/gui:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "orion",
+                "image": "dojot/fiware-orion",
+                "image_full": "dojot/fiware-orion:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "device-manager",
+                "image": "dojot/device-manager",
+                "image_full": "dojot/device-manager:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb",
+                    "postgres",
+                    "orion",
+                    "kafka"
+                ]
+            },
+            {
+                "name": "image-manager",
+                "image": "dojot/image-manager",
+                "image_full": "dojot/image-manager:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "auth",
+                "image": "dojot/auth",
+                "image_full": "dojot/auth",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "postgres",
+                "image": "postgres",
+                "image_full": "postgres:9.4",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kong-migration",
+                "image": "dojot/kong",
+                "image_full": "dojot/kong:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "kong"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "apigw",
+                "image": "dojot/kong",
+                "image_full": "dojot/kong:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "kong"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres",
+                    "kong-migration"
+                ]
+            },
+            {
+                "name": "perseo-core",
+                "image": "telefonicaiot/perseo-core",
+                "image_full": "telefonicaiot/perseo-core",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "perseo-fe",
+                "image": "dojot/perseo-fe",
+                "image_full": "dojot/perseo-fe:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "perseo-core",
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "mashup",
+                "image": "dojot/mashup",
+                "image_full": "dojot/mashup:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "alarm-manager",
+                "image": "dojot/alarm-manager",
+                "image_full": "dojot/alarm-manager:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb",
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "zookeeper",
+                "image": "zookeeper",
+                "image_full": "zookeeper:3.4",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "ches/kafka",
+                "image_full": "ches/kafka:0.10.1.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "ejbca",
+                "image": "dojot/ejbca",
+                "image_full": "dojot/ejbca",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 4,
+            "names": [
+                "mongo",
+                "postgres",
+                "redis",
+                "zookeeper"
+            ],
+            "services": [
+                "mongodb",
+                "postgres",
+                "redis",
+                "zookeeper"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 22,
+            "edges": 19,
+            "avg_deps_per_service": 0.8636363636363636,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 13,
+            "edges": 2,
+            "avg_deps_per_service": 0.15384615384615385,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 13
+    },
+    "files": [],
+    "dbs": [
+        "mongo",
+        "postgres",
+        "redis",
+        "zookeeper"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq",
+        "mosquitto",
+        "kafka"
+    ],
+    "langs": [],
+    "gates": [
+        "kong"
+    ],
+    "monitors": [],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 22,
+    "shared_dbs": true,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 4,
+    "num_servers": 0,
+    "num_buses": 3,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 1
+}

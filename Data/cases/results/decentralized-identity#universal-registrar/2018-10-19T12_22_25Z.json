@@ -1,0 +1,125 @@
+{
+    "url": "https://github.com/decentralized-identity/universal-registrar",
+    "name": "decentralized-identity/universal-registrar",
+    "dockers": [
+        {
+            "path": "/drivers/sov/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-sov/docker/run-driver-did-sov.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "sov",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/driver",
+            "from_full": "universalregistrar/driver",
+            "keywords": [
+                "opt",
+                "indy",
+                "sdk",
+                "install",
+                "dev"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-btcr/docker/run-driver-did-btcr.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "btcr",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/driver",
+            "from_full": "universalregistrar/driver",
+            "keywords": [
+                "opt",
+                "driver",
+                "did",
+                "btcr",
+                "git"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/drivers/sov/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "jetty"
+    ],
+    "buses": [],
+    "langs": [
+        "java",
+        "cmake"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "universalregistrar/driver"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

@@ -1,0 +1,523 @@
+{
+    "url": "https://github.com/dotnet-architecture/eShopOnDapr",
+    "name": "dotnet-architecture/eShopOnDapr",
+    "dockers": [
+        {
+            "path": "/src/Services/Catalog/Catalog.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "publish",
+                "eshopondapr",
+                "sln"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Services/Ordering/Ordering.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "ordering",
+                "api",
+                "dotnet",
+                "restore",
+                "csproj"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Services/Payment/Payment.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "publish",
+                "eshopondapr",
+                "sln"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Services/Identity/Identity.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "identity",
+                "api",
+                "dotnet",
+                "restore",
+                "csproj"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Services/Basket/Basket.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "basket",
+                "api",
+                "dotnet",
+                "restore",
+                "csproj"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Web/BlazorClient.Host/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "blazorclient",
+                "host",
+                "dotnet",
+                "restore",
+                "csproj"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ApiGateways/Aggregators/Web.Shopping.HttpAggregator/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "publish",
+                "eshopondapr",
+                "sln"
+            ],
+            "from_full": "base",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 23,
+        "services": [
+            {
+                "name": "maildev",
+                "image": "maildev/maildev",
+                "image_full": "maildev/maildev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3-management-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "seq",
+                "image": "datalust/seq",
+                "image_full": "datalust/seq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sqldata",
+                "image": "mcr.microsoft.com/mssql/server",
+                "image_full": "mcr.microsoft.com/mssql/server:2017-latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zipkin",
+                "image": "openzipkin/zipkin-slim",
+                "image_full": "openzipkin/zipkin-slim",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "basket-api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/basket.api:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "identity-api",
+                    "redis"
+                ]
+            },
+            {
+                "name": "basket-api-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "basket-api"
+                ]
+            },
+            {
+                "name": "blazor-client",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/blazor.client:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "catalog-api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/catalog.api:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sqldata"
+                ]
+            },
+            {
+                "name": "catalog-api-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "catalog-api"
+                ]
+            },
+            {
+                "name": "identity-api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/identity.api:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sqldata"
+                ]
+            },
+            {
+                "name": "identity-api-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "identity-api"
+                ]
+            },
+            {
+                "name": "ordering-api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/ordering.api:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sqldata"
+                ]
+            },
+            {
+                "name": "ordering-api-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ordering-api"
+                ]
+            },
+            {
+                "name": "payment-api",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/payment.api:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "payment-api-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "payment-api"
+                ]
+            },
+            {
+                "name": "webshoppingagg",
+                "image": "${REGISTRY",
+                "image_full": "${REGISTRY:-eshopdapr}/webshoppingagg:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "basket-api",
+                    "catalog-api",
+                    "identity-api",
+                    "ordering-api",
+                    "sqldata"
+                ]
+            },
+            {
+                "name": "webshoppingagg-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "webshoppingagg"
+                ]
+            },
+            {
+                "name": "webshoppingapigw",
+                "image": "envoyproxy/envoy",
+                "image_full": "envoyproxy/envoy:v1.14.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "envoy"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "webshoppingapigw-dapr",
+                "image": "daprio/daprd",
+                "image_full": "daprio/daprd:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "webshoppingapigw"
+                ]
+            },
+            {
+                "name": "webstatus",
+                "image": "xabarilcoding/healthchecksui",
+                "image_full": "xabarilcoding/healthchecksui:5.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dapr-placement",
+                "image": "daprio/dapr",
+                "image_full": "daprio/dapr:1.5.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 23,
+            "edges": 17,
+            "avg_deps_per_service": 0.7391304347826086,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "dep_graph_micro": {
+            "nodes": 20,
+            "edges": 15,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "number_of_microservices": 20
+    },
+    "files": [],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "envoy"
+    ],
+    "num_services": 23,
+    "shared_dbs": false,
+    "num_dockers": 7,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 8
+}

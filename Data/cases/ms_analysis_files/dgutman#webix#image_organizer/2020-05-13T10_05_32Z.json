@@ -1,0 +1,249 @@
+{
+    "url": "https://github.com/dgutman/webix_image_organizer",
+    "name": "dgutman/webix_image_organizer",
+    "dockers": [
+        {
+            "path": "/services/Dockerfile",
+            "cmd": "flask run --host=0.0.0.0",
+            "cmd_keywords": [
+                "flask",
+                "run",
+                "host"
+            ],
+            "from": "jjanzic/docker-python3-opencv",
+            "from_full": "jjanzic/docker-python3-opencv",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "tesseract",
+                "ocr"
+            ],
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tagger/tagger-for-david/Dockerfile",
+            "cmd": "nginx -g daemon off;",
+            "cmd_keywords": [
+                "nginx",
+                "daemon",
+                "off"
+            ],
+            "from": "baturik/base_ubuntu_image",
+            "from_full": "baturik/base_ubuntu_image:v2",
+            "keywords": [
+                "etc",
+                "nginx",
+                "sites",
+                "npm",
+                "codebase"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tagger/tagger-for-david/conf/base_image/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:18.04",
+            "keywords": [
+                "apt",
+                "install",
+                "curl",
+                "update",
+                "get"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tagger/tagger-for-david/sources/server/Dockerfile",
+            "cmd": "pm2-runtime pm2.config.js",
+            "cmd_keywords": [
+                "runtime",
+                "config"
+            ],
+            "from": "baturik/base_ubuntu_image",
+            "from_full": "baturik/base_ubuntu_image:v2",
+            "keywords": [
+                "npm",
+                "install",
+                "only",
+                "production"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/tagger/tagger-for-david/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "client",
+                "image": "./",
+                "image_full": "./",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "server",
+                "image": "./",
+                "image_full": "./",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mongodb",
+                "image": "mongo",
+                "image_full": "mongo:latest",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "mongodb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 2
+    },
+    "files": [
+        {
+            "path": "/services/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tagger/tagger-for-david/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node",
+                "mongoose"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "flask",
+        "mongoose"
+    ],
+    "buses": [],
+    "langs": [
+        "bash",
+        "python"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 4,
+    "images": [
+        "baturik/base_ubuntu_image",
+        "jjanzic/docker-python3-opencv",
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 4,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 8
+}

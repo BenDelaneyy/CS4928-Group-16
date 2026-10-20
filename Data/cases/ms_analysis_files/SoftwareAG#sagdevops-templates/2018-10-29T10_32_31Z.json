@@ -1,0 +1,244 @@
+{
+    "url": "https://github.com/SoftwareAG/sagdevops-templates",
+    "name": "SoftwareAG/sagdevops-templates",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "init"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-exx-broker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-spm-config/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-msc-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-um-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-abe/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "daerepository03.eur.ad.sag",
+            "from_full": "daerepository03.eur.ad.sag:4443/ibit/java:jdk-8-centos",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-ninja-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "cc",
+                "image": "${CC_BUILDER_IMAGE}",
+                "image_full": "${CC_BUILDER_IMAGE}:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sagcc",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sagccant",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "apply",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "provision",
+                "image": "${CC_BUILDER_IMAGE}",
+                "image_full": "${CC_BUILDER_IMAGE}:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 7,
+    "images": [
+        "$BASE_IMAGE",
+        "daerepository03.eur.ad.sag"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 8
+}

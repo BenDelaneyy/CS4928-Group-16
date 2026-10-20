@@ -1,0 +1,11 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Shell,5890,0,197,122,53,22,2,10,0,[]
+JSON,3106,0,164,161,0,3,0,8,0,[]
+Dockerfile,2627,0,80,37,26,17,4,4,0,[]
+YAML,42818,0,1444,1166,213,65,0,4,0,[]
+Markdown,14847,0,254,178,0,76,0,3,0,[]
+Properties File,1577,0,49,15,24,10,0,2,0,[]
+Go,643,0,27,23,2,2,0,1,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+gitignore,61,0,9,5,2,2,0,1,0,[]
+Total,82926,0,2425,1876,320,229,6,34,0,

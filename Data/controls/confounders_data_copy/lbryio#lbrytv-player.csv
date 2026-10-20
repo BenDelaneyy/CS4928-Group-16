@@ -1,0 +1,9 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Go,93063,0,3346,2701,145,500,426,29,0,[]
+YAML,3909,0,160,151,5,4,0,3,0,[]
+Dockerfile,88,0,7,5,0,2,0,1,0,[]
+Makefile,1053,0,39,32,0,7,0,1,0,[]
+Markdown,1734,0,46,23,0,23,0,1,0,[]
+Shell,230,0,11,6,1,4,2,1,0,[]
+gitignore,18,0,2,2,0,0,0,1,0,[]
+Total,100095,0,3611,2920,151,540,428,37,0,

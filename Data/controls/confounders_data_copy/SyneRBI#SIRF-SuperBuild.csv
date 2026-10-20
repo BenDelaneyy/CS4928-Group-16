@@ -1,0 +1,11 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+CMake,86791,0,2409,1310,760,339,141,26,0,[]
+Shell,1970,0,80,55,22,3,1,6,0,[]
+YAML,5254,0,141,112,19,10,0,3,0,[]
+Autoconf,1559,0,51,23,17,11,2,2,0,[]
+Markdown,5705,0,170,125,0,45,0,2,0,[]
+Plain Text,9697,0,66,40,0,26,0,2,0,[]
+gitignore,295,0,34,28,3,3,0,2,0,[]
+BASH,803,0,23,11,7,5,6,1,0,[]
+Dockerfile,2380,0,83,56,10,17,5,1,0,[]
+Total,114454,0,3057,1760,838,459,155,45,0,

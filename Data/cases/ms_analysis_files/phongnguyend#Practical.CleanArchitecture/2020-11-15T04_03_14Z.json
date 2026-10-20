@@ -1,0 +1,750 @@
+{
+    "url": "https://github.com/phongnguyend/Practical.CleanArchitecture",
+    "name": "phongnguyend/Practical.CleanArchitecture",
+    "dockers": [
+        {
+            "path": "/tools/ubuntu/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:18.04",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "update",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Notification/ClassifiedAds.Services.Notification.Grpc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "notification",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/src/Microservices/Services.Notification/ClassifiedAds.Services.Notification.Background/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "notification",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Notification/ClassifiedAds.Services.Notification.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "notification",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Product/ClassifiedAds.Services.Product.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "product",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Gateways.WebAPI/ClassifiedAds.Gateways.WebAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "gateways",
+                "webapi",
+                "classifiedads",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Identity/ClassifiedAds.Services.Identity.AuthServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "identity",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Identity/ClassifiedAds.Services.Identity.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "identity",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.Identity/ClassifiedAds.Services.Identity.Grpc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "identity",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/src/Microservices/Services.AuditLog/ClassifiedAds.Services.AuditLog.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "auditlog",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Microservices/Services.AuditLog/ClassifiedAds.Services.AuditLog.Grpc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "auditlog",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/src/Microservices/Services.Storage/ClassifiedAds.Services.Storage.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "classifiedads",
+                "services",
+                "storage",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ModularMonolith/ClassifiedAds.BackgroundServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "backgroundserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ModularMonolith/ClassifiedAds.WebAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "webapi",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ModularMonolith/ClassifiedAds.IdentityServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "identityserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ModularMonolith/ClassifiedAds.NotificationServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "notificationserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ModularMonolith/ClassifiedAds.Migrator/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/core/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "migrator",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/UIs/angular/Dockerfile",
+            "cmd": "nginx -g daemon off;",
+            "cmd_keywords": [
+                "nginx",
+                "daemon",
+                "off"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:1.17.0-alpine",
+            "keywords": [
+                "npm",
+                "app",
+                "mkdir",
+                "node",
+                "modules"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.BackgroundServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "backgroundserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.WebAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "webapi",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.WebMVC/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "webmvc",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.BlazorServerSide/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "blazorserverside",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.GraphQL/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "graphql",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.IdentityServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "identityserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.NotificationServer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "notificationserver",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Monolith/ClassifiedAds.Migrator/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/dotnet/aspnet",
+            "from_full": "mcr.microsoft.com/dotnet/aspnet:5.0",
+            "keywords": [
+                "dotnet",
+                "classifiedads",
+                "migrator",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/tools/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "db",
+                "image": "mcr.microsoft.com/mssql/server",
+                "image_full": "mcr.microsoft.com/mssql/server:2017-latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3-management",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mailhog",
+                "image": "mailhog/mailhog",
+                "image_full": "mailhog/mailhog",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zookeeper",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:latest",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "confluentinc/cp-kafka",
+                "image_full": "confluentinc/cp-kafka:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "ubuntu",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "zookeeper"
+            ],
+            "services": [
+                "zookeeper"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 2,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/src/UIs/reactjs/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/UIs/vuejs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/UIs/angular/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "zookeeper"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [
+        "rabbitmq",
+        "kafka"
+    ],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [
+        "grpc",
+        "zookeeper"
+    ],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 26,
+    "images": [
+        "nginx",
+        "mcr.microsoft.com/dotnet/core/aspnet",
+        "mcr.microsoft.com/dotnet/aspnet",
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 2,
+    "num_files": 30
+}

@@ -1,0 +1,68 @@
+{
+    "url": "https://github.com/prisma/prisma-engines",
+    "name": "prisma/prisma-engines",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "/usr/bin/prisma",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "prisma"
+            ],
+            "from": "rust",
+            "from_full": "rust:latest",
+            "keywords": [
+                "release",
+                "usr",
+                "apt",
+                "get",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "rust"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "rust"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "rust"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

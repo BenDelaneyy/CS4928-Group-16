@@ -1,0 +1,411 @@
+{
+    "no_analysis_projects": [
+        "lucaschen#microservices-demo",
+        "stackroute#ibm-wave7-lifeline"
+    ],
+    "no_ms_projects": [],
+    "negative_output_projects": [
+        {
+            "name": "amazeeio#lagoon",
+            "negative": 2718,
+            "non-negative": 564
+        },
+        {
+            "name": "ivanpaulovich#clean-architecture-manga",
+            "negative": 102,
+            "non-negative": 72
+        },
+        {
+            "name": "wellcometrust#wellcomecollection.org",
+            "negative": 4409,
+            "non-negative": 1648
+        },
+        {
+            "name": "networknt#light-config-test",
+            "negative": 225,
+            "non-negative": 24
+        },
+        {
+            "name": "fedspendingtransparency#usaspending-api",
+            "negative": 5275,
+            "non-negative": 99
+        }
+    ],
+    "positive_output_projects": [
+        {
+            "name": "FantasticFiasco#serilog-sinks-http-elastic-stack",
+            "positive": 34,
+            "non-positive": 0
+        },
+        {
+            "name": "EOL#eol#website",
+            "positive": 865,
+            "non-positive": 0
+        },
+        {
+            "name": "palletone#go-palletone",
+            "positive": 6390,
+            "non-positive": 0
+        },
+        {
+            "name": "PecanProject#BETYdb-YABA",
+            "positive": 110,
+            "non-positive": 0
+        },
+        {
+            "name": "decentralized-identity#universal-registrar",
+            "positive": 35,
+            "non-positive": 0
+        },
+        {
+            "name": "bugsnag#bugsnag-js",
+            "positive": 1214,
+            "non-positive": 0
+        },
+        {
+            "name": "collinbarrett#FilterLists",
+            "positive": 1908,
+            "non-positive": 0
+        },
+        {
+            "name": "nextcloud#docker",
+            "positive": 270,
+            "non-positive": 0
+        },
+        {
+            "name": "digirati-co-uk#madoc-platform",
+            "positive": 832,
+            "non-positive": 0
+        },
+        {
+            "name": "dojot#docker-compose",
+            "positive": 125,
+            "non-positive": 0
+        },
+        {
+            "name": "shopgate#connect-integration-sdk",
+            "positive": 914,
+            "non-positive": 0
+        },
+        {
+            "name": "xeraa#microservice-monitoring",
+            "positive": 191,
+            "non-positive": 0
+        },
+        {
+            "name": "zeeguu-ecosystem#Zeeguu-API",
+            "positive": 503,
+            "non-positive": 0
+        },
+        {
+            "name": "greenpress#greenpress",
+            "positive": 42,
+            "non-positive": 0
+        },
+        {
+            "name": "aspnetrun#run-aspnetcore-microservices",
+            "positive": 136,
+            "non-positive": 4
+        },
+        {
+            "name": "remp2020#remp",
+            "positive": 1939,
+            "non-positive": 0
+        },
+        {
+            "name": "theparanoids#ashirt-server",
+            "positive": 255,
+            "non-positive": 0
+        },
+        {
+            "name": "tisboyo#Twitch#Bot",
+            "positive": 523,
+            "non-positive": 0
+        },
+        {
+            "name": "jenkins-x#jx-docs",
+            "positive": 5594,
+            "non-positive": 0
+        },
+        {
+            "name": "confluentinc#examples",
+            "positive": 1439,
+            "non-positive": 0
+        },
+        {
+            "name": "ministryofjustice#opg-use-an-lpa",
+            "positive": 2705,
+            "non-positive": 0
+        },
+        {
+            "name": "ovh#cds",
+            "positive": 2096,
+            "non-positive": 0
+        },
+        {
+            "name": "DFE-Digital#apply-for-teacher-training",
+            "positive": 11286,
+            "non-positive": 476
+        },
+        {
+            "name": "3scale#porta",
+            "positive": 3340,
+            "non-positive": 0
+        },
+        {
+            "name": "creativesoftwarefdn#weaviate",
+            "positive": 615,
+            "non-positive": 39
+        },
+        {
+            "name": "OpenCodeFoundation#eSchool",
+            "positive": 85,
+            "non-positive": 0
+        },
+        {
+            "name": "akka#alpakka",
+            "positive": 527,
+            "non-positive": 8
+        },
+        {
+            "name": "hobbit-project#platform",
+            "positive": 609,
+            "non-positive": 0
+        },
+        {
+            "name": "mwinteringham#restful-booker-platform",
+            "positive": 145,
+            "non-positive": 0
+        },
+        {
+            "name": "phongnguyend#Practical.CleanArchitecture",
+            "positive": 147,
+            "non-positive": 29
+        },
+        {
+            "name": "adorsys#xs2a",
+            "positive": 4107,
+            "non-positive": 0
+        },
+        {
+            "name": "OpenLMIS#openlmis-ref-distro",
+            "positive": 338,
+            "non-positive": 0
+        },
+        {
+            "name": "RasaHQ#rasa-sdk",
+            "positive": 528,
+            "non-positive": 0
+        },
+        {
+            "name": "hmcts#tribunals-case-api",
+            "positive": 658,
+            "non-positive": 0
+        },
+        {
+            "name": "tmtsoftware#csw",
+            "positive": 2572,
+            "non-positive": 0
+        },
+        {
+            "name": "geoserver#geoserver-cloud",
+            "positive": 464,
+            "non-positive": 0
+        },
+        {
+            "name": "hashintel#engine",
+            "positive": 215,
+            "non-positive": 211
+        },
+        {
+            "name": "microservices-patterns#ftgo-application",
+            "positive": 130,
+            "non-positive": 0
+        },
+        {
+            "name": "microsoft#kafka-connect-cosmosdb",
+            "positive": 480,
+            "non-positive": 0
+        },
+        {
+            "name": "harvard-lil#capstone",
+            "positive": 1623,
+            "non-positive": 137
+        },
+        {
+            "name": "mozilla-services#autograph-edge",
+            "positive": 148,
+            "non-positive": 0
+        },
+        {
+            "name": "sflpro#notifier",
+            "positive": 300,
+            "non-positive": 0
+        },
+        {
+            "name": "Wradgio#StretchShop",
+            "positive": 146,
+            "non-positive": 0
+        },
+        {
+            "name": "mimo-labs#core-server",
+            "positive": 121,
+            "non-positive": 98
+        },
+        {
+            "name": "tinkerbell#boots",
+            "positive": 428,
+            "non-positive": 0
+        },
+        {
+            "name": "tshuck#musicbox-api",
+            "positive": 144,
+            "non-positive": 80
+        },
+        {
+            "name": "CoorpAcademy#serverless-plugins",
+            "positive": 107,
+            "non-positive": 0
+        },
+        {
+            "name": "Financial-Times#native-ingester",
+            "positive": 132,
+            "non-positive": 0
+        },
+        {
+            "name": "sorry-cypress#sorry-cypress",
+            "positive": 443,
+            "non-positive": 0
+        },
+        {
+            "name": "nquocnghia#microcalc",
+            "positive": 67,
+            "non-positive": 0
+        },
+        {
+            "name": "FAForever#faf-stack",
+            "positive": 196,
+            "non-positive": 0
+        },
+        {
+            "name": "itering#subscan-essentials",
+            "positive": 120,
+            "non-positive": 0
+        },
+        {
+            "name": "Patrik-Stas#indyscan",
+            "positive": 217,
+            "non-positive": 18
+        },
+        {
+            "name": "golastmile#rasa#nlu",
+            "positive": 4196,
+            "non-positive": 0
+        },
+        {
+            "name": "zavada-sergey#TradeUnionCommittee.Web.App",
+            "positive": 560,
+            "non-positive": 0
+        },
+        {
+            "name": "Greenstand#treetracker-admin",
+            "positive": 219,
+            "non-positive": 0
+        },
+        {
+            "name": "poanetwork#blockscout",
+            "positive": 5348,
+            "non-positive": 3
+        },
+        {
+            "name": "FudanSELab#train-ticket",
+            "positive": 180,
+            "non-positive": 0
+        },
+        {
+            "name": "hashicorp#waypoint",
+            "positive": 5349,
+            "non-positive": 0
+        },
+        {
+            "name": "FUB-HCC#IKON-backend",
+            "positive": 394,
+            "non-positive": 0
+        },
+        {
+            "name": "daggerok#streaming-file-server",
+            "positive": 61,
+            "non-positive": 42
+        },
+        {
+            "name": "owncloud#phoenix",
+            "positive": 2509,
+            "non-positive": 0
+        },
+        {
+            "name": "mjoniec#Utils",
+            "positive": 57,
+            "non-positive": 2
+        },
+        {
+            "name": "bbc#cloud-sync",
+            "positive": 107,
+            "non-positive": 0
+        },
+        {
+            "name": "appwrite#appwrite",
+            "positive": 3911,
+            "non-positive": 0
+        },
+        {
+            "name": "SoftwareAG#sagdevops-templates",
+            "positive": 878,
+            "non-positive": 0
+        },
+        {
+            "name": "firezone#firezone",
+            "positive": 1274,
+            "non-positive": 0
+        },
+        {
+            "name": "avalonmediasystem#avalon",
+            "positive": 948,
+            "non-positive": 0
+        },
+        {
+            "name": "lightninglabs#loop",
+            "positive": 453,
+            "non-positive": 0
+        },
+        {
+            "name": "dgutman#webix#image_organizer",
+            "positive": 123,
+            "non-positive": 0
+        },
+        {
+            "name": "coopcycle#coopcycle-web",
+            "positive": 1708,
+            "non-positive": 0
+        },
+        {
+            "name": "CodelyTV#php-ddd-example",
+            "positive": 140,
+            "non-positive": 12
+        },
+        {
+            "name": "gnosis#safe-transaction-service",
+            "positive": 375,
+            "non-positive": 0
+        },
+        {
+            "name": "EdwinVW#pitstop",
+            "positive": 162,
+            "non-positive": 0
+        },
+        {
+            "name": "prisma#prisma-engines",
+            "positive": 1780,
+            "non-positive": 1657
+        }
+    ]
+}

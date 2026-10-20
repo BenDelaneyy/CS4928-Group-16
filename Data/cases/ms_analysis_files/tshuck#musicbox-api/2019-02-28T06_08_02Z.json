@@ -1,0 +1,138 @@
+{
+    "url": "https://github.com/tshuck/musicbox-api",
+    "name": "tshuck/musicbox-api",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "[\"echo\", \"Commands: `bin/passenger start -p $PORT`]",
+            "cmd_keywords": [
+                "echo",
+                "commands",
+                "bin",
+                "passenger",
+                "start"
+            ],
+            "from": "ruby",
+            "from_full": "ruby:2.6.1",
+            "keywords": [
+                "install",
+                "apt",
+                "get",
+                "update",
+                "qqy"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "ruby"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "db",
+                "image": "postgres",
+                "image_full": "postgres:9.5.4",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "app",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db",
+                    "redis"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:5.0.3",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "postgres",
+                "redis"
+            ],
+            "services": [
+                "db",
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [],
+    "dbs": [
+        "postgres",
+        "redis"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "ruby"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "ruby"
+    ],
+    "num_dbs": 2,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

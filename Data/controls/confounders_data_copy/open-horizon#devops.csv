@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+JSON,1962,0,63,63,0,0,0,2,0,[]
+Markdown,6430,0,123,90,0,33,0,2,0,[]
+Shell,42010,0,949,767,91,91,165,2,0,[]
+Plain Text,10141,0,175,149,0,26,0,1,0,[]
+YAML,5034,0,151,131,10,10,0,1,0,[]
+Total,65577,0,1461,1200,101,160,165,8,0,

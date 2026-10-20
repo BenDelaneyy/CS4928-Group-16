@@ -1,0 +1,239 @@
+{
+    "url": "https://github.com/pagarme/tldr",
+    "name": "pagarme/tldr",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "pagarme/docker-nodejs",
+            "from_full": "pagarme/docker-nodejs:8.9",
+            "keywords": [
+                "apk",
+                "update",
+                "add",
+                "yarn",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.circleci/images/yopa/Dockerfile",
+            "cmd": "sh -c /usr/bin/java -Xms64m -Xmx256m -jar uberjar.jar -c /tmp/yopa-in/config.yml -o /tmp/dev-env-aws-regions-override.xml",
+            "cmd_keywords": [
+                "jar",
+                "tmp",
+                "usr",
+                "bin",
+                "java"
+            ],
+            "from": "pagarme/yopa",
+            "from_full": "pagarme/yopa:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "base",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "database",
+                "image": "postgres",
+                "image_full": "postgres:10.1-alpine",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "test-database",
+                "image": "postgres",
+                "image_full": "postgres:10.1-alpine",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "yopa",
+                "image": "pagarme/yopa",
+                "image_full": "pagarme/yopa:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "lint",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "test",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "test-database",
+                    "yopa"
+                ]
+            },
+            {
+                "name": "server",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "yopa",
+                    "database"
+                ]
+            },
+            {
+                "name": "worker",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "yopa",
+                    "database"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "database",
+                "test-database"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 6,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 3,
+            "avg_deps_per_service": 0.5,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 6
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [
+        "node",
+        "express"
+    ],
+    "buses": [],
+    "langs": [
+        "python",
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": true,
+    "num_dockers": 2,
+    "images": [
+        "pagarme/docker-nodejs",
+        "pagarme/yopa"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

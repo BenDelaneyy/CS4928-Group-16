@@ -1,0 +1,112 @@
+{
+    "url": "https://github.com/cuappdev/ithaca-transit-backend",
+    "name": "cuappdev/ithaca-transit-backend",
+    "dockers": [
+        {
+            "path": "/docker/Dockerfile",
+            "cmd": "npm run start",
+            "cmd_keywords": [
+                "npm",
+                "run",
+                "start"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8",
+            "keywords": [
+                "git",
+                "tcat",
+                "apt",
+                "get",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker/docker-compose.yml",
+        "num_services": 1,
+        "services": [
+            {
+                "name": "web",
+                "image": "tcat",
+                "image_full": "tcat",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node",
+        "express"
+    ],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 1,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "openjdk"
+    ],
+    "num_dbs": 0,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

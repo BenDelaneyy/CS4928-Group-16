@@ -1,0 +1,106 @@
+{
+    "url": "https://github.com/owncloud/phoenix",
+    "name": "owncloud/phoenix",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "nginx -g daemon off;",
+            "cmd_keywords": [
+                "nginx",
+                "daemon",
+                "off"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:1.13.12-alpine",
+            "keywords": [
+                "apk",
+                "yarn",
+                "update",
+                "upgrade",
+                "add"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/apps/files/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/apps/markdown-editor/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "nginx"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

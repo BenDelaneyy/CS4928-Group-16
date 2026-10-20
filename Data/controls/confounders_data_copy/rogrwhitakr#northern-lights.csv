@@ -1,0 +1,10 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Shell,68061,0,2922,1616,574,732,143,62,0,[]
+Dockerfile,361,0,20,11,0,9,6,3,0,[]
+BASH,3418,0,120,72,26,22,9,1,0,[]
+Expect,433,0,19,5,9,5,0,1,0,[]
+Markdown,217,0,10,8,0,2,0,1,0,[]
+Plain Text,2598,0,51,30,0,21,0,1,0,[]
+XML,5689,0,158,158,0,0,0,1,0,[]
+gitignore,0,0,0,0,0,0,0,1,0,[]
+Total,80777,0,3300,1900,609,791,158,71,0,

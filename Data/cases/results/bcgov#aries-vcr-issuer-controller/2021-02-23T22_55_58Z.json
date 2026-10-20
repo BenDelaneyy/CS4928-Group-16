@@ -1,0 +1,241 @@
+{
+    "url": "https://github.com/bcgov/aries-vcr-issuer-controller",
+    "name": "bcgov/aries-vcr-issuer-controller",
+    "dockers": [
+        {
+            "path": "/issuer_pipeline/docker/postgres/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "postgres",
+            "from_full": "postgres:10",
+            "keywords": [
+                "var",
+                "lib",
+                "pgsql",
+                "data",
+                "postgres"
+            ],
+            "dbs": [
+                "postgres"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/issuer_pipeline/docker/mara-app/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "python",
+                "chmod",
+                "root",
+                "app",
+                "apt"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/issuer_controller/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "bcgovimages/von-image",
+            "from_full": "bcgovimages/von-image:py36-1.15-0",
+            "keywords": [
+                "install",
+                "pip",
+                "apt",
+                "get",
+                "root"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "caddyx",
+                "image": "../issuer_controller",
+                "image_full": "../issuer_controller",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "myorg-controller:controller"
+                ]
+            },
+            {
+                "name": "myorg-controller",
+                "image": "../issuer_controller",
+                "image_full": "../issuer_controller",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "myorg-agent"
+                ]
+            },
+            {
+                "name": "myorg-agent",
+                "image": "vcr-agent",
+                "image_full": "vcr-agent",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "myorg-wallet-db"
+                ]
+            },
+            {
+                "name": "myorg-wallet-db",
+                "image": "registry.access.redhat.com/rhscl/postgresql-95-rhel7",
+                "image_full": "registry.access.redhat.com/rhscl/postgresql-95-rhel7:9.5",
+                "dbs": [
+                    "postgresql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "myorg-pipeline",
+                "image": "../issuer_pipeline",
+                "image_full": "../issuer_pipeline",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "myorg-controller",
+                    "myorg-pipeline-db"
+                ]
+            },
+            {
+                "name": "myorg-pipeline-db",
+                "image": "../issuer_pipeline",
+                "image_full": "../issuer_pipeline",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgresql"
+            ],
+            "services": [
+                "myorg-wallet-db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 5,
+            "avg_deps_per_service": 0.7142857142857143,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 4,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 6
+    },
+    "files": [
+        {
+            "path": "/issuer_pipeline/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/issuer_controller/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres",
+        "postgresql"
+    ],
+    "servers": [
+        "flask"
+    ],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "ubuntu",
+        "postgres",
+        "bcgovimages/von-image"
+    ],
+    "num_dbs": 2,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

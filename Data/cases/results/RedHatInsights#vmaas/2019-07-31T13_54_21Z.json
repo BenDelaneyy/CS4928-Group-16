@@ -1,0 +1,314 @@
+{
+    "url": "https://github.com/RedHatInsights/vmaas",
+    "name": "RedHatInsights/vmaas",
+    "dockers": [
+        {
+            "path": "/webapp-utils/Dockerfile",
+            "cmd": "bash /webapp-utils/entrypoint.sh",
+            "cmd_keywords": [
+                "bash",
+                "webapp",
+                "utils",
+                "entrypoint"
+            ],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "install",
+                "python",
+                "pip",
+                "yum",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "centos/postgresql-10-centos7",
+            "from_full": "centos/postgresql-10-centos7",
+            "keywords": [],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reposcan/Dockerfile",
+            "cmd": "/reposcan/entrypoint.sh",
+            "cmd_keywords": [
+                "reposcan",
+                "entrypoint"
+            ],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "install",
+                "python",
+                "pip",
+                "yum",
+                "bin"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/websocket/Dockerfile",
+            "cmd": "/websocket/websocket.py",
+            "cmd_keywords": [
+                "websocket"
+            ],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "python",
+                "pip",
+                "yum",
+                "install",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webapp/Dockerfile",
+            "cmd": "/webapp/entrypoint.sh",
+            "cmd_keywords": [
+                "webapp",
+                "entrypoint"
+            ],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "install",
+                "python",
+                "pip",
+                "yum",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "vmaas_database",
+                "image": "vmaas/database",
+                "image_full": "vmaas/database:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_websocket",
+                "image": "vmaas/websocket",
+                "image_full": "vmaas/websocket:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_reposcan",
+                "image": "vmaas/reposcan",
+                "image_full": "vmaas/reposcan:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_database"
+                ]
+            },
+            {
+                "name": "vmaas_webapp",
+                "image": "vmaas/webapp",
+                "image_full": "vmaas/webapp:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_reposcan"
+                ]
+            },
+            {
+                "name": "vmaas_apidoc",
+                "image": "vmaas/apidoc",
+                "image_full": "vmaas/apidoc:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_reposcan",
+                    "vmaas_webapp",
+                    "vmaas_webapp_utils"
+                ]
+            },
+            {
+                "name": "vmaas_webapp_utils",
+                "image": "vmaas/webapp-utils",
+                "image_full": "vmaas/webapp-utils:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_webapp"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 8,
+            "avg_deps_per_service": 1.3333333333333333,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 8,
+            "avg_deps_per_service": 1.3333333333333333,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "number_of_microservices": 6
+    },
+    "files": [
+        {
+            "path": "/webapp-utils/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reposcan/requirements.txt",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/websocket/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webapp/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgresql"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "python",
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "centos",
+        "centos/postgresql-10-centos7"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 0,
+    "num_files": 10
+}

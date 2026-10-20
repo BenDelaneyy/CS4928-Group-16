@@ -1,0 +1,185 @@
+{
+    "url": "https://github.com/FantasticFiasco/serilog-sinks-http-elastic-stack",
+    "name": "FantasticFiasco/serilog-sinks-http-elastic-stack",
+    "dockers": [
+        {
+            "path": "/elastic-stack/kibana/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/kibana/kibana-oss",
+            "from_full": "docker.elastic.co/kibana/kibana-oss:6.4.3",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/elastic-stack/elasticsearch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/elasticsearch/elasticsearch-oss",
+            "from_full": "docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.3",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/elastic-stack/logstash/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/logstash/logstash-oss",
+            "from_full": "docker.elastic.co/logstash/logstash-oss:6.4.3",
+            "keywords": [
+                "logstash",
+                "plugin",
+                "install",
+                "input",
+                "http"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/elastic-stack/extensions/logspout/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "gliderlabs/logspout",
+            "from_full": "gliderlabs/logspout:master",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/serilog/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.2-sdk",
+            "keywords": [
+                "dotnet",
+                "publish",
+                "release",
+                "out"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/elastic-stack/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "elasticsearch",
+                "image": "elasticsearch/",
+                "image_full": "elasticsearch/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "logstash",
+                "image": "logstash/",
+                "image_full": "logstash/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "elasticsearch"
+                ]
+            },
+            {
+                "name": "kibana",
+                "image": "kibana/",
+                "image_full": "kibana/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "elasticsearch"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "docker.elastic.co/logstash/logstash-oss",
+        "docker.elastic.co/kibana/kibana-oss",
+        "gliderlabs/logspout",
+        "docker.elastic.co/elasticsearch/elasticsearch-oss",
+        "microsoft/dotnet"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

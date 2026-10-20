@@ -1,0 +1,235 @@
+{
+    "url": "https://github.com/linianhui/oidc.example",
+    "name": "linianhui/oidc.example",
+    "dockers": [
+        {
+            "path": "/src/web.oauth2.client.aspnetcore/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.client.hybrid/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.server.ids4/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.client.js/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:1.15.1-alpine",
+            "keywords": [
+                "chmod",
+                "usr",
+                "share",
+                "nginx",
+                "html"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oauth2.resources.aspnetcore/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/traefik/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "traefik",
+            "from_full": "traefik:v1.6.4-alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "traefik"
+            ]
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "traefik_reverse_proxy",
+                "image": "./www/traefik",
+                "image_full": "./www/traefik",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "oidc_server",
+                "image": "./www/oidc-server.test/",
+                "image_full": "./www/oidc-server.test/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc_client_hybrid",
+                "image": "./www/oidc-client-hybrid.test/",
+                "image_full": "./www/oidc-client-hybrid.test/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc_client_js",
+                "image": "./www/oidc-client-js.test/",
+                "image_full": "./www/oidc-client-js.test/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2_resources_aspnetcore",
+                "image": "./www/oauth2-resources-aspnetcore.test/",
+                "image_full": "./www/oauth2-resources-aspnetcore.test/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2_client_aspnetcore",
+                "image": "./www/oauth2-client-aspnetcore.test/",
+                "image_full": "./www/oauth2-client-aspnetcore.test/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 6,
+    "images": [
+        "nginx",
+        "microsoft/aspnetcore",
+        "traefik"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 7
+}

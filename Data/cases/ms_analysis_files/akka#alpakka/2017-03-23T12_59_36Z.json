@@ -1,0 +1,127 @@
+{
+    "url": "https://github.com/akka/alpakka",
+    "name": "akka/alpakka",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "cassandra",
+                "image": "cassandra",
+                "image_full": "cassandra:3",
+                "dbs": [
+                    "cassandra"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sqs",
+                "image": "s12v/elasticmq",
+                "image_full": "s12v/elasticmq:0.12.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt",
+                "image": "toke/mosquitto",
+                "image_full": "toke/mosquitto",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mosquitto"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dynamodb",
+                "image": "deangiberson/aws-dynamodb-local",
+                "image_full": "deangiberson/aws-dynamodb-local",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "cassandra"
+            ],
+            "services": [
+                "cassandra"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 2
+    },
+    "files": [],
+    "dbs": [
+        "cassandra"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq",
+        "mosquitto"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

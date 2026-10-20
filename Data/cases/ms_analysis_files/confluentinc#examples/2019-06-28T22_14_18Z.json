@@ -1,0 +1,390 @@
+{
+    "url": "https://github.com/confluentinc/examples",
+    "name": "confluentinc/examples",
+    "dockers": [
+        {
+            "path": "/utils/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.4",
+            "keywords": [
+                "sqlite",
+                "apk",
+                "add",
+                "update",
+                "microservices"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "sql"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ccloud/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "confluentinc/cp-kafka-connect",
+            "from_full": "confluentinc/cp-kafka-connect:5.3.0-SNAPSHOT",
+            "keywords": [
+                "confluent",
+                "hub",
+                "install",
+                "prompt",
+                "confluentinc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/cloud/kafka-connect-datagen/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "confluentinc/cp-kafka-connect",
+            "from_full": "confluentinc/cp-kafka-connect:5.2.1",
+            "keywords": [
+                "confluent",
+                "hub",
+                "install",
+                "prompt",
+                "confluentinc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/postgres-debezium-ksql-elasticsearch/docker-compose/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "zookeeper",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:5.3.0-SNAPSHOT",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "confluentinc/cp-enterprise-kafka",
+                "image_full": "confluentinc/cp-enterprise-kafka:5.3.0-SNAPSHOT",
+                "dbs": [
+                    "enterprise"
+                ],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "schema-registry",
+                "image": "confluentinc/cp-schema-registry",
+                "image_full": "confluentinc/cp-schema-registry:5.3.0-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper",
+                    "kafka"
+                ]
+            },
+            {
+                "name": "kafka-connect-cp",
+                "image": "confluentinc/cp-kafka-connect",
+                "image_full": "confluentinc/cp-kafka-connect:5.3.0-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper",
+                    "kafka",
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "ksql-server",
+                "image": "confluentinc/ksql-cli",
+                "image_full": "confluentinc/ksql-cli:5.3.0-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "postgres",
+                "image": "debezium/postgres",
+                "image_full": "debezium/postgres:10.0",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "connect-debezium",
+                "image": "debezium/connect",
+                "image_full": "debezium/connect:0.8",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "datagen-ratings",
+                "image": "confluentinc/ksql-examples",
+                "image_full": "confluentinc/ksql-examples:5.3.0-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "ksql-cli",
+                "image": "confluentinc/ksql-cli",
+                "image_full": "confluentinc/ksql-cli:5.3.0-SNAPSHOT",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "schema-registry",
+                    "ksql-server"
+                ]
+            },
+            {
+                "name": "elasticsearch",
+                "image": "docker.elastic.co/elasticsearch/elasticsearch",
+                "image_full": "docker.elastic.co/elasticsearch/elasticsearch:6.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka-connect-cp"
+                ]
+            },
+            {
+                "name": "kibana",
+                "image": "docker.elastic.co/kibana/kibana",
+                "image_full": "docker.elastic.co/kibana/kibana:6.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "elasticsearch"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 3,
+            "names": [
+                "postgres",
+                "enterprise",
+                "zookeeper"
+            ],
+            "services": [
+                "zookeeper",
+                "kafka",
+                "postgres"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 17,
+            "avg_deps_per_service": 1.5454545454545454,
+            "acyclic": true,
+            "longest_path": 5
+        },
+        "dep_graph_micro": {
+            "nodes": 7,
+            "edges": 6,
+            "avg_deps_per_service": 0.8571428571428571,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 7
+    },
+    "files": [
+        {
+            "path": "/clients/cloud/groovy/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/cloud/groovy/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/cloud/java/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "avro"
+            ]
+        },
+        {
+            "path": "/clients/avro/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "avro"
+            ]
+        },
+        {
+            "path": "/connect-streams-pipeline/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "avro"
+            ]
+        },
+        {
+            "path": "/clients/cloud/nodejs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres",
+        "sqlite",
+        "enterprise",
+        "zookeeper"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "sql"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "avro",
+        "zookeeper"
+    ],
+    "num_services": 11,
+    "shared_dbs": true,
+    "num_dockers": 3,
+    "images": [
+        "alpine",
+        "confluentinc/cp-kafka-connect"
+    ],
+    "num_dbs": 4,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 2,
+    "num_files": 10
+}

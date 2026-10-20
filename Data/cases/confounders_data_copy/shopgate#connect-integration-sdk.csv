@@ -1,0 +1,10 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+PHP,99498,0,3036,1182,1573,281,62,55,0,[]
+Markdown,5586,0,129,82,0,47,0,5,0,[]
+JSON,765,0,30,30,0,0,0,1,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+Plain Text,134,0,9,9,0,0,0,1,0,[]
+Shell,287,0,8,6,1,1,0,1,0,[]
+YAML,2575,0,52,48,0,4,0,1,0,[]
+gitignore,125,0,10,10,0,0,0,1,0,[]
+Total,120327,0,3475,1536,1574,365,62,66,0,

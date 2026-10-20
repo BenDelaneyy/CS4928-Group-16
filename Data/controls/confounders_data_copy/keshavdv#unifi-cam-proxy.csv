@@ -1,0 +1,8 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,29518,0,889,830,13,46,13,10,0,[]
+ReStructuredText,369,0,29,19,0,10,0,2,0,[]
+Autoconf,39,0,1,1,0,0,0,1,0,[]
+License,1082,0,21,17,0,4,0,1,0,[]
+Plain Text,81,0,4,4,0,0,0,1,0,[]
+gitignore,44,0,6,6,0,0,0,1,0,[]
+Total,31133,0,950,877,13,60,13,16,0,

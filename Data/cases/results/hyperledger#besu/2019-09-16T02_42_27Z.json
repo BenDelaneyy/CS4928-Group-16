@@ -1,0 +1,523 @@
+{
+    "url": "https://github.com/hyperledger/besu",
+    "name": "hyperledger/besu",
+    "dockers": [
+        {
+            "path": "/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:11.0.2-jre-slim-stretch",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [
+                "max",
+                "nexus"
+            ],
+            "servers": [
+                "spring",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/enclave/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consensus/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consensus/ibft/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consensus/clique/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consensus/ibftlegacy/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consensus/common/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/api/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/p2p/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/referencetests/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/rlp/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/mock-p2p/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/blockcreation/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/eth/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/retesteth/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/permissioning/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/core/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ethereum/trie/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/util/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/errorprone-checks/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/config/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/crypto/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/plugins/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/plugins/rocksdb/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/acceptance-tests/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/nat/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/tasks/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/kvstore/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/services/pipeline/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/testutil/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/gradle/versions.gradle",
+            "dbs": [],
+            "servers": [
+                "spring",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/gradle/check-licenses.gradle",
+            "dbs": [
+                "berkeley",
+                "oracle"
+            ],
+            "servers": [
+                "glassfish",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/besu/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/metrics/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/metrics/rocksdb/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/metrics/core/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/plugin-api/build.gradle",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "max",
+        "berkeley",
+        "nexus",
+        "oracle"
+    ],
+    "servers": [
+        "glassfish",
+        "spring",
+        "express"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "openjdk"
+    ],
+    "num_dbs": 4,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 0,
+    "num_files": 42
+}

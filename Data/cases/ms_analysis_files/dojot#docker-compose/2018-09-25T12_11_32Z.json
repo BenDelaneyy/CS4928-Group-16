@@ -1,0 +1,438 @@
+{
+    "url": "https://github.com/dojot/docker-compose",
+    "name": "dojot/docker-compose",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 24,
+        "services": [
+            {
+                "name": "history",
+                "image": "dojot/history",
+                "image_full": "dojot/history",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "persister",
+                "image": "dojot/persister",
+                "image_full": "dojot/persister",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongodb",
+                    "auth",
+                    "kafka",
+                    "data-broker"
+                ]
+            },
+            {
+                "name": "mongodb",
+                "image": "mongo",
+                "image_full": "mongo:3.2",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mosca-redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "iotagent-mqtt",
+                "image": "dojot/iotagent-mosca",
+                "image_full": "dojot/iotagent-mosca",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mosca-redis",
+                    "kafka",
+                    "data-broker",
+                    "auth",
+                    "ejbca"
+                ]
+            },
+            {
+                "name": "gui",
+                "image": "dojot/gui",
+                "image_full": "dojot/gui:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "data-broker",
+                "image": "dojot/data-broker",
+                "image_full": "dojot/data-broker",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "data-broker-redis"
+                ]
+            },
+            {
+                "name": "data-broker-redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "device-manager-redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "device-manager",
+                "image": "dojot/device-manager",
+                "image_full": "dojot/device-manager",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres",
+                    "kafka",
+                    "data-broker",
+                    "device-manager-redis"
+                ]
+            },
+            {
+                "name": "auth-redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "auth",
+                "image": "dojot/auth",
+                "image_full": "dojot/auth:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "postgres",
+                "image": "postgres",
+                "image_full": "postgres:9.4-alpine",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "postgres-users",
+                "image": "postgres",
+                "image_full": "postgres:9.4-alpine",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "kong-migration",
+                "image": "dojot/kong",
+                "image_full": "dojot/kong:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "kong"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "apigw",
+                "image": "dojot/kong",
+                "image_full": "dojot/kong:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "kong"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres",
+                    "kong-migration"
+                ]
+            },
+            {
+                "name": "kong-config",
+                "image": "appropriate/curl",
+                "image_full": "appropriate/curl",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "apigw"
+                ]
+            },
+            {
+                "name": "flowbroker-redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "flowbroker",
+                "image": "dojot/flowbroker",
+                "image_full": "dojot/flowbroker:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "kafka",
+                    "mongodb",
+                    "auth",
+                    "flowbroker-context-manager",
+                    "flowbroker-redis"
+                ]
+            },
+            {
+                "name": "flowbroker-context-manager",
+                "image": "dojot/flowbroker-context-manager",
+                "image_full": "dojot/flowbroker-context-manager:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3.7-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zookeeper",
+                "image": "zookeeper",
+                "image_full": "zookeeper:3.4",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "ches/kafka",
+                "image_full": "ches/kafka:0.10.1.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "ejbca",
+                "image": "dojot/ejbca",
+                "image_full": "dojot/ejbca",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 9,
+            "names": [
+                "mongo",
+                "postgres",
+                "redis",
+                "zookeeper"
+            ],
+            "services": [
+                "mongodb",
+                "mosca-redis",
+                "data-broker-redis",
+                "device-manager-redis",
+                "auth-redis",
+                "postgres",
+                "postgres-users",
+                "flowbroker-redis",
+                "zookeeper"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 24,
+            "edges": 30,
+            "avg_deps_per_service": 1.25,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 11,
+            "edges": 8,
+            "avg_deps_per_service": 0.7272727272727273,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 11
+    },
+    "files": [],
+    "dbs": [
+        "mongo",
+        "postgres",
+        "redis",
+        "zookeeper"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq",
+        "kafka"
+    ],
+    "langs": [],
+    "gates": [
+        "kong"
+    ],
+    "monitors": [],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 24,
+    "shared_dbs": true,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 4,
+    "num_servers": 0,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 1
+}

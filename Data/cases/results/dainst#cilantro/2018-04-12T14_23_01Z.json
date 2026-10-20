@@ -1,0 +1,231 @@
+{
+    "url": "https://github.com/dainst/cilantro",
+    "name": "dainst/cilantro",
+    "dockers": [
+        {
+            "path": "/monitor/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mher/flower",
+            "from_full": "mher/flower:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:alpine",
+            "keywords": [
+                "pip",
+                "install",
+                "cache",
+                "dir",
+                "requirements"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/worker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:alpine",
+            "keywords": [
+                "pip",
+                "install",
+                "cache",
+                "dir",
+                "requirements"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "task-broker",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-db",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-service",
+                "image": "./service",
+                "image_full": "./service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-worker",
+                "image": "./workers",
+                "image_full": "./workers",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-monitor",
+                "image": "./monitor",
+                "image_full": "./monitor",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "task-db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/service/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/test/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/worker/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "flask"
+    ],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "python",
+        "mher/flower"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

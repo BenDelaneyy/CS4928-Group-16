@@ -1,0 +1,145 @@
+{
+    "url": "https://github.com/zavada-sergey/TradeUnionCommittee.Web.App",
+    "name": "zavada-sergey/TradeUnionCommittee.Web.App",
+    "dockers": [
+        {
+            "path": "/src/api/TradeUnionCommittee.Mvc.Web.GUI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "mvc",
+                "web",
+                "gui",
+                "dotnet"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/api/TradeUnionCommittee.Web.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "web",
+                "api",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/blob/Orchestration/Minio/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "minio-node-1",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-04-18T01-15-57Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-2",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-04-18T01-15-57Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-3",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-04-18T01-15-57Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio-node-4",
+                "image": "minio/minio",
+                "image_full": "minio/minio:RELEASE.2019-04-18T01-15-57Z",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

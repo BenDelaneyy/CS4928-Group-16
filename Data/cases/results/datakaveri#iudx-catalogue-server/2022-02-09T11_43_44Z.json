@@ -1,0 +1,150 @@
+{
+    "url": "https://github.com/datakaveri/iudx-catalogue-server",
+    "name": "datakaveri/iudx-catalogue-server",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "cat",
+                "image": "ghcr.io/datakaveri/cat-prod",
+                "image_full": "ghcr.io/datakaveri/cat-prod:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "dev",
+                "image": "ghcr.io/datakaveri/cat-dev",
+                "image_full": "ghcr.io/datakaveri/cat-dev:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "test",
+                "image": "ghcr.io/datakaveri/cat-test",
+                "image_full": "ghcr.io/datakaveri/cat-test:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "perfTest",
+                "image": "ghcr.io/datakaveri/cat-test",
+                "image_full": "ghcr.io/datakaveri/cat-test:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zookeeper",
+                "image": "zookeeper",
+                "image_full": "zookeeper:latest",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "zookeeper"
+            ],
+            "services": [
+                "zookeeper"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 1,
+            "avg_deps_per_service": 0.2,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "max",
+                "zookeeper",
+                "postgresql",
+                "hazelcast"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "zookeeper"
+            ]
+        }
+    ],
+    "dbs": [
+        "max",
+        "zookeeper",
+        "postgresql",
+        "hazelcast"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 4,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 2
+}

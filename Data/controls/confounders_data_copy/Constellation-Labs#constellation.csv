@@ -1,0 +1,10 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Scala,264928,0,8293,5426,1157,1710,378,70,0,[]
+Shell,6641,0,179,112,26,41,6,9,0,[]
+YAML,8570,0,308,232,52,24,0,3,0,[]
+Properties File,40,0,2,2,0,0,0,2,0,[]
+HTML,9507,0,177,134,1,42,0,1,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+Markdown,1541,0,30,24,0,6,0,1,0,[]
+gitignore,78,0,8,8,0,0,0,1,0,[]
+Total,302662,0,9198,6107,1236,1855,384,88,0,

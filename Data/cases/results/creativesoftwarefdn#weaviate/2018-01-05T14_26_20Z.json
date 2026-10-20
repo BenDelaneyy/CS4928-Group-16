@@ -1,0 +1,178 @@
+{
+    "url": "https://github.com/creativesoftwarefdn/weaviate",
+    "name": "creativesoftwarefdn/weaviate",
+    "dockers": [
+        {
+            "path": "/vendor/github.com/dgraph-io/dgraph/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/dgraph-io/dgraph/docker/release/Dockerfile",
+            "cmd": "dgraph",
+            "cmd_keywords": [
+                "dgraph"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "force",
+                "yes",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/dgraph-io/dgraph/docker/base/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "force",
+                "yes"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/dgraph-io/dgraph/contrib/nightly/Dockerfile",
+            "cmd": "dgraph",
+            "cmd_keywords": [
+                "dgraph"
+            ],
+            "from": "dgraph/dgraph",
+            "from_full": "dgraph/dgraph:base",
+            "keywords": [
+                "mkdir",
+                "usr",
+                "local",
+                "share",
+                "dgraph"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/Dockerfile",
+            "cmd": "/var/weaviate/weaviate --scheme=http --port=80 --host=0.0.0.0 --config=docker --config-file=/var/weaviate/config/weaviate.conf.json  > /var/weaviate/first_run.log 2>&1",
+            "cmd_keywords": [
+                "weaviate",
+                "var",
+                "config",
+                "scheme",
+                "http"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "weaviate",
+                "zip",
+                "var",
+                "nightly",
+                "linux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scheme"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/vendor/github.com/dgraph-io/dgraph/dashboard/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "python",
+        "scheme"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "ubuntu",
+        "dgraph/dgraph"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

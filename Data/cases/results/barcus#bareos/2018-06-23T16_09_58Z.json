@@ -1,0 +1,408 @@
+{
+    "url": "https://github.com/barcus/bareos",
+    "name": "barcus/bareos",
+    "dockers": [
+        {
+            "path": "/storage/17.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-sd -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "http"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/storage/16.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-sd -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "http"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/client/17.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-fd -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "client"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/client/16.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-fd -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "client"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/director-mysql/17.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-dir -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin",
+                "dir"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "database",
+                "common",
+                "apt",
+                "echo"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/director-mysql/16.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-dir -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin",
+                "dir"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "database",
+                "common",
+                "apt",
+                "echo"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webui/17.2/Dockerfile",
+            "cmd": "/usr/sbin/apache2ctl -D FOREGROUND",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "apache",
+                "ctl",
+                "foreground"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "webui"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webui/16.2/Dockerfile",
+            "cmd": "/usr/sbin/apache2ctl -D FOREGROUND",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "apache",
+                "ctl",
+                "foreground"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "apt",
+                "release",
+                "etc",
+                "webui"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/director-pgsql/17.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-dir -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin",
+                "dir"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "database",
+                "common",
+                "apt",
+                "echo"
+            ],
+            "dbs": [
+                "psql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/director-pgsql/16.2/Dockerfile",
+            "cmd": "/usr/sbin/bareos-dir -u bareos -f",
+            "cmd_keywords": [
+                "bareos",
+                "usr",
+                "sbin",
+                "dir"
+            ],
+            "from": "barcus/ubuntu",
+            "from_full": "barcus/ubuntu:xenial",
+            "keywords": [
+                "bareos",
+                "database",
+                "common",
+                "apt",
+                "echo"
+            ],
+            "dbs": [
+                "psql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "bareos-dir",
+                "image": "barcus/bareos-director",
+                "image_full": "barcus/bareos-director:mysql",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "bareos-db"
+                ]
+            },
+            {
+                "name": "bareos-sd",
+                "image": "barcus/bareos-storage",
+                "image_full": "barcus/bareos-storage",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "bareos-fd",
+                "image": "barcus/bareos-client",
+                "image_full": "barcus/bareos-client",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "bareos-webui",
+                "image": "barcus/bareos-webui",
+                "image_full": "barcus/bareos-webui",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "bareos-db",
+                "image": "mysql",
+                "image_full": "mysql:5.6",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "smtpd",
+                "image": "namshi/smtp",
+                "image_full": "namshi/smtp",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mysql"
+            ],
+            "services": [
+                "bareos-db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 1,
+            "avg_deps_per_service": 0.16666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [
+        "mysql",
+        "psql"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 10,
+    "images": [
+        "barcus/ubuntu"
+    ],
+    "num_dbs": 2,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 11
+}

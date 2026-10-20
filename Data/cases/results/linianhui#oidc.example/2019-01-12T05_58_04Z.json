@@ -1,0 +1,207 @@
+{
+    "url": "https://github.com/linianhui/oidc.example",
+    "name": "linianhui/oidc.example",
+    "dockers": [
+        {
+            "path": "/1-src/traefik/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "traefik",
+            "from_full": "traefik:v1.6.4-alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "traefik"
+            ]
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "traefik",
+                "image": "./1-src/traefik",
+                "image_full": "./1-src/traefik",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-server.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-client-hybrid.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-client-js.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-client-aspnetcore.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-resources-aspnetcore.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-resources-nodejs.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-resources-java.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 7,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 7
+    },
+    "files": [
+        {
+            "path": "/1-src/web.oauth2.resources.java/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-src/web.oauth2.resources.java/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-src/web.oauth2.resources.nodejs/package.json",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "spring",
+        "express"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 8,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "traefik"
+    ],
+    "num_dbs": 0,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 5
+}

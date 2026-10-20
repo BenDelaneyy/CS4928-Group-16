@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+YAML,10453,0,309,120,120,69,0,10,0,[]
+JSON,51134,0,1790,1790,0,0,0,6,0,[]
+License,1066,0,21,17,0,4,0,1,0,[]
+Markdown,1556,0,22,18,0,4,0,1,0,[]
+gitignore,249,0,19,17,1,1,0,1,0,[]
+Total,64458,0,2161,1962,121,78,0,19,0,

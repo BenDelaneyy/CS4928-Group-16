@@ -1,0 +1,139 @@
+{
+    "url": "https://github.com/tinkerbell/boots",
+    "name": "tinkerbell/boots",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.13",
+            "keywords": [
+                "apk",
+                "add",
+                "update",
+                "upgrade",
+                "cache"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.14",
+            "keywords": [
+                "apk",
+                "add",
+                "update",
+                "upgrade",
+                "cache"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "boots",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "client",
+                "image": "test",
+                "image_full": "test",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "boots"
+                ]
+            },
+            {
+                "name": "otel-collector",
+                "image": "otel/opentelemetry-collector-contrib",
+                "image_full": "otel/opentelemetry-collector-contrib:0.38.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [
+        "busybox"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "alpine"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

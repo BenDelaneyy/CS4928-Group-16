@@ -1,0 +1,9 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+TypeScript,75271,0,2544,2050,80,414,62,76,0,[]
+JSON,1129003,0,29891,29891,0,0,0,25,0,[]
+HTML,806627,0,320,288,0,32,0,13,0,[]
+Sass,2476,0,154,135,1,18,0,12,0,[]
+JavaScript,6570,0,224,137,67,20,0,11,0,[]
+Markdown,6105,0,153,105,0,48,0,3,0,[]
+gitignore,1073,0,86,56,17,13,0,3,0,[]
+Total,2027125,0,33372,32662,165,545,62,143,0,

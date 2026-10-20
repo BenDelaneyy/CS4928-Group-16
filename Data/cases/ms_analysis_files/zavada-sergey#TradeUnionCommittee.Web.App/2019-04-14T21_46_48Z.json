@@ -1,0 +1,167 @@
+{
+    "url": "https://github.com/zavada-sergey/TradeUnionCommittee.Web.App",
+    "name": "zavada-sergey/TradeUnionCommittee.Web.App",
+    "dockers": [
+        {
+            "path": "/src/TradeUnionCommittee.Mvc.Web.GUI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "mvc",
+                "web",
+                "gui",
+                "dotnet"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/TradeUnionCommittee.Web.Api/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "tradeunioncommittee",
+                "web",
+                "api",
+                "dotnet",
+                "csproj"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "tradeunioncommittee.mvc.web.gui",
+                "image": "${DOCKER_REGISTRY-}tradeunioncommittee_webapp_core_mvc",
+                "image_full": "${DOCKER_REGISTRY-}tradeunioncommittee_webapp_core_mvc",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "tradeunioncommittee.web.api",
+                "image": "${DOCKER_REGISTRY-}tradeunioncommittee_webapp_core_api",
+                "image_full": "${DOCKER_REGISTRY-}tradeunioncommittee_webapp_core_api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "postgres",
+                "image": "postgres",
+                "image_full": "postgres:11.2",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "elasticsearch",
+                "image": "docker.elastic.co/elasticsearch/elasticsearch",
+                "image_full": "docker.elastic.co/elasticsearch/elasticsearch:6.2.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kibana",
+                "image": "docker.elastic.co/kibana/kibana",
+                "image_full": "docker.elastic.co/kibana/kibana:6.2.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "elasticsearch"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "postgres"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 1,
+            "avg_deps_per_service": 0.2,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 1,
+            "avg_deps_per_service": 0.25,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 4
+    },
+    "files": [],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

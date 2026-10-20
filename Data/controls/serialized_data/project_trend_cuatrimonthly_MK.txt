@@ -1,0 +1,17 @@
+moov-io#paygate.csv
+tootsuite#mastodon.csv
+DemocracyLab#CivicTechExchange.csv
+supabase#supabase.csv
+VictoriaMetrics#VictoriaMetrics.csv
+gnosis#dex-services.csv
+google#ml-metadata.csv
+ElrondNetwork#elrond-go.csv
+shellhub-io#shellhub.csv
+confluentinc#ksql.csv
+layer5io#meshery.csv
+eclipse-iceoryx#iceoryx.csv
+hyperledger#cactus.csv
+datagrok-ai#public.csv
+onc-healthit#inferno.csv
+inspirehep#inspirehep.csv
+paritytech#substrate.csv

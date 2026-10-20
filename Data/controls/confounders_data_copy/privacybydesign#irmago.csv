@@ -1,0 +1,9 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Go,238942,0,7757,6020,707,1030,1245,36,0,[]
+XML,71614,0,641,629,0,12,0,28,0,[]
+License,10773,0,190,160,0,30,0,1,0,[]
+Markdown,2770,0,45,26,0,19,0,1,0,[]
+SQL,2704,0,1,1,0,0,0,1,0,[]
+TOML,1191,0,58,24,25,9,0,1,0,[]
+gitignore,82,0,6,6,0,0,0,1,0,[]
+Total,328076,0,8698,6866,732,1100,1245,69,0,

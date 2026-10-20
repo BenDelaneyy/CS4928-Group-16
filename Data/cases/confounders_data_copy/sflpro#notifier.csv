@@ -1,0 +1,12 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Java,1049072,0,26437,17753,5006,3678,457,321,0,[]
+XML,103358,0,2563,2253,25,285,0,61,0,[]
+Properties File,4257,0,136,99,12,25,0,5,0,[]
+HTML,283,0,14,14,0,0,0,1,0,[]
+JavaServer Pages,268,0,13,11,0,2,0,1,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+Markdown,1801,0,46,32,0,14,0,1,0,[]
+Plain Text,0,0,0,0,0,0,0,1,0,[]
+YAML,152,0,9,9,0,0,0,1,0,[]
+gitignore,26,0,4,4,0,0,0,1,0,[]
+Total,1170574,0,29423,20344,5043,4036,457,394,0,

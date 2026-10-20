@@ -1,0 +1,155 @@
+{
+    "url": "https://github.com/ome/omero-ms-zarr",
+    "name": "ome/omero-ms-zarr",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "adoptopenjdk/openjdk11",
+            "from_full": "adoptopenjdk/openjdk11:jre-11.0.7_10-alpine",
+            "keywords": [
+                "build",
+                "omero",
+                "zarr",
+                "shadow",
+                "gradle"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "database",
+                "image": "postgres",
+                "image_full": "postgres:11",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "omeroserver",
+                "image": "openmicroscopy/omero-server",
+                "image_full": "openmicroscopy/omero-server:5.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "omeroweb",
+                "image": "openmicroscopy/omero-web-standalone",
+                "image_full": "openmicroscopy/omero-web-standalone:5.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zarr",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "database"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "adoptopenjdk/openjdk11"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

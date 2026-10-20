@@ -1,0 +1,482 @@
+{
+    "no_analysis_projects": [
+        "hotosm#tasking-manager",
+        "Waziup#WaziGate",
+        "cod1ng-earth#coding-earth",
+        "kkosiba#ecommerce-backend",
+        "zmhassan#streaming-online-analytics-demo",
+        "ikemtz#Nurser",
+        "Fatezhang#scaffold-cloud",
+        "lucaschen#microservices-demo"
+    ],
+    "no_ms_projects": [],
+    "negative_output_projects": [
+        {
+            "name": "ivanpaulovich#clean-architecture-manga",
+            "negative": 102,
+            "non-negative": 72
+        },
+        {
+            "name": "wellcometrust#wellcomecollection.org",
+            "negative": 4409,
+            "non-negative": 1648
+        },
+        {
+            "name": "fedspendingtransparency#usaspending-api",
+            "negative": 5275,
+            "non-negative": 99
+        },
+        {
+            "name": "dice-group#Basilisk",
+            "negative": 64,
+            "non-negative": 30
+        }
+    ],
+    "positive_output_projects": [
+        {
+            "name": "daggerok#streaming-file-server",
+            "positive": 61,
+            "non-positive": 42
+        },
+        {
+            "name": "hyperledger#besu",
+            "positive": 1053,
+            "non-positive": 0
+        },
+        {
+            "name": "oktadev#java-microservices-examples",
+            "positive": 39,
+            "non-positive": 0
+        },
+        {
+            "name": "RedHatInsights#vmaas",
+            "positive": 395,
+            "non-positive": 0
+        },
+        {
+            "name": "confluentinc#examples",
+            "positive": 1439,
+            "non-positive": 0
+        },
+        {
+            "name": "linianhui#oidc.example",
+            "positive": 112,
+            "non-positive": 0
+        },
+        {
+            "name": "owncloud#phoenix",
+            "positive": 2509,
+            "non-positive": 0
+        },
+        {
+            "name": "dainst#cilantro",
+            "positive": 590,
+            "non-positive": 0
+        },
+        {
+            "name": "geoserver#geoserver-cloud",
+            "positive": 464,
+            "non-positive": 0
+        },
+        {
+            "name": "digirati-co-uk#madoc-platform",
+            "positive": 832,
+            "non-positive": 0
+        },
+        {
+            "name": "EOL#eol#website",
+            "positive": 865,
+            "non-positive": 0
+        },
+        {
+            "name": "cuappdev#ithaca-transit-backend",
+            "positive": 241,
+            "non-positive": 34
+        },
+        {
+            "name": "cloudlibz#clocal-azure",
+            "positive": 55,
+            "non-positive": 0
+        },
+        {
+            "name": "FUB-HCC#IKON-backend",
+            "positive": 394,
+            "non-positive": 0
+        },
+        {
+            "name": "sorry-cypress#sorry-cypress",
+            "positive": 443,
+            "non-positive": 0
+        },
+        {
+            "name": "globocom#vault",
+            "positive": 118,
+            "non-positive": 0
+        },
+        {
+            "name": "BuoyantIO#emojivoto",
+            "positive": 36,
+            "non-positive": 0
+        },
+        {
+            "name": "topcoder-platform#tc-project-service",
+            "positive": 224,
+            "non-positive": 0
+        },
+        {
+            "name": "vulpemventures#nigiri",
+            "positive": 22,
+            "non-positive": 0
+        },
+        {
+            "name": "Engineering-Research-and-Development#true-connector-execution#core_container",
+            "positive": 84,
+            "non-positive": 0
+        },
+        {
+            "name": "MuizMahdi#EHR-Route",
+            "positive": 36,
+            "non-positive": 0
+        },
+        {
+            "name": "RedHatInsights#insights-puptoo",
+            "positive": 159,
+            "non-positive": 0
+        },
+        {
+            "name": "cmgl#product-model-toolkit",
+            "positive": 26,
+            "non-positive": 0
+        },
+        {
+            "name": "OpenCodeFoundation#eSchool",
+            "positive": 85,
+            "non-positive": 0
+        },
+        {
+            "name": "dgutman#webix#image_organizer",
+            "positive": 123,
+            "non-positive": 0
+        },
+        {
+            "name": "microsoft#kafka-connect-cosmosdb",
+            "positive": 480,
+            "non-positive": 0
+        },
+        {
+            "name": "georchestra#docker",
+            "positive": 32,
+            "non-positive": 0
+        },
+        {
+            "name": "appwrite#appwrite",
+            "positive": 3911,
+            "non-positive": 0
+        },
+        {
+            "name": "RADAR-base#RADAR-Rest-Source-Auth",
+            "positive": 108,
+            "non-positive": 0
+        },
+        {
+            "name": "bartverdonck#Sitecore-Forms-Extensions",
+            "positive": 67,
+            "non-positive": 0
+        },
+        {
+            "name": "akka#alpakka",
+            "positive": 527,
+            "non-positive": 8
+        },
+        {
+            "name": "FantasticFiasco#serilog-sinks-http-elastic-stack",
+            "positive": 34,
+            "non-positive": 0
+        },
+        {
+            "name": "SrinivasanTarget#ContractTestingBoilerplate",
+            "positive": 10,
+            "non-positive": 4
+        },
+        {
+            "name": "RasaHQ#rasa-sdk",
+            "positive": 528,
+            "non-positive": 0
+        },
+        {
+            "name": "golastmile#rasa#nlu",
+            "positive": 4196,
+            "non-positive": 0
+        },
+        {
+            "name": "apache#skywalking-python",
+            "positive": 78,
+            "non-positive": 0
+        },
+        {
+            "name": "harvard-lil#capstone",
+            "positive": 1623,
+            "non-positive": 137
+        },
+        {
+            "name": "matter-labs#zksync",
+            "positive": 5155,
+            "non-positive": 0
+        },
+        {
+            "name": "hashintel#engine",
+            "positive": 215,
+            "non-positive": 211
+        },
+        {
+            "name": "firezone#firezone",
+            "positive": 1274,
+            "non-positive": 0
+        },
+        {
+            "name": "andreybavt#Hobo-Sapiens",
+            "positive": 31,
+            "non-positive": 5
+        },
+        {
+            "name": "apache#skywalking-nodejs",
+            "positive": 44,
+            "non-positive": 0
+        },
+        {
+            "name": "xebialabs#e-commerce-microservice",
+            "positive": 6,
+            "non-positive": 0
+        },
+        {
+            "name": "ome#omero-ms-zarr",
+            "positive": 50,
+            "non-positive": 0
+        },
+        {
+            "name": "bcgov#aries-vcr-issuer-controller",
+            "positive": 116,
+            "non-positive": 0
+        },
+        {
+            "name": "ministryofjustice#opg-use-an-lpa",
+            "positive": 2705,
+            "non-positive": 0
+        },
+        {
+            "name": "pagarme#tldr",
+            "positive": 31,
+            "non-positive": 0
+        },
+        {
+            "name": "ZeroCater#zc#events",
+            "positive": 53,
+            "non-positive": 0
+        },
+        {
+            "name": "nymtech#nym",
+            "positive": 710,
+            "non-positive": 0
+        },
+        {
+            "name": "dotnet-architecture#eShopOnDapr",
+            "positive": 36,
+            "non-positive": 0
+        },
+        {
+            "name": "dotnet-architecture#eShopModernizing",
+            "positive": 71,
+            "non-positive": 0
+        },
+        {
+            "name": "charlessolar#eShopOnContainersDDD",
+            "positive": 14,
+            "non-positive": 0
+        },
+        {
+            "name": "FudanSELab#train-ticket",
+            "positive": 180,
+            "non-positive": 0
+        },
+        {
+            "name": "bugsnag#bugsnag-js",
+            "positive": 1214,
+            "non-positive": 0
+        },
+        {
+            "name": "gnosis#safe-transaction-service",
+            "positive": 375,
+            "non-positive": 0
+        },
+        {
+            "name": "cygnusb2b#radix",
+            "positive": 67,
+            "non-positive": 0
+        },
+        {
+            "name": "xeraa#microservice-monitoring",
+            "positive": 191,
+            "non-positive": 0
+        },
+        {
+            "name": "mattkohl#docker-flask-celery-redis",
+            "positive": 7,
+            "non-positive": 0
+        },
+        {
+            "name": "cortexproject#cortex",
+            "positive": 297,
+            "non-positive": 0
+        },
+        {
+            "name": "Greenstand#treetracker-admin",
+            "positive": 219,
+            "non-positive": 0
+        },
+        {
+            "name": "syxolk#euro2016",
+            "positive": 1,
+            "non-positive": 0
+        },
+        {
+            "name": "datakaveri#iudx-catalogue-server",
+            "positive": 256,
+            "non-positive": 0
+        },
+        {
+            "name": "confluentinc#cp-all-in-one",
+            "positive": 407,
+            "non-positive": 0
+        },
+        {
+            "name": "gh-network#gateway",
+            "positive": 70,
+            "non-positive": 0
+        },
+        {
+            "name": "hmcts#tribunals-case-api",
+            "positive": 658,
+            "non-positive": 0
+        },
+        {
+            "name": "hmcts#ccpay-payment-app",
+            "positive": 732,
+            "non-positive": 0
+        },
+        {
+            "name": "hubcare#hubcare-api",
+            "positive": 6,
+            "non-positive": 0
+        },
+        {
+            "name": "shopgate#connect-integration-sdk",
+            "positive": 914,
+            "non-positive": 0
+        },
+        {
+            "name": "mjoniec#Utils",
+            "positive": 57,
+            "non-positive": 2
+        },
+        {
+            "name": "bbc#cloud-sync",
+            "positive": 107,
+            "non-positive": 0
+        },
+        {
+            "name": "decentralized-identity#universal-registrar",
+            "positive": 35,
+            "non-positive": 0
+        },
+        {
+            "name": "FAForever#faf-stack",
+            "positive": 196,
+            "non-positive": 0
+        },
+        {
+            "name": "HotMaps#Hotmaps-toolbox-service",
+            "positive": 370,
+            "non-positive": 1
+        },
+        {
+            "name": "Reconmap#api-backend",
+            "positive": 191,
+            "non-positive": 0
+        },
+        {
+            "name": "piomin#sample-spring-microservices-new",
+            "positive": 8,
+            "non-positive": 0
+        },
+        {
+            "name": "flowant#website",
+            "positive": 20,
+            "non-positive": 0
+        },
+        {
+            "name": "kecorbin#pyosupgrade",
+            "positive": 6,
+            "non-positive": 0
+        },
+        {
+            "name": "nextcloud#docker",
+            "positive": 270,
+            "non-positive": 0
+        },
+        {
+            "name": "mozilla-services#autograph-edge",
+            "positive": 148,
+            "non-positive": 0
+        },
+        {
+            "name": "EdwinVW#pitstop",
+            "positive": 162,
+            "non-positive": 0
+        },
+        {
+            "name": "barnumd#idp-in-a-box",
+            "positive": 148,
+            "non-positive": 0
+        },
+        {
+            "name": "interlay#polkabtc-js",
+            "positive": 683,
+            "non-positive": 0
+        },
+        {
+            "name": "creativesoftwarefdn#weaviate",
+            "positive": 615,
+            "non-positive": 39
+        },
+        {
+            "name": "opensanca#opensanca#jobs",
+            "positive": 78,
+            "non-positive": 0
+        },
+        {
+            "name": "moira-alert#moira",
+            "positive": 309,
+            "non-positive": 0
+        },
+        {
+            "name": "kiotlog#kiotlog",
+            "positive": 13,
+            "non-positive": 0
+        },
+        {
+            "name": "barcus#bareos",
+            "positive": 17,
+            "non-positive": 0
+        },
+        {
+            "name": "collinbarrett#FilterLists",
+            "positive": 1908,
+            "non-positive": 0
+        },
+        {
+            "name": "mwinteringham#restful-booker-platform",
+            "positive": 145,
+            "non-positive": 0
+        }
+    ]
+}

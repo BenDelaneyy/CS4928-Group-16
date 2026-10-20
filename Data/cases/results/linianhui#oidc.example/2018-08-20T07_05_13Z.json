@@ -1,0 +1,174 @@
+{
+    "url": "https://github.com/linianhui/oidc.example",
+    "name": "linianhui/oidc.example",
+    "dockers": [
+        {
+            "path": "/1-src/web.oidc.client.js/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:1.15.1-alpine",
+            "keywords": [
+                "chmod",
+                "usr",
+                "share",
+                "nginx",
+                "html"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-src/traefik/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "traefik",
+            "from_full": "traefik:v1.6.4-alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "traefik"
+            ]
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "traefik",
+                "image": "./1-src/traefik",
+                "image_full": "./1-src/traefik",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-server.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-client-hybrid.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oidc-client-js.test",
+                "image": "./1-src/web.oidc.client.js/",
+                "image_full": "./1-src/web.oidc.client.js/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-resources-aspnetcore.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "oauth2-client-aspnetcore.test",
+                "image": "./1-src/",
+                "image_full": "./1-src/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "nginx",
+        "traefik"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 3
+}

@@ -1,0 +1,399 @@
+{
+    "url": "https://github.com/akka/alpakka",
+    "name": "akka/alpakka",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 25,
+        "services": [
+            {
+                "name": "amazonsns",
+                "image": "pafortin/goaws",
+                "image_full": "pafortin/goaws",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "amqp",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cassandra",
+                "image": "cassandra",
+                "image_full": "cassandra:3.0.15",
+                "dbs": [
+                    "cassandra"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "couchbase",
+                "image": "couchbase",
+                "image_full": "couchbase:community-5.1.1",
+                "dbs": [
+                    "couchbase"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "couchbase_prep",
+                "image": "couchbase",
+                "image_full": "couchbase:community-5.1.1",
+                "dbs": [
+                    "couchbase"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "couchbase"
+                ]
+            },
+            {
+                "name": "elasticmq",
+                "image": "softwaremill/elasticmq",
+                "image_full": "softwaremill/elasticmq:0.14.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dynamodb",
+                "image": "deangiberson/aws-dynamodb-local",
+                "image_full": "deangiberson/aws-dynamodb-local",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ftp",
+                "image": "stilliard/pure-ftpd",
+                "image_full": "stilliard/pure-ftpd:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "geode",
+                "image": "apachegeode/geode",
+                "image_full": "apachegeode/geode:1.8.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gcloud-pubsub-emulator",
+                "image": "bigtruedata/gcloud-pubsub-emulator",
+                "image_full": "bigtruedata/gcloud-pubsub-emulator",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gcloud-pubsub-emulator_prep",
+                "image": "martynas/gcloud-pubsub-client",
+                "image_full": "martynas/gcloud-pubsub-client",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "gcloud-pubsub-emulator"
+                ]
+            },
+            {
+                "name": "hbase",
+                "image": "nerdammer/hbase",
+                "image_full": "nerdammer/hbase:1.1.2",
+                "dbs": [
+                    "hbase"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ibmmq",
+                "image": "ibmcom/mq",
+                "image_full": "ibmcom/mq:9.1.1.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ironauth",
+                "image": "iron/auth",
+                "image_full": "iron/auth",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ironmq",
+                "image": "iron/mq",
+                "image_full": "iron/mq",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ironauth:ironauth"
+                ]
+            },
+            {
+                "name": "kudu-master-data",
+                "image": "kunickiaj/kudu",
+                "image_full": "kunickiaj/kudu",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kudu-tserver-data",
+                "image": "kunickiaj/kudu",
+                "image_full": "kunickiaj/kudu",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kudu-master",
+                "image": "kunickiaj/kudu",
+                "image_full": "kunickiaj/kudu",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kudu-tserver",
+                "image": "kunickiaj/kudu",
+                "image_full": "kunickiaj/kudu",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kudu-master"
+                ]
+            },
+            {
+                "name": "minio",
+                "image": "minio/minio",
+                "image_full": "minio/minio",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "minio_prep",
+                "image": "mesosphere/aws-cli",
+                "image_full": "mesosphere/aws-cli",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "minio"
+                ]
+            },
+            {
+                "name": "mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt",
+                "image": "toke/mosquitto",
+                "image_full": "toke/mosquitto",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mosquitto"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "orientdb",
+                "image": "orientdb",
+                "image_full": "orientdb:3.0.13",
+                "dbs": [
+                    "orientdb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sftp",
+                "image": "atmoz/sftp",
+                "image_full": "atmoz/sftp",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 6,
+            "names": [
+                "mongo",
+                "cassandra",
+                "couchbase",
+                "hbase",
+                "orientdb"
+            ],
+            "services": [
+                "cassandra",
+                "couchbase",
+                "couchbase_prep",
+                "hbase",
+                "mongo",
+                "orientdb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 26,
+            "edges": 5,
+            "avg_deps_per_service": 0.19230769230769232,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 18,
+            "edges": 4,
+            "avg_deps_per_service": 0.2222222222222222,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 18
+    },
+    "files": [],
+    "dbs": [
+        "mongo",
+        "cassandra",
+        "couchbase",
+        "hbase"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq",
+        "mosquitto"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 25,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 4,
+    "num_servers": 0,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

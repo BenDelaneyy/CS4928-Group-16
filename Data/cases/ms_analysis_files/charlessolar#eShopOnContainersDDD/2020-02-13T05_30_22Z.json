@@ -1,0 +1,319 @@
+{
+    "url": "https://github.com/charlessolar/eShopOnContainersDDD",
+    "name": "charlessolar/eShopOnContainersDDD",
+    "dockers": [
+        {
+            "path": "/src/Web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:stable",
+            "keywords": [
+                "yarn",
+                "npm",
+                "webpack",
+                "apk",
+                "add"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Endpoints/MongoDb/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.0-runtime",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "sln"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Endpoints/Presentation/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "sln"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Endpoints/Elastic/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.0-runtime",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "sln"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Endpoints/Domain/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.0-runtime",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "release",
+                "app",
+                "sln"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "domain",
+                "image": "eshop/domain",
+                "image_full": "eshop/domain:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "eventstore"
+                ]
+            },
+            {
+                "name": "mongo",
+                "image": "eshop/mongodb",
+                "image_full": "eshop/mongodb:${TAG:-latest}",
+                "dbs": [
+                    "mongodb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "eventstore",
+                    "mongodb"
+                ]
+            },
+            {
+                "name": "elastic",
+                "image": "eshop/elastic",
+                "image_full": "eshop/elastic:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "eventstore",
+                    "elasticdb"
+                ]
+            },
+            {
+                "name": "presentation",
+                "image": "eshop/presentation",
+                "image_full": "eshop/presentation:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "frontend",
+                "image": "eshop/frontend",
+                "image_full": "eshop/frontend:${TAG:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "presentation"
+                ]
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3-management-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "eventstore",
+                "image": "eventstore/eventstore",
+                "image_full": "eventstore/eventstore",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mongodb",
+                "image": "mongo",
+                "image_full": "mongo:3.7-jessie",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "elasticdb",
+                "image": "docker.elastic.co/elasticsearch/elasticsearch-oss",
+                "image_full": "docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "mongo",
+                "mongodb"
+            ],
+            "services": [
+                "mongo",
+                "mongodb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 10,
+            "avg_deps_per_service": 1.1111111111111112,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 4,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 6
+    },
+    "files": [
+        {
+            "path": "/src/Web/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 9,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "nginx",
+        "microsoft/aspnetcore",
+        "microsoft/dotnet"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

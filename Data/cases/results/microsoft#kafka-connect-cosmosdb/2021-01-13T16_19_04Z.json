@@ -1,0 +1,284 @@
+{
+    "url": "https://github.com/microsoft/kafka-connect-cosmosdb",
+    "name": "microsoft/kafka-connect-cosmosdb",
+    "dockers": [
+        {
+            "path": "/.devcontainer/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mcr.microsoft.com/vscode/devcontainers/java",
+            "keywords": [
+                "install",
+                "apt",
+                "tmp",
+                "packages",
+                "microsoft"
+            ],
+            "from_full": "mcr.microsoft.com/vscode/devcontainers/java:0-${VARIANT}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "confluentinc/cp-kafka-connect",
+            "from_full": "confluentinc/cp-kafka-connect:6.0.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/src/docker/docker-compose.yml",
+        "num_services": 10,
+        "services": [
+            {
+                "name": "zookeeper",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:6.0.0",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "broker",
+                "image": "confluentinc/cp-server",
+                "image_full": "confluentinc/cp-server:6.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "schema-registry",
+                "image": "confluentinc/cp-schema-registry",
+                "image_full": "confluentinc/cp-schema-registry:6.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker"
+                ]
+            },
+            {
+                "name": "schema-registry-ui",
+                "image": "landoop/schema-registry-ui",
+                "image_full": "landoop/schema-registry-ui:0.9.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "rest-proxy",
+                "image": "confluentinc/cp-kafka-rest",
+                "image_full": "confluentinc/cp-kafka-rest:6.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker",
+                    "schema-registry"
+                ]
+            },
+            {
+                "name": "kafka-topics-ui",
+                "image": "landoop/kafka-topics-ui",
+                "image_full": "landoop/kafka-topics-ui:0.9.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper",
+                    "broker",
+                    "schema-registry",
+                    "rest-proxy"
+                ]
+            },
+            {
+                "name": "connect",
+                "image": "cosmosdb-kafka-connect",
+                "image_full": "cosmosdb-kafka-connect:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper",
+                    "broker",
+                    "schema-registry",
+                    "rest-proxy"
+                ]
+            },
+            {
+                "name": "control-center",
+                "image": "confluentinc/cp-enterprise-control-center",
+                "image_full": "confluentinc/cp-enterprise-control-center:6.0.0",
+                "dbs": [
+                    "enterprise"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker",
+                    "schema-registry",
+                    "connect"
+                ]
+            },
+            {
+                "name": "ksqldb-server",
+                "image": "confluentinc/cp-ksqldb-server",
+                "image_full": "confluentinc/cp-ksqldb-server:6.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker",
+                    "connect"
+                ]
+            },
+            {
+                "name": "zoonavigator",
+                "image": "elkozmon/zoonavigator",
+                "image_full": "elkozmon/zoonavigator:0.8.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "zookeeper",
+                "enterprise"
+            ],
+            "services": [
+                "zookeeper",
+                "control-center"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 10,
+            "edges": 18,
+            "avg_deps_per_service": 1.8,
+            "acyclic": true,
+            "longest_path": 5
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 3,
+            "avg_deps_per_service": 0.6,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "cosmos"
+            ],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "zookeeper",
+        "cosmos",
+        "enterprise"
+    ],
+    "servers": [],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 10,
+    "shared_dbs": true,
+    "num_dockers": 2,
+    "images": [
+        "confluentinc/cp-kafka-connect",
+        "mcr.microsoft.com/vscode/devcontainers/java"
+    ],
+    "num_dbs": 3,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 4
+}

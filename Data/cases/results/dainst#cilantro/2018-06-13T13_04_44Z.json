@@ -1,0 +1,254 @@
+{
+    "url": "https://github.com/dainst/cilantro",
+    "name": "dainst/cilantro",
+    "dockers": [
+        {
+            "path": "/docker/monitor/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mher/flower",
+            "from_full": "mher/flower:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:alpine",
+            "keywords": [
+                "set",
+                "install",
+                "pipenv",
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "pipenv"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/worker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "set"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/ojs2/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "php",
+            "from_full": "php:5.6.36-apache-jessie",
+            "keywords": [
+                "ojs",
+                "git",
+                "var",
+                "www",
+                "html"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "task-broker",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-db",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-service",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-worker",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cilantro-test",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "task-monitor",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "task-db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [],
+    "dbs": [
+        "mysql",
+        "redis"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [
+        "python",
+        "php"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "python",
+        "mher/flower",
+        "php"
+    ],
+    "num_dbs": 2,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

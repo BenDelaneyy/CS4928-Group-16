@@ -1,0 +1,297 @@
+{
+    "url": "https://github.com/barnumd/idp-in-a-box",
+    "name": "barnumd/idp-in-a-box",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose/docker-compose.yml",
+        "num_services": 17,
+        "services": [
+            {
+                "name": "db-broker",
+                "image": "silintl/mariadb",
+                "image_full": "silintl/mariadb:latest",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "broker",
+                "image": "silintl/idp-id-broker",
+                "image_full": "silintl/idp-id-broker:develop-4.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-broker"
+                ]
+            },
+            {
+                "name": "phpmyadmin-broker",
+                "image": "phpmyadmin/phpmyadmin",
+                "image_full": "phpmyadmin/phpmyadmin:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-broker"
+                ]
+            },
+            {
+                "name": "db-ssp",
+                "image": "silintl/mariadb",
+                "image_full": "silintl/mariadb:latest",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ssp",
+                "image": "silintl/ssp-base",
+                "image_full": "silintl/ssp-base:feature_add-profilereview",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker",
+                    "db-ssp"
+                ]
+            },
+            {
+                "name": "phpmyadmin-ssp",
+                "image": "phpmyadmin/phpmyadmin",
+                "image_full": "phpmyadmin/phpmyadmin:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-ssp"
+                ]
+            },
+            {
+                "name": "db-pw",
+                "image": "silintl/mariadb",
+                "image_full": "silintl/mariadb:latest",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "pw-api",
+                "image": "silintl/idp-pw-api",
+                "image_full": "silintl/idp-pw-api:develop-3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-pw"
+                ]
+            },
+            {
+                "name": "pw-cron",
+                "image": "silintl/idp-pw-api",
+                "image_full": "silintl/idp-pw-api:develop-3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-pw"
+                ]
+            },
+            {
+                "name": "phpmyadmin-pw",
+                "image": "phpmyadmin/phpmyadmin",
+                "image_full": "phpmyadmin/phpmyadmin:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-pw"
+                ]
+            },
+            {
+                "name": "zxcvbn",
+                "image": "wcjr/zxcvbn-api",
+                "image_full": "wcjr/zxcvbn-api:1.1.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "pw-ui",
+                "image": "silintl/idp-pw-ui",
+                "image_full": "silintl/idp-pw-ui:develop",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sync",
+                "image": "silintl/idp-id-sync",
+                "image_full": "silintl/idp-id-sync:develop",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "broker"
+                ]
+            },
+            {
+                "name": "email",
+                "image": "silintl/email-service",
+                "image_full": "silintl/email-service:develop",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-email",
+                    "emailcron"
+                ]
+            },
+            {
+                "name": "emailcron",
+                "image": "silintl/email-service",
+                "image_full": "silintl/email-service:develop",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-email"
+                ]
+            },
+            {
+                "name": "db-email",
+                "image": "silintl/mariadb",
+                "image_full": "silintl/mariadb:latest",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "phpmyadmin-email",
+                "image": "phpmyadmin/phpmyadmin",
+                "image_full": "phpmyadmin/phpmyadmin:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db-email"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 4,
+            "names": [
+                "mariadb"
+            ],
+            "services": [
+                "db-broker",
+                "db-ssp",
+                "db-pw",
+                "db-email"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 17,
+            "edges": 13,
+            "avg_deps_per_service": 0.7647058823529411,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 13,
+            "edges": 3,
+            "avg_deps_per_service": 0.23076923076923078,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 13
+    },
+    "files": [],
+    "dbs": [
+        "db"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 17,
+    "shared_dbs": true,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

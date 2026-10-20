@@ -1,0 +1,285 @@
+{
+    "url": "https://github.com/aspnetrun/run-aspnetcore-microservices",
+    "name": "aspnetrun/run-aspnetcore-microservices",
+    "dockers": [
+        {
+            "path": "/src/WebApp/AspnetRunBasics/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "aspnetrunbasics",
+                "dotnet",
+                "csproj",
+                "build",
+                "release"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/ApiGateway/APIGateway/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "apigateway",
+                "dotnet",
+                "csproj",
+                "build",
+                "release"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Catalog/Catalog.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "catalog",
+                "api",
+                "dotnet",
+                "csproj",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Ordering/Ordering.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "ordering",
+                "api",
+                "dotnet",
+                "csproj",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/Basket/Basket.API/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base",
+            "keywords": [
+                "basket",
+                "api",
+                "dotnet",
+                "csproj",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "catalogdb",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "basketdb",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "orderdb",
+                "image": "mcr.microsoft.com/mssql/server",
+                "image_full": "mcr.microsoft.com/mssql/server",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3-management-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "catalog.api",
+                "image": "${DOCKER_REGISTRY-}catalogapi",
+                "image_full": "${DOCKER_REGISTRY-}catalogapi",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "basket.api",
+                "image": "${DOCKER_REGISTRY-}basketapi",
+                "image_full": "${DOCKER_REGISTRY-}basketapi",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ordering.api",
+                "image": "${DOCKER_REGISTRY-}orderingapi",
+                "image_full": "${DOCKER_REGISTRY-}orderingapi",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "apigateway",
+                "image": "${DOCKER_REGISTRY-}apigateway",
+                "image_full": "${DOCKER_REGISTRY-}apigateway",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "aspnetrunbasics",
+                "image": "${DOCKER_REGISTRY-}aspnetrunbasics",
+                "image_full": "${DOCKER_REGISTRY-}aspnetrunbasics",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "mongo",
+                "redis"
+            ],
+            "services": [
+                "catalogdb",
+                "basketdb"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 6
+    },
+    "files": [],
+    "dbs": [
+        "mongo",
+        "redis"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 9,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "base"
+    ],
+    "num_dbs": 2,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

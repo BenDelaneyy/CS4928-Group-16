@@ -1,0 +1,235 @@
+{
+    "url": "https://github.com/RedHatInsights/insights-puptoo",
+    "name": "RedHatInsights/insights-puptoo",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "registry.redhat.io/ubi8/python-36",
+            "from_full": "registry.redhat.io/ubi8/python-36",
+            "keywords": [
+                "pip",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/dev/io_test/producer/Dockerfile",
+            "cmd": "python ./producer.py",
+            "cmd_keywords": [
+                "python",
+                "producer"
+            ],
+            "from": "python",
+            "from_full": "python:3.6",
+            "keywords": [
+                "pip",
+                "install",
+                "cache",
+                "dir",
+                "requirements"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/dev/io_test/consumer/Dockerfile",
+            "cmd": "python ./consumer.py",
+            "cmd_keywords": [
+                "python",
+                "consumer"
+            ],
+            "from": "python",
+            "from_full": "python:3.6",
+            "keywords": [
+                "pip",
+                "install",
+                "cache",
+                "dir",
+                "requirements"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/dev/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "zookeeper",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "confluentinc/cp-kafka",
+                "image_full": "confluentinc/cp-kafka",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "pup",
+                "image": "insights-puptoo",
+                "image_full": "insights-puptoo:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka"
+                ]
+            },
+            {
+                "name": "minio",
+                "image": "minio/minio",
+                "image_full": "minio/minio",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "createbuckets",
+                "image": "minio/mc",
+                "image_full": "minio/mc",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "minio"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "zookeeper"
+            ],
+            "services": [
+                "zookeeper"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 3,
+            "avg_deps_per_service": 0.6,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/dev/io_test/producer/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/dev/io_test/consumer/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "zookeeper"
+    ],
+    "servers": [],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "registry.redhat.io/ubi8/python-36",
+        "python"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 6
+}

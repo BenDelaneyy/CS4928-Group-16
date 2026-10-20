@@ -1,0 +1,155 @@
+{
+    "url": "https://github.com/appwrite/appwrite",
+    "name": "appwrite/appwrite",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "php app/server.php",
+            "cmd_keywords": [
+                "php",
+                "app",
+                "server"
+            ],
+            "from": "php",
+            "from_full": "php:7.4-cli",
+            "keywords": [
+                "storage",
+                "install",
+                "php",
+                "chmod",
+                "www"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/resources/docker/mariadb/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mariadb",
+            "from_full": "mariadb:10.2",
+            "keywords": [
+                "mysql",
+                "chown",
+                "docker",
+                "entrypoint",
+                "initdb"
+            ],
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/app/sdks/server-python/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/server-java/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/client-web/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/console-web/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/server-nodejs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "php"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "mariadb",
+        "php"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 9
+}

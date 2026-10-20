@@ -1,0 +1,577 @@
+{
+    "url": "https://github.com/ministryofjustice/opg-use-an-lpa",
+    "name": "ministryofjustice/opg-use-an-lpa",
+    "dockers": [
+        {
+            "path": "/service-pdf/docker/app/Dockerfile",
+            "cmd": "node -r esm src/server.js",
+            "cmd_keywords": [
+                "node",
+                "esm",
+                "src",
+                "server"
+            ],
+            "from": "node",
+            "from_full": "node:lts-alpine",
+            "keywords": [
+                "add",
+                "freetype",
+                "yarn",
+                "apk",
+                "cache"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-front/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:8-alpine",
+            "keywords": [
+                "freetype",
+                "apk",
+                "add",
+                "cache",
+                "chromium"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-front/docker/app/Dockerfile",
+            "cmd": "([[ -z \"${ENABLE_XDEBUG}\" ]] || docker-php-ext-enable xdebug)     && php-fpm",
+            "cmd_keywords": [
+                "enable",
+                "xdebug",
+                "php",
+                "docker",
+                "ext"
+            ],
+            "from": "php",
+            "from_full": "php:7-fpm-alpine",
+            "keywords": [
+                "install",
+                "pecl",
+                "apk",
+                "cache",
+                "build"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-front/docker/web/Dockerfile",
+            "cmd": "confd -onetime -backend env   && nginx -g \"daemon off;\"",
+            "cmd_keywords": [
+                "confd",
+                "onetime",
+                "backend",
+                "env",
+                "nginx"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:stable-alpine",
+            "keywords": [
+                "confd",
+                "waitforit",
+                "usr",
+                "local",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-api/docker/app/Dockerfile",
+            "cmd": "([[ -z \"${ENABLE_XDEBUG}\" ]] || docker-php-ext-enable xdebug)     && php-fpm",
+            "cmd_keywords": [
+                "enable",
+                "xdebug",
+                "php",
+                "docker",
+                "ext"
+            ],
+            "from": "php",
+            "from_full": "php:7-fpm-alpine",
+            "keywords": [
+                "install",
+                "pecl",
+                "apk",
+                "cache",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-api/docker/web/Dockerfile",
+            "cmd": "confd -onetime -backend env   && nginx -g \"daemon off;\"",
+            "cmd_keywords": [
+                "confd",
+                "onetime",
+                "backend",
+                "env",
+                "nginx"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:stable-alpine",
+            "keywords": [
+                "confd",
+                "waitforit",
+                "usr",
+                "local",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-api/docker/seeding/Dockerfile",
+            "cmd": "chmod +x /app/docker/seeding/*.sh     && /app/docker/seeding/start.sh",
+            "cmd_keywords": [
+                "app",
+                "docker",
+                "seeding",
+                "chmod",
+                "start"
+            ],
+            "from": "python",
+            "from_full": "python:alpine",
+            "keywords": [
+                "waitforit",
+                "usr",
+                "local",
+                "bin",
+                "wget"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/zap/Dockerfile",
+            "cmd": "zap-cli",
+            "cmd_keywords": [
+                "zap",
+                "cli"
+            ],
+            "from": "owasp/zap2docker-bare",
+            "from_full": "owasp/zap2docker-bare",
+            "keywords": [
+                "apk",
+                "upgrade",
+                "pip",
+                "cache",
+                "add"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/smoke/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "circleci/php",
+            "from_full": "circleci/php:7-cli-browsers",
+            "keywords": [
+                "mkdir",
+                "home",
+                "circleci",
+                "project"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 15,
+        "services": [
+            {
+                "name": "webpack",
+                "image": "webpack",
+                "image_full": "webpack",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "service-pdf",
+                "image": "service-pdf",
+                "image_full": "service-pdf",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "viewer-web",
+                "image": "front-web",
+                "image_full": "front-web",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "webpack"
+                ]
+            },
+            {
+                "name": "viewer-app",
+                "image": "viewer-app",
+                "image_full": "viewer-app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "actor-web",
+                "image": "front-web",
+                "image_full": "front-web",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "webpack"
+                ]
+            },
+            {
+                "name": "actor-app",
+                "image": "actor-app",
+                "image_full": "actor-app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "front-composer",
+                "image": "composer",
+                "image_full": "composer",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api-web",
+                "image": "api-web",
+                "image_full": "api-web",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api-app",
+                "image": "api-app",
+                "image_full": "api-app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api-composer",
+                "image": "composer",
+                "image_full": "composer",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api-seeding",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "localstack"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:5",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gateway",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "localstack",
+                "image": "localstack/localstack",
+                "image_full": "localstack/localstack",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kms",
+                "image": "nsmithuk/local-kms",
+                "image_full": "nsmithuk/local-kms:2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 15,
+            "edges": 4,
+            "avg_deps_per_service": 0.26666666666666666,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 14,
+            "edges": 3,
+            "avg_deps_per_service": 0.21428571428571427,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 14
+    },
+    "files": [
+        {
+            "path": "/service-api/seeding/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/call-api-gateway/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/generate_actor_codes/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/pipeline/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/remove_default_sg_rules/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-pdf/app/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/service-front/web/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "python",
+        "php"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 15,
+    "shared_dbs": false,
+    "num_dockers": 9,
+    "images": [
+        "owasp/zap2docker-bare",
+        "python",
+        "nginx",
+        "php",
+        "circleci/php",
+        "node"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 17
+}

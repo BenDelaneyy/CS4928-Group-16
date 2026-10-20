@@ -1,0 +1,317 @@
+{
+    "url": "https://github.com/tisboyo/Twitch_Bot",
+    "name": "tisboyo/Twitch_Bot",
+    "dockers": [
+        {
+            "path": "/mqtt_logger/Dockerfile",
+            "cmd": "./wait_for_it.sh mqtt:1883 --timeout=60 --strict -- python main.py",
+            "cmd_keywords": [
+                "wait",
+                "for",
+                "mqtt",
+                "timeout",
+                "strict"
+            ],
+            "from": "python",
+            "from_full": "python:3.9",
+            "keywords": [
+                "pip",
+                "install",
+                "upgrade",
+                "workspace",
+                "mqtt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "mqtt"
+            ],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/bot/Dockerfile",
+            "cmd": "./wait_for_it.sh mysql:3306 --timeout=60 --strict -- ./wait_for_it.sh api.twitch.tv:443 --timeout=60 --strict -- ./wait_for_it.sh tmi.twitch.tv:443 --timeout=60 --strict -- ./start.sh",
+            "cmd_keywords": [
+                "wait",
+                "for",
+                "timeout",
+                "strict",
+                "twitch"
+            ],
+            "from": "python",
+            "from_full": "python:3.9",
+            "keywords": [
+                "pip",
+                "install",
+                "upgrade",
+                "workspace",
+                "bot"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/web/Dockerfile",
+            "cmd": "./wait_for_it.sh mysql:3306 --timeout=60 --strict -- python main.py",
+            "cmd_keywords": [
+                "wait",
+                "for",
+                "mysql",
+                "timeout",
+                "strict"
+            ],
+            "from": "python",
+            "from_full": "python:3.9",
+            "keywords": [
+                "pip",
+                "install",
+                "upgrade",
+                "workspace",
+                "web"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "bot",
+                "image": "./bot/",
+                "image_full": "./bot/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql"
+                ]
+            },
+            {
+                "name": "webserver",
+                "image": "./web/",
+                "image_full": "./web/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql"
+                ]
+            },
+            {
+                "name": "mysql",
+                "image": "mysql",
+                "image_full": "mysql:latest",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "traefik",
+                "image": "traefik",
+                "image_full": "traefik:v2.3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "fail2ban",
+                "image": "crazymax/fail2ban",
+                "image_full": "crazymax/fail2ban:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "chores",
+                "image": "funkyfuture/deck-chores",
+                "image_full": "funkyfuture/deck-chores:1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt",
+                "image": "eclipse-mosquitto",
+                "image_full": "eclipse-mosquitto:2-openssl",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mosquitto"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mqtt_logger",
+                "image": "./mqtt_logger/",
+                "image_full": "./mqtt_logger/",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "mqtt"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mqtt"
+                ]
+            },
+            {
+                "name": "traefik-certs-dumper",
+                "image": "ldez/traefik-certs-dumper",
+                "image_full": "ldez/traefik-certs-dumper:v2.7.4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mysql"
+            ],
+            "services": [
+                "mysql"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 3,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/mqtt_logger/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/bot/requirements.txt",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/web/requirements.txt",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql"
+    ],
+    "servers": [],
+    "buses": [
+        "mqtt",
+        "mosquitto"
+    ],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 9,
+    "shared_dbs": true,
+    "num_dockers": 3,
+    "images": [
+        "python"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 2,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 7
+}

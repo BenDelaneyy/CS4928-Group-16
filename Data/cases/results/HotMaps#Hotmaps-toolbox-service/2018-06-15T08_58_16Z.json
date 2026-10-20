@@ -1,0 +1,153 @@
+{
+    "url": "https://github.com/HotMaps/Hotmaps-toolbox-service",
+    "name": "HotMaps/Hotmaps-toolbox-service",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "celery worker -A celery_worker.celery --loglevel=info",
+            "cmd_keywords": [
+                "celery",
+                "worker",
+                "loglevel",
+                "info"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "pip",
+                "server"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [
+                "rabbitmq"
+            ],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "flask",
+                "image": "flask",
+                "image_full": "flask",
+                "dbs": [],
+                "servers": [
+                    "flask"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "celery",
+                "image": "celery",
+                "image_full": "celery",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:4.0.1-alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [
+        {
+            "path": "/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "flask"
+    ],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [
+        "gcc"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

@@ -1,0 +1,311 @@
+{
+    "url": "https://github.com/FUB-HCC/IKON-backend",
+    "name": "FUB-HCC/IKON-backend",
+    "dockers": [
+        {
+            "path": "/src/controller/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:1.17.8-alpine",
+            "keywords": [
+                "frontend",
+                "git",
+                "mkdir",
+                "data",
+                "yarn"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/topicextraction/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "tiangolo/uvicorn-gunicorn-fastapi",
+            "from_full": "tiangolo/uvicorn-gunicorn-fastapi:python3.7",
+            "keywords": [
+                "poetry",
+                "install",
+                "pip",
+                "config",
+                "virtualenvs"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/logging/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:13-alpine",
+            "keywords": [
+                "npm",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/bert/Dockerfile",
+            "cmd": "bert-serving-start -model_dir /model/ -num_worker=1 -cpu -cased_tokenization -max_seq_len NONE -ckpt_name model.ckpt",
+            "cmd_keywords": [
+                "model",
+                "ckpt",
+                "bert",
+                "serving",
+                "start"
+            ],
+            "from": "tensorflow/tensorflow",
+            "from_full": "tensorflow/tensorflow:1.12.0-py3",
+            "keywords": [
+                "pip",
+                "install",
+                "bert",
+                "serving",
+                "server"
+            ],
+            "dbs": [
+                "max"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/sharing/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "tiangolo/uvicorn-gunicorn-fastapi",
+            "from_full": "tiangolo/uvicorn-gunicorn-fastapi:python3.7",
+            "keywords": [
+                "poetry",
+                "install",
+                "pip",
+                "config",
+                "virtualenvs"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/mwc/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:13-alpine",
+            "keywords": [
+                "npm",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "nginx",
+                "image": "docker.pkg.github.com/fub-hcc/ikon-backend/controller",
+                "image_full": "docker.pkg.github.com/fub-hcc/ikon-backend/controller:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mwc",
+                "image": "docker.pkg.github.com/fub-hcc/ikon-backend/mwc",
+                "image_full": "docker.pkg.github.com/fub-hcc/ikon-backend/mwc:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "logging",
+                "image": "docker.pkg.github.com/fub-hcc/ikon-backend/logging",
+                "image_full": "docker.pkg.github.com/fub-hcc/ikon-backend/logging:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "topicextraction",
+                "image": "docker.pkg.github.com/fub-hcc/ikon-backend/tes",
+                "image_full": "docker.pkg.github.com/fub-hcc/ikon-backend/tes:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "bertikon",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sharing",
+                "image": "docker.pkg.github.com/fub-hcc/ikon-backend/sharing",
+                "image_full": "docker.pkg.github.com/fub-hcc/ikon-backend/sharing:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 6
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/logging/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/mwc/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "max"
+    ],
+    "servers": [
+        "node",
+        "express"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 6,
+    "images": [
+        "nginx",
+        "node",
+        "tiangolo/uvicorn-gunicorn-fastapi",
+        "tensorflow/tensorflow"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 10
+}

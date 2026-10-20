@@ -1,0 +1,607 @@
+{
+    "url": "https://github.com/remp2020/remp",
+    "name": "remp2020/remp",
+    "dockers": [
+        {
+            "path": "/Beam/go/cmd/tracker/Dockerfile",
+            "cmd": "dockerize -timeout 1m -wait tcp://kafka:2181 tracker",
+            "cmd_keywords": [
+                "dockerize",
+                "timeout",
+                "wait",
+                "tcp",
+                "kafka"
+            ],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Beam/go/cmd/tracker/builder/Dockerfile",
+            "cmd": "build",
+            "cmd_keywords": [
+                "build"
+            ],
+            "from": "golang",
+            "from_full": "golang:1.9",
+            "keywords": [
+                "mkdir",
+                "src",
+                "build",
+                "remp",
+                "get"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Beam/go/cmd/segments/Dockerfile",
+            "cmd": "segments",
+            "cmd_keywords": [
+                "segments"
+            ],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Beam/go/cmd/segments/builder/Dockerfile",
+            "cmd": "build",
+            "cmd_keywords": [
+                "build"
+            ],
+            "from": "golang",
+            "from_full": "golang:1.9",
+            "keywords": [
+                "mkdir",
+                "src",
+                "build",
+                "remp",
+                "get"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Beam/go/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Beam/go/vendor/golang.org/x/sys/unix/linux/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "linux",
+                "gcc",
+                "apt",
+                "git",
+                "gnu"
+            ],
+            "dbs": [
+                "universe"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Docker/kafka/Dockerfile",
+            "cmd": "./kafka-start.sh",
+            "cmd_keywords": [
+                "kafka",
+                "start"
+            ],
+            "from": "spotify/kafka",
+            "from_full": "spotify/kafka",
+            "keywords": [
+                "apt",
+                "get",
+                "chmod",
+                "update",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Docker/php/Dockerfile",
+            "cmd": "/root/remp.sh",
+            "cmd_keywords": [
+                "root",
+                "remp"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm",
+            "keywords": [
+                "install",
+                "php",
+                "apt",
+                "docker",
+                "ext"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Docker/telegraf/Dockerfile",
+            "cmd": "./dockerize -timeout 1m -wait-retry-interval 10s -wait tcp://kafka:2181 -wait tcp://kafka:9092 telegraf",
+            "cmd_keywords": [
+                "wait",
+                "tcp",
+                "kafka",
+                "dockerize",
+                "timeout"
+            ],
+            "from": "telegraf",
+            "from_full": "telegraf:1.4",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "kafka"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 18,
+        "services": [
+            {
+                "name": "nginx",
+                "image": "nginx",
+                "image_full": "nginx:stable",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "campaign",
+                    "mailer",
+                    "sso",
+                    "beam"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:3.2",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mailhog",
+                "image": "mailhog/mailhog",
+                "image_full": "mailhog/mailhog:v1.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "adminer",
+                "image": "./Docker/php",
+                "image_full": "./Docker/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "campaign",
+                "image": "./Docker/php",
+                "image_full": "./Docker/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "campaign_mysql"
+                ]
+            },
+            {
+                "name": "campaign_mysql",
+                "image": "mysql",
+                "image_full": "mysql:8.0",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mailer",
+                "image": "./Docker/php",
+                "image_full": "./Docker/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mailer_mysql",
+                    "redis",
+                    "mailhog"
+                ]
+            },
+            {
+                "name": "mailer_mysql",
+                "image": "mysql",
+                "image_full": "mysql:8.0",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sso",
+                "image": "./Docker/php",
+                "image_full": "./Docker/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sso_mysql"
+                ]
+            },
+            {
+                "name": "sso_mysql",
+                "image": "mysql",
+                "image_full": "mysql:8.0",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "beam",
+                "image": "./Docker/php",
+                "image_full": "./Docker/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "beam_mysql"
+                ]
+            },
+            {
+                "name": "beam_mysql",
+                "image": "mysql",
+                "image_full": "mysql:8.0",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "./Docker/kafka",
+                "image_full": "./Docker/kafka",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "influxdb",
+                "image": "influxdb",
+                "image_full": "influxdb:1.3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "influxdb"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "telegraf",
+                "image": "./Docker/telegraf",
+                "image_full": "./Docker/telegraf",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "influxdb",
+                    "kafka"
+                ]
+            },
+            {
+                "name": "grafana",
+                "image": "grafana/grafana",
+                "image_full": "grafana/grafana",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "grafana"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "beam_tracker",
+                "image": "./Beam/go/cmd/tracker",
+                "image_full": "./Beam/go/cmd/tracker",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka"
+                ]
+            },
+            {
+                "name": "beam_segments",
+                "image": "./Beam/go/cmd/segments",
+                "image_full": "./Beam/go/cmd/segments",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "influxdb"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 5,
+            "names": [
+                "mysql",
+                "redis"
+            ],
+            "services": [
+                "redis",
+                "campaign_mysql",
+                "mailer_mysql",
+                "sso_mysql",
+                "beam_mysql"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 18,
+            "edges": 14,
+            "avg_deps_per_service": 0.7777777777777778,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 9,
+            "edges": 1,
+            "avg_deps_per_service": 0.1111111111111111,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 9
+    },
+    "files": [
+        {
+            "path": "/Beam/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "laravel"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Campaign/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "laravel"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Sso/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "laravel"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Mailer/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "laravel"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "universe",
+        "mysql",
+        "redis"
+    ],
+    "servers": [
+        "node",
+        "laravel"
+    ],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "golang",
+        "php",
+        "python"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [
+        "influxdb",
+        "grafana"
+    ],
+    "discos": [],
+    "num_services": 18,
+    "shared_dbs": false,
+    "num_dockers": 9,
+    "images": [
+        "golang",
+        "spotify/kafka",
+        "telegraf",
+        "php",
+        "ubuntu",
+        "alpine"
+    ],
+    "num_dbs": 3,
+    "num_servers": 2,
+    "num_buses": 1,
+    "num_langs": 3,
+    "num_gates": 1,
+    "num_monitors": 2,
+    "num_discos": 0,
+    "num_files": 14
+}

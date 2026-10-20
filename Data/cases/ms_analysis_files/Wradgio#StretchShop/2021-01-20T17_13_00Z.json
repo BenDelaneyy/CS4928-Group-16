@@ -1,0 +1,261 @@
+{
+    "url": "https://github.com/Wradgio/StretchShop",
+    "name": "Wradgio/StretchShop",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:current-alpine",
+            "keywords": [
+                "mkdir",
+                "app",
+                "npm",
+                "install",
+                "silent"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker/micro/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "api",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "users",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "products",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "categories",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "cart",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "orders",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "subscriptions",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "pages",
+                "image": "wradgio/stretchshop",
+                "image_full": "wradgio/stretchshop:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "nats-server",
+                "image": "nats",
+                "image_full": "nats",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "nats"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "traefik",
+                "image": "traefik",
+                "image_full": "traefik:1.7",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "mongo"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 7,
+            "avg_deps_per_service": 0.6363636363636364,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 8,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 8
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [
+                "mongo"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "nats"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [
+        "nats"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 11,
+    "shared_dbs": true,
+    "num_dockers": 1,
+    "images": [
+        "node"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 3
+}

@@ -1,0 +1,70 @@
+{
+    "url": "https://github.com/creativesoftwarefdn/weaviate",
+    "name": "creativesoftwarefdn/weaviate",
+    "dockers": [
+        {
+            "path": "/docker/Dockerfile",
+            "cmd": "/var/weaviate/weaviate --scheme=http --port=8080 --host=localhost --config=docker --config-file=/var/weaviate/weaviate.json",
+            "cmd_keywords": [
+                "weaviate",
+                "var",
+                "config",
+                "scheme",
+                "http"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "weaviate",
+                "var",
+                "zip",
+                "wget",
+                "conf"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scheme"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "scheme"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "ubuntu"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

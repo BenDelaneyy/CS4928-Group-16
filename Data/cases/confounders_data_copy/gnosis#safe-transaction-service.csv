@@ -1,0 +1,14 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,108551,0,2500,2102,221,177,46,34,0,[]
+Plain Text,1208,0,57,52,0,5,0,5,0,[]
+Shell,1955,0,58,38,7,13,5,5,0,[]
+ReStructuredText,8278,0,220,156,0,64,0,4,0,[]
+Dockerfile,964,0,34,26,1,7,7,2,0,[]
+YAML,2199,0,110,103,0,7,0,2,0,[]
+gitignore,1206,0,105,61,23,21,0,2,0,[]
+Docker ignore,89,0,11,10,0,1,0,1,0,[]
+INI,53,0,2,2,0,0,0,1,0,[]
+License,1063,0,21,17,0,4,0,1,0,[]
+Makefile,5636,0,153,124,5,24,2,1,0,[]
+Markdown,791,0,21,16,0,5,0,1,0,[]
+Total,131993,0,3292,2707,257,328,60,59,0,

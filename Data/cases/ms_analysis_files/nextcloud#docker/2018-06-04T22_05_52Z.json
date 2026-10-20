@@ -1,0 +1,990 @@
+{
+    "url": "https://github.com/nextcloud/docker",
+    "name": "nextcloud/docker",
+    "dockers": [
+        {
+            "path": "/12.0/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "dev",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "echo",
+                "dev",
+                "install"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0/fpm-alpine/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-alpine3.7",
+            "keywords": [
+                "nextcloud",
+                "usr",
+                "dev",
+                "tar",
+                "opcache"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "dev",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "echo",
+                "dev",
+                "install"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0/fpm-alpine/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-alpine3.7",
+            "keywords": [
+                "nextcloud",
+                "usr",
+                "dev",
+                "tar",
+                "opcache"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0-rc/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "dev",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0-rc/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "echo",
+                "dev",
+                "install"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/13.0-rc/fpm-alpine/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-alpine3.7",
+            "keywords": [
+                "nextcloud",
+                "usr",
+                "dev",
+                "tar",
+                "opcache"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0-rc/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "dev",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0-rc/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache-stretch",
+            "keywords": [
+                "apt",
+                "nextcloud",
+                "echo",
+                "dev",
+                "install"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0-rc/fpm-alpine/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm-alpine3.7",
+            "keywords": [
+                "nextcloud",
+                "usr",
+                "dev",
+                "tar",
+                "opcache"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/full/fpm/Dockerfile",
+            "cmd": "/usr/bin/supervisord",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "supervisord"
+            ],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [
+                "dev",
+                "apt",
+                "install",
+                "smbclient",
+                "var"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/full/apache/Dockerfile",
+            "cmd": "/usr/bin/supervisord",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "supervisord"
+            ],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [
+                "dev",
+                "apt",
+                "install",
+                "smbclient",
+                "var"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/imap/fpm/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [
+                "apt",
+                "imap",
+                "get",
+                "install",
+                "dev"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/imap/apache/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [
+                "apt",
+                "imap",
+                "get",
+                "install",
+                "dev"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/cron/fpm/Dockerfile",
+            "cmd": "/usr/bin/supervisord",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "supervisord"
+            ],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [
+                "apt",
+                "var",
+                "get",
+                "supervisord",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/cron/apache/Dockerfile",
+            "cmd": "/usr/bin/supervisord",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "supervisord"
+            ],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [
+                "apt",
+                "var",
+                "get",
+                "supervisord",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/smb/fpm/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "smbclient"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/dockerfiles/smb/apache/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "smbclient"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/fpm/app/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/fpm/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/apache/app/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/apache/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb/fpm/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/mariadb/apache/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/postgres/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/postgres/fpm/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/with-nginx-proxy/postgres/apache/proxy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jwilder/nginx-proxy",
+            "from_full": "jwilder/nginx-proxy:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/insecure/mariadb-cron-redis/fpm/app/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:fpm",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/insecure/mariadb-cron-redis/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/insecure/mariadb-cron-redis/apache/app/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nextcloud",
+            "from_full": "nextcloud:apache",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/insecure/mariadb/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/.examples/docker-compose/insecure/postgres/fpm/web/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/.examples/docker-compose/with-nginx-proxy/mariadb-cron-redis/fpm/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "db",
+                "image": "mariadb",
+                "image_full": "mariadb",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "app",
+                "image": "./app",
+                "image_full": "./app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db",
+                    "redis"
+                ]
+            },
+            {
+                "name": "web",
+                "image": "./web",
+                "image_full": "./web",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "app"
+                ]
+            },
+            {
+                "name": "cron",
+                "image": "./app",
+                "image_full": "./app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db",
+                    "redis"
+                ]
+            },
+            {
+                "name": "proxy",
+                "image": "./proxy",
+                "image_full": "./proxy",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "letsencrypt-companion",
+                "image": "jrcs/letsencrypt-nginx-proxy-companion",
+                "image_full": "jrcs/letsencrypt-nginx-proxy-companion",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "proxy"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "redis",
+                "mariadb"
+            ],
+            "services": [
+                "db",
+                "redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 6,
+            "avg_deps_per_service": 0.8571428571428571,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 1,
+            "avg_deps_per_service": 0.25,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 4
+    },
+    "files": [],
+    "dbs": [
+        "redis",
+        "postgresql",
+        "mysql"
+    ],
+    "servers": [
+        "busybox"
+    ],
+    "buses": [],
+    "langs": [
+        "php"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": true,
+    "num_dockers": 36,
+    "images": [
+        "nextcloud",
+        "php",
+        "jwilder/nginx-proxy",
+        "nginx"
+    ],
+    "num_dbs": 3,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 37
+}

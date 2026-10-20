@@ -1,0 +1,221 @@
+{
+    "url": "https://github.com/hashicorp/waypoint",
+    "name": "hashicorp/waypoint",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.mirror.hashicorp.services/alpine",
+            "from_full": "docker.mirror.hashicorp.services/alpine:3.15.0",
+            "keywords": [
+                "waypoint",
+                "mkdir",
+                "bin",
+                "kaniko",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "pebble",
+                "image": "docker.mirror.hashicorp.services/letsencrypt/pebble",
+                "image_full": "docker.mirror.hashicorp.services/letsencrypt/pebble",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "localstack",
+                "image": "docker.mirror.hashicorp.services/localstack/localstack",
+                "image_full": "docker.mirror.hashicorp.services/localstack/localstack",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "postgres",
+                "image": "docker.mirror.hashicorp.services/postgres",
+                "image_full": "docker.mirror.hashicorp.services/postgres:12.3",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vault",
+                "image": "docker.mirror.hashicorp.services/vault",
+                "image_full": "docker.mirror.hashicorp.services/vault",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "consul",
+                "image": "docker.mirror.hashicorp.services/consul",
+                "image_full": "docker.mirror.hashicorp.services/consul",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "consul"
+                ],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "postgres"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/website/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/ui/lib/grpc-web/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/ui/lib/waypoint-pb/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/lib/api-common-protos/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/lib/waypoint-client/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [
+        "node",
+        "busybox"
+    ],
+    "buses": [],
+    "langs": [
+        "gcc"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "consul",
+        "grpc"
+    ],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "docker.mirror.hashicorp.services/alpine"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 2,
+    "num_files": 8
+}

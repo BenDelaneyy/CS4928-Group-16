@@ -1,0 +1,3901 @@
+{
+    "url": "https://github.com/ovh/cds",
+    "name": "ovh/cds",
+    "dockers": [
+        {
+            "path": "/engine/Dockerfile",
+            "cmd": "/app/cds-engine-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "cds",
+                "engine",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "cds",
+                "grep",
+                "worker",
+                "apt",
+                "curl"
+            ],
+            "dbs": [
+                "sql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "sql"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/engine/api/Dockerfile",
+            "cmd": "/app/api-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "api",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "apt",
+                "curl",
+                "app",
+                "api"
+            ],
+            "dbs": [
+                "sql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "sql"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/engine/worker/Dockerfile",
+            "cmd": "/app/cds-worker-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "cds",
+                "worker",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "cds",
+                "grep",
+                "apt",
+                "curl",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/golang.org/x/sys/unix/linux/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "linux",
+                "gcc",
+                "apt",
+                "git",
+                "gnu"
+            ],
+            "dbs": [
+                "universe"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/ovh/tat/Dockerfile",
+            "cmd": "/app/tat-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "tat",
+                "linux",
+                "amd"
+            ],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [
+                "tat",
+                "app",
+                "apk",
+                "deps",
+                "wget"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/fsouza/go-dockerclient/testing/data/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "base",
+            "from_full": "base:ubuntu-quantal",
+            "keywords": [
+                "tsuru",
+                "var",
+                "lib",
+                "base",
+                "basebuilder"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch",
+            "keywords": [
+                "docker",
+                "com",
+                "github",
+                "gopath",
+                "git"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/hack/integration-cli-on-swarm/agent/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.7",
+            "keywords": [
+                "master",
+                "docker",
+                "build",
+                "github",
+                "com"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/escapes/Dockerfile",
+            "cmd": "/usr\\\"/bin/znc -f -r",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "znc"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "znc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/escape/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "image",
+            "from_full": "image",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-bracket/Dockerfile",
+            "cmd": "[\"echo\", \"Please, close the brackets when you're done\"",
+            "cmd_keywords": [
+                "echo",
+                "please",
+                "close",
+                "the",
+                "brackets"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/influxdb/Dockerfile",
+            "cmd": "/usr/bin/influxdb --pidfile /var/run/influxdb.pid -config /opt/influxdb/shared/config.toml",
+            "cmd_keywords": [
+                "influxdb",
+                "config",
+                "usr",
+                "bin",
+                "pidfile"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "influxdb",
+                "apt",
+                "get",
+                "wget",
+                "latest"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "influxdb"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/escape-nonewline/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-string/Dockerfile",
+            "cmd": "[\"echo\", \"look ma, no quote!]",
+            "cmd_keywords": [
+                "echo",
+                "look",
+                "quote"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/continue-at-eof/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.5",
+            "keywords": [
+                "something"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/nginx/Dockerfile",
+            "cmd": "/usr/sbin/nginx",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "nginx"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "nginx",
+                "apt",
+                "get",
+                "etc",
+                "root"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/znc/Dockerfile",
+            "cmd": "/usr/bin/znc -f -r",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "znc"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "znc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/health/Dockerfile",
+            "cmd": "/app/main.sh",
+            "cmd_keywords": [
+                "app",
+                "main"
+            ],
+            "from": "debian",
+            "from_full": "debian",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/flags/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "scratch",
+            "from_full": "scratch",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scratch"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/lk4d4-the-edge-case-generator/Dockerfile",
+            "cmd": "echo 'test' | wc -",
+            "cmd_keywords": [
+                "echo",
+                "test"
+            ],
+            "from": "busybox",
+            "from_full": "busybox:buildroot-2014.02",
+            "keywords": [
+                "echo",
+                "test",
+                "root",
+                "testpass",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/json/Dockerfile",
+            "cmd": "abc 123 ♥ ☃ \" \\ / \b \f \n \r \t ",
+            "cmd_keywords": [
+                "abc"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/env/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/continueIndent/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "echo",
+                "hello",
+                "world",
+                "goodbyefrog",
+                "goodnight"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/cpuguy83-nagios/Dockerfile",
+            "cmd": "/usr/local/bin/start_nagios",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "start",
+                "nagios"
+            ],
+            "from": "cpuguy83/ubuntu",
+            "from_full": "cpuguy83/ubuntu",
+            "keywords": [
+                "nagios",
+                "etc",
+                "home",
+                "usr",
+                "snmp"
+            ],
+            "dbs": [
+                "universe"
+            ],
+            "servers": [
+                "httpd"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [
+                "nagios"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string-double/Dockerfile",
+            "cmd": "\"[\\\"echo\\\", \\\"Phew, I just managed to escaped those double quotes\\\"]\"",
+            "cmd_keywords": [
+                "echo",
+                "phew",
+                "just",
+                "managed",
+                "escaped"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/escape-after-comment/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "image",
+            "from_full": "image",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/kartar-entrypoint-oddities/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "redis",
+                "update",
+                "install"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/mail/Dockerfile",
+            "cmd": "setsid cron; tmux -2",
+            "cmd_keywords": [
+                "setsid",
+                "cron",
+                "tmux"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "offlineimap",
+                "mkdir",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/jeztah-invalid-json-single-quotes/Dockerfile",
+            "cmd": "['echo','single quotes are invalid JSON']",
+            "cmd_keywords": [
+                "echo",
+                "single",
+                "quotes",
+                "are",
+                "invalid"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/mumble/Dockerfile",
+            "cmd": "/usr/sbin/murmurd",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "murmurd"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "libcap"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/brimstone-consuldock/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "dpkg",
+                "apt",
+                "get",
+                "tmp",
+                "awk"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "git",
+                "usr",
+                "local",
+                "docker",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "ruby"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/weechat/Dockerfile",
+            "cmd": "zsh -c weechat",
+            "cmd_keywords": [
+                "zsh",
+                "weechat"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "tmux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/ADD-COPY-with-JSON/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/brimstone-docker-consul/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "dpkg",
+                "get",
+                "tmp",
+                "web"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/tf2/Dockerfile",
+            "cmd": "cd /steam/tf2 && ./srcds_run -port 27015 +ip 0.0.0.0 +map ctf_2fort -autoupdate -steam_dir /steam -steamcmd_script /steam/script +tf_bot_quota 12 +tf_bot_quota_mode fill",
+            "cmd_keywords": [
+                "steam",
+                "script",
+                "bot",
+                "quota",
+                "srcds"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:12.04",
+            "keywords": [
+                "steam",
+                "tar",
+                "sourcemod",
+                "curl",
+                "addons"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string/Dockerfile",
+            "cmd": "'[\"echo\", \"Well, JSON in a string is JSON too?\"]'",
+            "cmd_keywords": [
+                "json",
+                "echo",
+                "well",
+                "string",
+                "too"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles/multiple-volumes/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "foo",
+            "from_full": "foo",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles-negative/env_no_value/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfiles-negative/shykes-nested-json/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/builder/dockerfile/parser/testfile-line/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "dpkg",
+                "apt",
+                "get",
+                "tmp",
+                "awk"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/nnp-test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "buildpack-deps",
+            "from_full": "buildpack-deps:jessie",
+            "keywords": [
+                "nnp",
+                "test",
+                "usr",
+                "bin",
+                "gcc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/desktop-integration/gparted/Dockerfile",
+            "cmd": "/usr/sbin/gparted",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "gparted"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "update",
+                "gparted"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/desktop-integration/chromium/Dockerfile",
+            "cmd": "/usr/bin/chromium --no-sandbox --user-data-dir=/data",
+            "cmd_keywords": [
+                "data",
+                "usr",
+                "bin",
+                "chromium",
+                "sandbox"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "chromium",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/syscall-test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "buildpack-deps",
+            "from_full": "buildpack-deps:jessie",
+            "keywords": [
+                "gcc",
+                "usr",
+                "bin",
+                "test",
+                "wall"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/s390x/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "s390x/ubuntu",
+            "from_full": "s390x/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/s390x/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "s390x/ubuntu",
+            "from_full": "s390x/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/aarch64/debian-stretch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/debian",
+            "from_full": "aarch64/debian:stretch",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/aarch64/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/ubuntu",
+            "from_full": "aarch64/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/aarch64/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/ubuntu",
+            "from_full": "aarch64/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/aarch64/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/debian",
+            "from_full": "aarch64/debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "debian",
+                "org",
+                "backports"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/armhf/raspbian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "resin/rpi-raspbian",
+            "from_full": "resin/rpi-raspbian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "resin"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/armhf/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/armhf/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/armhf/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/debian",
+            "from_full": "armhf/debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/armhf/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/ppc64le/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/ppc64le/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/ppc64le/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/debian-stretch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/debian-wheezy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:wheezy-backports",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "org",
+                "list"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/deb/amd64/ubuntu-zesty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:zesty",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/s390x/clefos-base-s390x-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "sinenomine/clefos-base-s390x",
+            "from_full": "sinenomine/clefos-base-s390x",
+            "keywords": [
+                "devel",
+                "tar",
+                "usr",
+                "touch",
+                "var"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/s390x/opensuse-tumbleweed-1/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "opensuse/s390x",
+            "from_full": "opensuse/s390x:tumbleweed",
+            "keywords": [
+                "devel",
+                "zypper",
+                "tar",
+                "usr",
+                "https"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/armhf/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "multiarch/centos",
+            "from_full": "multiarch/centos:7.2.1511-armhfp-clean",
+            "keywords": [
+                "devel",
+                "yum",
+                "systemd",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/ppc64le/opensuse-42.1/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/opensuse",
+            "from_full": "ppc64le/opensuse:42.1",
+            "keywords": [
+                "ppc",
+                "devel",
+                "zypper",
+                "oss",
+                "https"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/ppc64le/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/centos",
+            "from_full": "ppc64le/centos:7",
+            "keywords": [
+                "devel",
+                "systemd",
+                "yum",
+                "tar",
+                "container"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/ppc64le/fedora-24/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/fedora",
+            "from_full": "ppc64le/fedora:24",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/fedora-25/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "fedora",
+            "from_full": "fedora:25",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/oraclelinux-6/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "oraclelinux",
+            "from_full": "oraclelinux:6",
+            "keywords": [
+                "yum",
+                "devel",
+                "install",
+                "tar",
+                "curl"
+            ],
+            "dbs": [
+                "oracle"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "devel",
+                "systemd",
+                "yum",
+                "tar",
+                "container"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/opensuse-13.2/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "opensuse",
+            "from_full": "opensuse:13.2",
+            "keywords": [
+                "devel",
+                "tar",
+                "zypper",
+                "non",
+                "interactive"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/oraclelinux-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "oraclelinux",
+            "from_full": "oraclelinux:7",
+            "keywords": [
+                "devel",
+                "tar",
+                "yum",
+                "selinux",
+                "policy"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/photon-1.0/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "photon",
+            "from_full": "photon:1.0",
+            "keywords": [
+                "devel",
+                "tar",
+                "tdnf",
+                "install",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/fedora-24/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "fedora",
+            "from_full": "fedora:24",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/builder/rpm/amd64/amazonlinux-latest/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "amazonlinux",
+            "from_full": "amazonlinux:latest",
+            "keywords": [
+                "devel",
+                "tar",
+                "yum",
+                "selinux",
+                "policy"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/docker/docker/contrib/httpserver/Dockerfile",
+            "cmd": "./httpserver",
+            "cmd_keywords": [
+                "httpserver"
+            ],
+            "from": "busybox",
+            "from_full": "busybox",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/hashicorp/vault/scripts/cross/Dockerfile",
+            "cmd": "make bin",
+            "cmd_keywords": [
+                "make",
+                "bin"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "mkdir",
+                "com",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch",
+            "keywords": [
+                "docker",
+                "com",
+                "github",
+                "gopath",
+                "git"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/hack/integration-cli-on-swarm/agent/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.7",
+            "keywords": [
+                "master",
+                "docker",
+                "build",
+                "github",
+                "com"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/escapes/Dockerfile",
+            "cmd": "/usr\\\"/bin/znc -f -r",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "znc"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "znc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/escape/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "image",
+            "from_full": "image",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-bracket/Dockerfile",
+            "cmd": "[\"echo\", \"Please, close the brackets when you're done\"",
+            "cmd_keywords": [
+                "echo",
+                "please",
+                "close",
+                "the",
+                "brackets"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/influxdb/Dockerfile",
+            "cmd": "/usr/bin/influxdb --pidfile /var/run/influxdb.pid -config /opt/influxdb/shared/config.toml",
+            "cmd_keywords": [
+                "influxdb",
+                "config",
+                "usr",
+                "bin",
+                "pidfile"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "influxdb",
+                "apt",
+                "get",
+                "wget",
+                "latest"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "influxdb"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/escape-nonewline/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-string/Dockerfile",
+            "cmd": "[\"echo\", \"look ma, no quote!]",
+            "cmd_keywords": [
+                "echo",
+                "look",
+                "quote"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/continue-at-eof/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.5",
+            "keywords": [
+                "something"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/nginx/Dockerfile",
+            "cmd": "/usr/sbin/nginx",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "nginx"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "nginx",
+                "apt",
+                "get",
+                "etc",
+                "root"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/znc/Dockerfile",
+            "cmd": "/usr/bin/znc -f -r",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "znc"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "znc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/health/Dockerfile",
+            "cmd": "/app/main.sh",
+            "cmd_keywords": [
+                "app",
+                "main"
+            ],
+            "from": "debian",
+            "from_full": "debian",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/flags/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "scratch",
+            "from_full": "scratch",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scratch"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/lk4d4-the-edge-case-generator/Dockerfile",
+            "cmd": "echo 'test' | wc -",
+            "cmd_keywords": [
+                "echo",
+                "test"
+            ],
+            "from": "busybox",
+            "from_full": "busybox:buildroot-2014.02",
+            "keywords": [
+                "echo",
+                "test",
+                "root",
+                "testpass",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/json/Dockerfile",
+            "cmd": "abc 123 ♥ ☃ \" \\ / \b \f \n \r \t ",
+            "cmd_keywords": [
+                "abc"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/env/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/continueIndent/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "echo",
+                "hello",
+                "world",
+                "goodbyefrog",
+                "goodnight"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/cpuguy83-nagios/Dockerfile",
+            "cmd": "/usr/local/bin/start_nagios",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "start",
+                "nagios"
+            ],
+            "from": "cpuguy83/ubuntu",
+            "from_full": "cpuguy83/ubuntu",
+            "keywords": [
+                "nagios",
+                "etc",
+                "home",
+                "usr",
+                "snmp"
+            ],
+            "dbs": [
+                "universe"
+            ],
+            "servers": [
+                "httpd"
+            ],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [
+                "nagios"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string-double/Dockerfile",
+            "cmd": "\"[\\\"echo\\\", \\\"Phew, I just managed to escaped those double quotes\\\"]\"",
+            "cmd_keywords": [
+                "echo",
+                "phew",
+                "just",
+                "managed",
+                "escaped"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/escape-after-comment/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "image",
+            "from_full": "image",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/kartar-entrypoint-oddities/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "redis",
+                "update",
+                "install"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/mail/Dockerfile",
+            "cmd": "setsid cron; tmux -2",
+            "cmd_keywords": [
+                "setsid",
+                "cron",
+                "tmux"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "offlineimap",
+                "mkdir",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/jeztah-invalid-json-single-quotes/Dockerfile",
+            "cmd": "['echo','single quotes are invalid JSON']",
+            "cmd_keywords": [
+                "echo",
+                "single",
+                "quotes",
+                "are",
+                "invalid"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/mumble/Dockerfile",
+            "cmd": "/usr/sbin/murmurd",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "murmurd"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "libcap"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/brimstone-consuldock/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "dpkg",
+                "apt",
+                "get",
+                "tmp",
+                "awk"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "git",
+                "usr",
+                "local",
+                "docker",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "ruby"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/weechat/Dockerfile",
+            "cmd": "zsh -c weechat",
+            "cmd_keywords": [
+                "zsh",
+                "weechat"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "tmux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/ADD-COPY-with-JSON/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:14.04",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/brimstone-docker-consul/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "apt",
+                "dpkg",
+                "get",
+                "tmp",
+                "web"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/tf2/Dockerfile",
+            "cmd": "cd /steam/tf2 && ./srcds_run -port 27015 +ip 0.0.0.0 +map ctf_2fort -autoupdate -steam_dir /steam -steamcmd_script /steam/script +tf_bot_quota 12 +tf_bot_quota_mode fill",
+            "cmd_keywords": [
+                "steam",
+                "script",
+                "bot",
+                "quota",
+                "srcds"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:12.04",
+            "keywords": [
+                "steam",
+                "tar",
+                "sourcemod",
+                "curl",
+                "addons"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string/Dockerfile",
+            "cmd": "'[\"echo\", \"Well, JSON in a string is JSON too?\"]'",
+            "cmd_keywords": [
+                "json",
+                "echo",
+                "well",
+                "string",
+                "too"
+            ],
+            "from": "",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles/multiple-volumes/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "foo",
+            "from_full": "foo",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles-negative/env_no_value/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfiles-negative/shykes-nested-json/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": ""
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/builder/dockerfile/parser/testfile-line/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "brimstone/ubuntu",
+            "from_full": "brimstone/ubuntu:14.04",
+            "keywords": [
+                "dpkg",
+                "apt",
+                "get",
+                "tmp",
+                "awk"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/nnp-test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "buildpack-deps",
+            "from_full": "buildpack-deps:jessie",
+            "keywords": [
+                "nnp",
+                "test",
+                "usr",
+                "bin",
+                "gcc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/desktop-integration/gparted/Dockerfile",
+            "cmd": "/usr/sbin/gparted",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "gparted"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "update",
+                "gparted"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/desktop-integration/chromium/Dockerfile",
+            "cmd": "/usr/bin/chromium --no-sandbox --user-data-dir=/data",
+            "cmd_keywords": [
+                "data",
+                "usr",
+                "bin",
+                "chromium",
+                "sandbox"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "chromium",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/syscall-test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "buildpack-deps",
+            "from_full": "buildpack-deps:jessie",
+            "keywords": [
+                "gcc",
+                "usr",
+                "bin",
+                "test",
+                "wall"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/s390x/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "s390x/ubuntu",
+            "from_full": "s390x/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/s390x/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "s390x/ubuntu",
+            "from_full": "s390x/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/aarch64/debian-stretch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/debian",
+            "from_full": "aarch64/debian:stretch",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/aarch64/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/ubuntu",
+            "from_full": "aarch64/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/aarch64/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/ubuntu",
+            "from_full": "aarch64/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/aarch64/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "aarch64/debian",
+            "from_full": "aarch64/debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "debian",
+                "org",
+                "backports"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/armhf/raspbian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "resin/rpi-raspbian",
+            "from_full": "resin/rpi-raspbian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "resin"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/armhf/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/armhf/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/armhf/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/debian",
+            "from_full": "armhf/debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/armhf/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "armhf/ubuntu",
+            "from_full": "armhf/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/ppc64le/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/ppc64le/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/ppc64le/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/ubuntu",
+            "from_full": "ppc64le/ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/debian-stretch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/ubuntu-trusty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "apt",
+                "dev",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/ubuntu-xenial/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:xenial",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/debian-jessie/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "dev",
+                "org",
+                "get",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/ubuntu-yakkety/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:yakkety",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/debian-wheezy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:wheezy-backports",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "org",
+                "list"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/deb/amd64/ubuntu-zesty/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:zesty",
+            "keywords": [
+                "dev",
+                "apt",
+                "get",
+                "install",
+                "apparmor"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/s390x/clefos-base-s390x-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "sinenomine/clefos-base-s390x",
+            "from_full": "sinenomine/clefos-base-s390x",
+            "keywords": [
+                "devel",
+                "tar",
+                "usr",
+                "touch",
+                "var"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/s390x/opensuse-tumbleweed-1/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "opensuse/s390x",
+            "from_full": "opensuse/s390x:tumbleweed",
+            "keywords": [
+                "devel",
+                "zypper",
+                "tar",
+                "usr",
+                "https"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/armhf/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "multiarch/centos",
+            "from_full": "multiarch/centos:7.2.1511-armhfp-clean",
+            "keywords": [
+                "devel",
+                "yum",
+                "systemd",
+                "install",
+                "tar"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/ppc64le/opensuse-42.1/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/opensuse",
+            "from_full": "ppc64le/opensuse:42.1",
+            "keywords": [
+                "devel",
+                "ppc",
+                "zypper",
+                "oss",
+                "https"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/ppc64le/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/centos",
+            "from_full": "ppc64le/centos:7",
+            "keywords": [
+                "devel",
+                "systemd",
+                "yum",
+                "tar",
+                "container"
+            ],
+            "dbs": [
+                "sqlite"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/ppc64le/fedora-24/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ppc64le/fedora",
+            "from_full": "ppc64le/fedora:24",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/fedora-25/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "fedora",
+            "from_full": "fedora:25",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/oraclelinux-6/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "oraclelinux",
+            "from_full": "oraclelinux:6",
+            "keywords": [
+                "yum",
+                "devel",
+                "install",
+                "tar",
+                "curl"
+            ],
+            "dbs": [
+                "oracle"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/centos-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "devel",
+                "systemd",
+                "yum",
+                "tar",
+                "container"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/opensuse-13.2/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "opensuse",
+            "from_full": "opensuse:13.2",
+            "keywords": [
+                "devel",
+                "tar",
+                "zypper",
+                "non",
+                "interactive"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/oraclelinux-7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "oraclelinux",
+            "from_full": "oraclelinux:7",
+            "keywords": [
+                "devel",
+                "tar",
+                "yum",
+                "selinux",
+                "policy"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/photon-1.0/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "photon",
+            "from_full": "photon:1.0",
+            "keywords": [
+                "devel",
+                "tar",
+                "tdnf",
+                "install",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/fedora-24/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "fedora",
+            "from_full": "fedora:24",
+            "keywords": [
+                "devel",
+                "dnf",
+                "tar",
+                "install",
+                "selinux"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/builder/rpm/amd64/amazonlinux-latest/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "amazonlinux",
+            "from_full": "amazonlinux:latest",
+            "keywords": [
+                "devel",
+                "tar",
+                "yum",
+                "selinux",
+                "policy"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "cmake"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/moby/moby/contrib/httpserver/Dockerfile",
+            "cmd": "./httpserver",
+            "cmd_keywords": [
+                "httpserver"
+            ],
+            "from": "busybox",
+            "from_full": "busybox",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/opencontainers/runc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.7.1",
+            "keywords": [
+                "criu",
+                "dev",
+                "backports",
+                "install",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/cpuguy83/go-md2man/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "scratch",
+            "from_full": "scratch",
+            "keywords": [
+                "cgo",
+                "enabled",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scratch"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/Dockerfile",
+            "cmd": "/app/setup",
+            "cmd_keywords": [
+                "app",
+                "setup"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "caddy",
+                "apt",
+                "curl",
+                "wget"
+            ],
+            "dbs": [],
+            "servers": [
+                "caddy"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/contrib/uservices/cds2xmpp/Dockerfile",
+            "cmd": "/app/service",
+            "cmd_keywords": [
+                "app",
+                "service"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "app",
+                "service",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/contrib/uservices/cds2tat/Dockerfile",
+            "cmd": "/app/api",
+            "cmd_keywords": [
+                "app",
+                "api"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "app",
+                "api",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "cds-db",
+                "image": "postgres",
+                "image_full": "postgres:9.6.2",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cds-cache",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cds-migrate",
+                "image": "ovhcom/cds-engine",
+                "image_full": "ovhcom/cds-engine:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-db"
+                ]
+            },
+            {
+                "name": "cds-api",
+                "image": "ovhcom/cds-engine",
+                "image_full": "ovhcom/cds-engine:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-db",
+                    "cds-cache"
+                ]
+            },
+            {
+                "name": "cds-ui",
+                "image": "ovhcom/cds-ui",
+                "image_full": "ovhcom/cds-ui:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            },
+            {
+                "name": "cds-hatchery-swarm",
+                "image": "ovhcom/cds-engine",
+                "image_full": "ovhcom/cds-engine:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            },
+            {
+                "name": "cds-hatchery-local",
+                "image": "ovhcom/cds-engine",
+                "image_full": "ovhcom/cds-engine:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "postgres",
+                "redis"
+            ],
+            "services": [
+                "cds-db",
+                "cds-cache"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 6,
+            "avg_deps_per_service": 0.8571428571428571,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 3,
+            "avg_deps_per_service": 0.6,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/vendor/github.com/prometheus/client_model/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/blang/semver/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docs/themes/docdock/static/revealjs/plugin/multiplex/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres",
+        "redis",
+        "sql",
+        "sqlite",
+        "oracle",
+        "universe"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "resin",
+        "busybox",
+        "httpd",
+        "caddy"
+    ],
+    "buses": [],
+    "langs": [
+        "golang",
+        "bash",
+        "sql",
+        "gcc",
+        "scratch",
+        "php",
+        "python",
+        "cmake",
+        "ruby"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [
+        "influxdb",
+        "prometheus",
+        "nagios"
+    ],
+    "discos": [
+        "consul"
+    ],
+    "num_services": 7,
+    "shared_dbs": true,
+    "num_dockers": 163,
+    "images": [
+        "aarch64/ubuntu",
+        "foo",
+        "amazonlinux",
+        "debian",
+        "ppc64le/opensuse",
+        "base",
+        "multiarch/centos",
+        "armhf/ubuntu",
+        "resin/rpi-raspbian",
+        "ppc64le/ubuntu",
+        "opensuse/s390x",
+        "centos",
+        "brimstone/ubuntu",
+        "oraclelinux",
+        "buildpack-deps",
+        "sinenomine/clefos-base-s390x",
+        "busybox",
+        "photon",
+        "scratch",
+        "cpuguy83/ubuntu",
+        "opensuse",
+        "armhf/debian",
+        "golang",
+        "ppc64le/fedora",
+        "ppc64le/centos",
+        "fedora",
+        "aarch64/debian",
+        "ubuntu",
+        "image",
+        "alpine",
+        "s390x/ubuntu"
+    ],
+    "num_dbs": 6,
+    "num_servers": 6,
+    "num_buses": 0,
+    "num_langs": 9,
+    "num_gates": 1,
+    "num_monitors": 3,
+    "num_discos": 1,
+    "num_files": 168
+}

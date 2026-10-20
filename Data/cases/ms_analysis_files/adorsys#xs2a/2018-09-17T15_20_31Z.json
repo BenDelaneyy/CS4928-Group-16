@@ -1,0 +1,567 @@
+{
+    "url": "https://github.com/adorsys/xs2a",
+    "name": "adorsys/xs2a",
+    "dockers": [
+        {
+            "path": "/spi-mock/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/aspsp-xs2a/spi-mock.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "exec",
+                "home",
+                "bin"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/profile/aspsp-profile.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "profile",
+                "exec",
+                "home"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-idp/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jboss/keycloak",
+            "from_full": "jboss/keycloak:3.4.3.Final",
+            "keywords": [
+                "jboss",
+                "home",
+                "chgrp",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [
+                "jboss"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management-system/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/consents/consent-management.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "exec",
+                "home",
+                "bin"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/integration-tests/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/xs2a-integtests/xs2a-integtests.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "integtests",
+                "exec",
+                "home"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/online-banking-demo/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/online-banking/online-banking-demo.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "online",
+                "banking",
+                "exec"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/online-banking-demo/src/main/ui/Dockerfile",
+            "cmd": "/usr/libexec/s2i/run",
+            "cmd_keywords": [
+                "usr",
+                "libexec",
+                "run"
+            ],
+            "from": "centos/nginx-112-centos7",
+            "from_full": "centos/nginx-112-centos7",
+            "keywords": [
+                "opt",
+                "app",
+                "root",
+                "src",
+                "chgrp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-mock-server/Dockerfile",
+            "cmd": "exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/aspsp-mock-server/aspsp-mock-server.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "aspsp",
+                "mock",
+                "server"
+            ],
+            "from": "adorsys/openjdk-jre-base",
+            "from_full": "adorsys/openjdk-jre-base:8-minideb",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "xs2a-idp",
+                "image": "aspsp-idp",
+                "image_full": "aspsp-idp",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "keycloak-postgres"
+                ]
+            },
+            {
+                "name": "keycloak-postgres",
+                "image": "centos/postgresql-95-centos7",
+                "image_full": "centos/postgresql-95-centos7",
+                "dbs": [
+                    "postgresql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "aspsp-mock-server",
+                "image": "aspsp-mock-server",
+                "image_full": "aspsp-mock-server",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "aspsp-mock-mongo"
+                ]
+            },
+            {
+                "name": "aspsp-mock-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "aspsp-profile",
+                "image": "aspsp-profile",
+                "image_full": "aspsp-profile",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "consent-management",
+                "image": "consent-management-system",
+                "image_full": "consent-management-system",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consent-management-postgres"
+                ]
+            },
+            {
+                "name": "consent-management-postgres",
+                "image": "centos/postgresql-95-centos7",
+                "image_full": "centos/postgresql-95-centos7",
+                "dbs": [
+                    "postgresql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 3,
+            "names": [
+                "mongo",
+                "postgresql"
+            ],
+            "services": [
+                "keycloak-postgres",
+                "aspsp-mock-mongo",
+                "consent-management-postgres"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 3,
+            "avg_deps_per_service": 0.42857142857142855,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "nexus"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spi-mock/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/psd2-validator/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cms-client/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-profile/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-idp/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-idp/keycloak-provider-extension/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-idp/keycloak-provider-extension/keycloak-clientregistration-provider/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/consent-management-system/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/integration-tests/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/online-banking-demo/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cms-db-schema/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-server-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/aspsp-mock-server/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "express",
+                "jboss",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/xs2a-impl/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spi-api/pom.xml",
+            "dbs": [],
+            "servers": [
+                "express",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/online-banking-demo/src/main/ui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo",
+        "postgresql",
+        "nexus"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "jboss",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [
+        "java"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": false,
+    "num_dockers": 8,
+    "images": [
+        "centos/nginx-112-centos7",
+        "jboss/keycloak",
+        "adorsys/openjdk-jre-base"
+    ],
+    "num_dbs": 3,
+    "num_servers": 4,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 27
+}

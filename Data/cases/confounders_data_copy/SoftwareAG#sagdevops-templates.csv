@@ -1,0 +1,12 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+YAML,87289,0,2429,1973,218,238,0,46,0,[]
+Properties File,3457,0,128,59,48,21,0,23,0,[]
+Shell,18189,0,555,352,77,126,39,19,0,[]
+Markdown,17600,0,567,405,0,162,0,10,0,[]
+XML,6980,0,171,133,2,36,0,8,0,[]
+Dockerfile,6829,0,234,99,66,69,5,7,0,[]
+CloudFormation (YAML),4617,0,95,88,1,6,0,2,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+Powershell,3148,0,96,91,1,4,1,1,0,[]
+gitignore,40,0,2,2,0,0,0,1,0,[]
+Total,159506,0,4478,3371,413,694,45,118,0,

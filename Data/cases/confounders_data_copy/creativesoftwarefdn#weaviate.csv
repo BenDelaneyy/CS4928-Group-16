@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Go,2426576,0,53000,32658,10582,9760,9282,371,0,[]
+Markdown,9643,0,150,105,0,45,0,3,0,[]
+JavaScript,28390,0,707,415,238,54,0,1,0,[]
+YAML,142,0,9,9,0,0,0,1,0,[]
+gitignore,666,0,47,20,14,13,0,1,0,[]
+Total,2465417,0,53913,33207,10834,9872,9282,377,0,

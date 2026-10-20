@@ -1,0 +1,211 @@
+{
+    "url": "https://github.com/cloudlibz/clocal-azure",
+    "name": "cloudlibz/clocal-azure",
+    "dockers": [
+        {
+            "path": "/example/azure-functions/function-sample/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/azure-functions-runtime",
+            "from_full": "microsoft/azure-functions-runtime:v2.0.0-beta1",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/services/azure-cosmosdb/cosmosdb-image/Dockerfile",
+            "cmd": "c:\\CosmosDBEmulator\\startemu.cmd",
+            "cmd_keywords": [
+                "cosmosdbemulator",
+                "startemu",
+                "cmd"
+            ],
+            "from": "microsoft/windowsservercore",
+            "from_full": "microsoft/windowsservercore",
+            "keywords": [
+                "echo",
+                "installer",
+                "exe",
+                "starting",
+                "powershell"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/services/azure-api-app-service/Image/ContactList/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "storage",
+                "image": "arafato/azurite",
+                "image_full": "arafato/azurite:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "functions",
+                "image": "azure-functions-image",
+                "image_full": "azure-functions-image",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api-app",
+                "image": "azure-api-app-image",
+                "image_full": "azure-api-app-image",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/example/azure-cosmosdb/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/example/azure-storage/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/services/azure-api-app-service/Image/ContactList/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql"
+    ],
+    "servers": [
+        "node",
+        "express"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "node",
+        "microsoft/azure-functions-runtime",
+        "microsoft/windowsservercore"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 8
+}

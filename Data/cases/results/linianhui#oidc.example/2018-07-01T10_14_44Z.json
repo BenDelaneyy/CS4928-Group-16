@@ -1,0 +1,119 @@
+{
+    "url": "https://github.com/linianhui/oidc.example",
+    "name": "linianhui/oidc.example",
+    "dockers": [
+        {
+            "path": "/src/web.oauth2.client.aspnetcore/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.client.hybrid/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.server.ids4/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oidc.client.js/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/web.oauth2.resources.aspnetcore/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/aspnetcore",
+            "from_full": "microsoft/aspnetcore:2.0",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "nginx",
+        "microsoft/aspnetcore"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

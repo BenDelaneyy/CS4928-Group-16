@@ -1,0 +1,254 @@
+{
+    "url": "https://github.com/OpenLMIS/openlmis-ref-distro",
+    "name": "OpenLMIS/openlmis-ref-distro",
+    "dockers": [
+        {
+            "path": "/config/Dockerfile",
+            "cmd": "/bin/true",
+            "cmd_keywords": [
+                "bin",
+                "true"
+            ],
+            "from": "gliderlabs/alpine",
+            "from_full": "gliderlabs/alpine:3.4",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 12,
+        "services": [
+            {
+                "name": "consul",
+                "image": "gliderlabs/consul-server",
+                "image_full": "gliderlabs/consul-server:0.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "consul"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "nginx",
+                "image": "openlmis/nginx",
+                "image_full": "openlmis/nginx:1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consul"
+                ]
+            },
+            {
+                "name": "reference-ui",
+                "image": "openlmis/reference-ui",
+                "image_full": "openlmis/reference-ui:5.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consul"
+                ]
+            },
+            {
+                "name": "requisition",
+                "image": "openlmis/requisition",
+                "image_full": "openlmis/requisition:3.1.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "log"
+                ]
+            },
+            {
+                "name": "referencedata",
+                "image": "openlmis/referencedata",
+                "image_full": "openlmis/referencedata:5.0.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "log"
+                ]
+            },
+            {
+                "name": "auth",
+                "image": "openlmis/auth",
+                "image_full": "openlmis/auth:3.0.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "log"
+                ]
+            },
+            {
+                "name": "notification",
+                "image": "openlmis/notification",
+                "image_full": "openlmis/notification:3.0.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "log"
+                ]
+            },
+            {
+                "name": "fulfillment",
+                "image": "openlmis/fulfillment",
+                "image_full": "openlmis/fulfillment:3.0.2",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "log"
+                ]
+            },
+            {
+                "name": "db",
+                "image": "openlmis/postgres",
+                "image_full": "openlmis/postgres:9.6",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consul"
+                ]
+            },
+            {
+                "name": "log",
+                "image": "openlmis/rsyslog",
+                "image_full": "openlmis/rsyslog:1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "service-configuration",
+                    "consul"
+                ]
+            },
+            {
+                "name": "service-configuration",
+                "image": "./config",
+                "image_full": "./config",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ftp",
+                "image": "hauptmedia/proftpd",
+                "image_full": "hauptmedia/proftpd",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "consul"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 12,
+            "edges": 11,
+            "avg_deps_per_service": 0.9166666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 9,
+            "edges": 6,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 9
+    },
+    "files": [],
+    "dbs": [
+        "postgres"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [
+        "consul"
+    ],
+    "num_services": 12,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "gliderlabs/alpine"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 2
+}

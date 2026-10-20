@@ -1,0 +1,4459 @@
+{
+    "url": "https://github.com/FudanSELab/train-ticket",
+    "name": "FudanSELab/train-ticket",
+    "dockers": [
+        {
+            "path": "/ts-price-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-price-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "price"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-route-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-route-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "route"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-notification-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-notification-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "notification"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel2-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-travel2-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "travel"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-verification-code-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-verification-code-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "verification"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-assurance-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-assurance-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "assurance"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-seat-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-seat-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "seat"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-cancel-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-cancel-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "cancel"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-preserve-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-preserve-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "preserve"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticketinfo-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-ticketinfo-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "ticketinfo"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-contacts-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-contacts-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "contacts"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-order-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-order-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "order"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-security-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-security-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "security"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-voucher-service/Dockerfile",
+            "cmd": "python server.py",
+            "cmd_keywords": [
+                "python",
+                "server"
+            ],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "mkdir",
+                "app",
+                "pip",
+                "install",
+                "cache"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ui-dashboard/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openresty/openresty",
+            "from_full": "openresty/openresty:trusty",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-go/Dockerfile",
+            "cmd": "./app",
+            "cmd_keywords": [
+                "app"
+            ],
+            "from": "mrrm/web.go",
+            "from_full": "mrrm/web.go",
+            "keywords": [
+                "mkdir",
+                "app",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-1/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-1-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-3/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-3-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-5/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-5-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-jboss/Dockerfile",
+            "cmd": "/opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0",
+            "cmd_keywords": [
+                "opt",
+                "jboss",
+                "wildfly",
+                "bin",
+                "standalone"
+            ],
+            "from": "jboss/wildfly",
+            "from_full": "jboss/wildfly",
+            "keywords": [
+                "admin",
+                "opt",
+                "jboss",
+                "wildfly",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [
+                "jboss"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-python/Dockerfile",
+            "cmd": "python server.py",
+            "cmd_keywords": [
+                "python",
+                "server"
+            ],
+            "from": "erkekin/tornado",
+            "from_full": "erkekin/tornado",
+            "keywords": [
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-2/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-2-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-end/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-end-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/dashboard_x/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openresty/openresty",
+            "from_full": "openresty/openresty:trusty",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-collector/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-collector-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-nodejs/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node",
+            "keywords": [
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-6/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-6-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-4/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-4-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-config-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-config-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "config"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-travel-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-admin-travel-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "admin"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-order-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-admin-order-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "admin"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-payment-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-payment-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "payment"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-news-service/Dockerfile",
+            "cmd": "./app",
+            "cmd_keywords": [
+                "app"
+            ],
+            "from": "mrrm/web.go",
+            "from_full": "mrrm/web.go",
+            "keywords": [
+                "mkdir",
+                "app",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-inside-payment-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-inside-payment-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "inside"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker_build/k8s/echoserver/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "gcr.io/google_containers/echoserver",
+            "from_full": "gcr.io/google_containers/echoserver:1.4",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker_build/k8s/api_server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "gcr.io/google_containers/kube-apiserver-amd64",
+            "from_full": "gcr.io/google_containers/kube-apiserver-amd64:v1.7.3",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/rest-service-update/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-travel.service-update-0.1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-route-plan-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-route-plan-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "route"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-station-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-station-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "station"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-order-other-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-order-other-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "order"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-preserve-other-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-preserve-other-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "preserve"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-food-map-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-food-map-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "food"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node",
+            "keywords": [
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-rebook-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-rebook-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rebook"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-consign-price-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-consign-price-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "consign"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-basic-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-basic-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "basic"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-consign-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-consign-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "consign"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-user-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-admin-user-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "admin"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-train-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-train-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "train"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel-plan-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-travel-plan-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "travel"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-execute-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-execute-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "execute"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-travel-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "travel"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-1/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-1-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-3/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-3-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-2/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/rest-service-2-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "rest"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-basic-info-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-admin-basic-info-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "admin"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-route-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-admin-route-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "admin"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-food-service/Dockerfile",
+            "cmd": "java -Xmx200m -jar /app/ts-food-service-1.0.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "xmx",
+                "app",
+                "food"
+            ],
+            "from": "java",
+            "from_full": "java:8-jre",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 67,
+        "services": [
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-ui-dashboard",
+                "image": "ts/ts-ui-dashboard",
+                "image_full": "ts/ts-ui-dashboard",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-login-service",
+                "image": "ts/ts-login-service",
+                "image_full": "ts/ts-login-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-account-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-route-service",
+                "image": "ts/ts-route-service",
+                "image_full": "ts/ts-route-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-route-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-register-service",
+                "image": "ts/ts-register-service",
+                "image_full": "ts/ts-register-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-sso-service",
+                "image": "ts/ts-sso-service",
+                "image_full": "ts/ts-sso-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-verification-code-service",
+                "image": "ts/ts-verification-code-service",
+                "image_full": "ts/ts-verification-code-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-verification-code-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-contacts-service",
+                "image": "ts/ts-contacts-service",
+                "image_full": "ts/ts-contacts-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-contacts-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-order-service",
+                "image": "ts/ts-order-service",
+                "image_full": "ts/ts-order-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-order-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-order-other-service",
+                "image": "ts/ts-order-other-service",
+                "image_full": "ts/ts-order-other-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-order-other-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-config-service",
+                "image": "ts/ts-config-service",
+                "image_full": "ts/ts-config-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-config-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-station-service",
+                "image": "ts/ts-station-service",
+                "image_full": "ts/ts-station-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-station-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-train-service",
+                "image": "ts/ts-train-service",
+                "image_full": "ts/ts-train-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-train-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-travel-service",
+                "image": "ts/ts-travel-service",
+                "image_full": "ts/ts-travel-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-travel-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-travel2-service",
+                "image": "ts/ts-travel2-service",
+                "image_full": "ts/ts-travel2-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-travel2-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-preserve-service",
+                "image": "ts/ts-preserve-service",
+                "image_full": "ts/ts-preserve-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-preserve-other-service",
+                "image": "ts/ts-preserve-other-service",
+                "image_full": "ts/ts-preserve-other-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-basic-service",
+                "image": "ts/ts-basic-service",
+                "image_full": "ts/ts-basic-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-ticketinfo-service",
+                "image": "ts/ts-ticketinfo-service",
+                "image_full": "ts/ts-ticketinfo-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-price-service",
+                "image": "ts/ts-price-service",
+                "image_full": "ts/ts-price-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-price-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-notification-service",
+                "image": "ts/ts-notification-service",
+                "image_full": "ts/ts-notification-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-security-service",
+                "image": "ts/ts-security-service",
+                "image_full": "ts/ts-security-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-security-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-inside-payment-service",
+                "image": "ts/ts-inside-payment-service",
+                "image_full": "ts/ts-inside-payment-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-inside-payment-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-execute-service",
+                "image": "ts/ts-execute-service",
+                "image_full": "ts/ts-execute-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-payment-service",
+                "image": "ts/ts-payment-service",
+                "image_full": "ts/ts-payment-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-payment-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-rebook-service",
+                "image": "ts/ts-rebook-service",
+                "image_full": "ts/ts-rebook-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-rebook-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-cancel-service",
+                "image": "ts/ts-cancel-service",
+                "image_full": "ts/ts-cancel-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-assurance-service",
+                "image": "ts/ts-assurance-service",
+                "image_full": "ts/ts-assurance-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-assurance-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-seat-service",
+                "image": "ts/ts-seat-service",
+                "image_full": "ts/ts-seat-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-travel-plan-service",
+                "image": "ts/ts-travel-plan-service",
+                "image_full": "ts/ts-travel-plan-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-ticket-office-service",
+                "image": "ts/ts-ticket-office-service",
+                "image_full": "ts/ts-ticket-office-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-ticket-office-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-news-service",
+                "image": "ts/ts-news-service",
+                "image_full": "ts/ts-news-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-news-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-voucher-mysql",
+                "image": "mysql",
+                "image_full": "mysql",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-voucher-service",
+                "image": "ts/ts-voucher-service",
+                "image_full": "ts/ts-voucher-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ts-voucher-mysql"
+                ]
+            },
+            {
+                "name": "ts-food-map-service",
+                "image": "ts/ts-food-map-service",
+                "image_full": "ts/ts-food-map-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-food-map-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-route-plan-service",
+                "image": "ts/ts-route-plan-service",
+                "image_full": "ts/ts-route-plan-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-food-service",
+                "image": "ts/ts-food-service",
+                "image_full": "ts/ts-food-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-consign-service",
+                "image": "ts/ts-consign-service",
+                "image_full": "ts/ts-consign-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-consign-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-consign-price-service",
+                "image": "ts/ts-consign-price-service",
+                "image_full": "ts/ts-consign-price-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-consign-price-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-food-mongo",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-admin-basic-info-service",
+                "image": "ts/ts-admin-basic-info-service",
+                "image_full": "ts/ts-admin-basic-info-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-admin-order-service",
+                "image": "ts/ts-admin-order-service",
+                "image_full": "ts/ts-admin-order-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-admin-route-service",
+                "image": "ts/ts-admin-route-service",
+                "image_full": "ts/ts-admin-route-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-admin-travel-service",
+                "image": "ts/ts-admin-travel-service",
+                "image_full": "ts/ts-admin-travel-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ts-admin-user-service",
+                "image": "ts/ts-admin-user-service",
+                "image_full": "ts/ts-admin-user-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 25,
+            "names": [
+                "mongo",
+                "mysql",
+                "redis"
+            ],
+            "services": [
+                "redis",
+                "ts-account-mongo",
+                "ts-route-mongo",
+                "ts-verification-code-mongo",
+                "ts-contacts-mongo",
+                "ts-order-mongo",
+                "ts-order-other-mongo",
+                "ts-config-mongo",
+                "ts-station-mongo",
+                "ts-train-mongo",
+                "ts-travel-mongo",
+                "ts-travel2-mongo",
+                "ts-price-mongo",
+                "ts-security-mongo",
+                "ts-inside-payment-mongo",
+                "ts-payment-mongo",
+                "ts-rebook-mongo",
+                "ts-assurance-mongo",
+                "ts-ticket-office-mongo",
+                "ts-news-mongo",
+                "ts-voucher-mysql",
+                "ts-food-map-mongo",
+                "ts-consign-mongo",
+                "ts-consign-price-mongo",
+                "ts-food-mongo"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 67,
+            "edges": 1,
+            "avg_deps_per_service": 0.014925373134328358,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 42,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 42
+    },
+    "files": [
+        {
+            "path": "/ts-voucher-service/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/akka-quickstart-java/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/android_client/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/android_client/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/android_client/app/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Json2Shiviz/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Json2Shiviz/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Json2Shiviz/bin/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Json2Shiviz/bin/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services-analysis/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services-analysis/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "monitoring"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/ts-price-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-route-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-notification-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel2-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-verification-code-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ui-test/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-assurance-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-seat-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/akka-quickstart-java/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-cancel-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-preserve-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticketinfo-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-contacts-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-order-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-security-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "monitoring"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-1/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-3/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-5/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-2/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-end/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-collector/pom.xml",
+            "dbs": [
+                "sql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "avro"
+            ]
+        },
+        {
+            "path": "/1-services/rest-service-6/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-4/pom.xml",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-config-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-travel-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spring-transaction-producer/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "artemis",
+                "activemq"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-order-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-common/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-payment-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-inside-payment-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/rest-service-update/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-route-plan-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/spring-transaction-consumer/pom.xml",
+            "dbs": [
+                "hsqldb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-station-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-order-other-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ms-monitoring-core/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "monitoring"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/ts-preserve-other-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-food-map-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-rebook-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-consign-price-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-basic-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-consign-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-user-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/sample-test-1/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-train-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel-plan-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-execute-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-travel-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [
+                "monitoring"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-1/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-3/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/kubernetes-services/rest-service-2/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-basic-info-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-admin-route-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-food-service/pom.xml",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/1-services/rest-service-nodejs/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/package.json",
+            "dbs": [
+                "mongo"
+            ],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mkdirp/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/is-buffer/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [
+                "zuul"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/acorn/package.json",
+            "dbs": [
+                "max"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/serve-static/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/setprototypeof/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/fs/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/lazy-cache/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/destroy/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mime-db/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/semver/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/commander/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/basic-auth/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/iconv-lite/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mongo/package.json",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/express/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/express/node_modules/qs/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/optimist/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/array-flatten/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/character-parser/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mime-types/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/jstransformer/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/path-to-regexp/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/merge-descriptors/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/decamelize/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/negotiator/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/content-type/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/resolve-from/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/vary/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/amdefine/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/window-size/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/minimist/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/cookie/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/is-promise/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/css-stringify/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/bson/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/bson/browser_build/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/debug/package.json",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/body-parser/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/bytes/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/methods/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/yargs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/proxy-addr/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/forwarded/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/wordwrap/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/uglify-js/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/uglify-js/node_modules/source-map/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/camelcase/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/accepts/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/string_decoder/package.json",
+            "dbs": [
+                "foundation"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/statuses/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/with/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/with/node_modules/acorn/package.json",
+            "dbs": [
+                "max"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/unpipe/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/readable-stream/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [
+                "zuul"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/source-map/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/process-nextick-args/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/finalhandler/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/range-parser/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/css/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/send/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/ee-first/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/serve-favicon/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/longest/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/content-disposition/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/cookie-signature/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/utils-merge/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/void-elements/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/util-deprecate/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/graceful-readlink/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/buffer-shims/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/qs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mongodb/package.json",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/clean-css/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/clean-css/node_modules/commander/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/etag/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/asap/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/repeat-string/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/raw-body/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mongodb-core/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/safe-buffer/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [
+                "zuul"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/morgan/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/parseurl/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/on-headers/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/http-errors/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/jade/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/promise/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/isarray/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/fresh/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/transformers/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/transformers/node_modules/is-promise/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/transformers/node_modules/uglify-js/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/transformers/node_modules/source-map/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/transformers/node_modules/promise/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/css-parse/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/align-text/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/encodeurl/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/es6-promise/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/core-util-is/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/escape-html/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/on-finished/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/ms/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/center-align/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/ipaddr.js/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/uglify-to-browserify/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/cookie-parser/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/depd/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/type-is/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/kind-of/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/mime/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/right-align/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/inherits/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/media-typer/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/acorn-globals/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/constantinople/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/require_optional/package.json",
+            "dbs": [
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/require_optional/test/nestedTest/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/cliui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ts-ticket-office-service/node_modules/cliui/node_modules/wordwrap/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo",
+        "foundation",
+        "sql",
+        "mysql",
+        "redis",
+        "max"
+    ],
+    "servers": [
+        "node",
+        "jboss",
+        "spring",
+        "express"
+    ],
+    "buses": [
+        "artemis",
+        "amqp",
+        "mqtt",
+        "kafka",
+        "activemq"
+    ],
+    "langs": [
+        "python",
+        "java"
+    ],
+    "gates": [
+        "nginx",
+        "zuul"
+    ],
+    "monitors": [
+        "monitoring"
+    ],
+    "discos": [
+        "avro"
+    ],
+    "num_services": 67,
+    "shared_dbs": false,
+    "num_dockers": 58,
+    "images": [
+        "gcr.io/google_containers/kube-apiserver-amd64",
+        "openresty/openresty",
+        "python",
+        "erkekin/tornado",
+        "mrrm/web.go",
+        "gcr.io/google_containers/echoserver",
+        "node",
+        "java",
+        "jboss/wildfly"
+    ],
+    "num_dbs": 6,
+    "num_servers": 4,
+    "num_buses": 5,
+    "num_langs": 2,
+    "num_gates": 2,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 247
+}

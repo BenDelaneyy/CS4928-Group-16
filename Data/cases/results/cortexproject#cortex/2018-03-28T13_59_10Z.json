@@ -1,0 +1,350 @@
+{
+    "url": "https://github.com/cortexproject/cortex",
+    "name": "cortexproject/cortex",
+    "dockers": [
+        {
+            "path": "/cmd/distributor/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/querier/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/configs/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/lite/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/ruler/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/table-manager/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/alertmanager/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/cmd/ingester/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "quay.io/prometheus/busybox",
+            "from_full": "quay.io/prometheus/busybox:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/tools/build/haskell/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "fpco/stack-build",
+            "from_full": "fpco/stack-build:lts-8.9",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tools/build/golang/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.9.2-stretch",
+            "keywords": [
+                "github",
+                "com",
+                "protoc",
+                "protobuf",
+                "shfmt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/tools/socks/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "gliderlabs/alpine",
+            "from_full": "gliderlabs/alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build-image/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.9.3-stretch",
+            "keywords": [
+                "github",
+                "com",
+                "shfmt",
+                "protobuf",
+                "apt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/prometheus/alertmanager/ui/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:6.10",
+            "keywords": [
+                "elm",
+                "npm",
+                "install",
+                "format",
+                "alpha"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/tools/scheduler/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/blang/semver/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node",
+        "busybox",
+        "flask"
+    ],
+    "buses": [],
+    "langs": [
+        "golang",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 14,
+    "images": [
+        "ubuntu",
+        "gliderlabs/alpine",
+        "quay.io/prometheus/busybox",
+        "fpco/stack-build",
+        "golang",
+        "node"
+    ],
+    "num_dbs": 0,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 0,
+    "num_files": 17
+}

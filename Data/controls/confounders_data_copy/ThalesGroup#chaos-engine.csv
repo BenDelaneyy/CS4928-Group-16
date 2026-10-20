@@ -1,0 +1,10 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Java,902345,0,19739,17021,405,2313,513,198,0,[]
+Shell,1602,0,68,18,39,11,4,10,0,[]
+XML,9605,0,265,239,6,20,0,6,0,[]
+YAML,6385,0,260,242,4,14,0,6,0,[]
+Markdown,5328,0,119,68,0,51,0,2,0,[]
+Dockerfile,778,0,20,17,0,3,1,1,0,[]
+Properties File,66,0,3,3,0,0,0,1,0,[]
+gitignore,573,0,36,22,4,10,0,1,0,[]
+Total,926682,0,20510,17630,458,2422,518,225,0,

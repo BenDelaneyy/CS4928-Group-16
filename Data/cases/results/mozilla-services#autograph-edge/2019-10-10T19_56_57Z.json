@@ -1,0 +1,156 @@
+{
+    "url": "https://github.com/mozilla-services/autograph-edge",
+    "name": "mozilla-services/autograph-edge",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "$GOPATH/bin/autograph-edge",
+            "cmd_keywords": [
+                "gopath",
+                "bin",
+                "autograph",
+                "edge"
+            ],
+            "from": "golang",
+            "from_full": "golang:1.13.1-buster",
+            "keywords": [
+                "apt",
+                "get",
+                "app",
+                "gid",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/integration_test/Dockerfile",
+            "cmd": "/bin/bash -c '/app/sign_test_apk.sh edge 8080 && /app/sign_test_xpi.sh edge 8080 && /app/verify_apk.sh /tmp/signed.apk'",
+            "cmd_keywords": [
+                "app",
+                "apk",
+                "sign",
+                "test",
+                "edge"
+            ],
+            "from": "circleci/android",
+            "from_full": "circleci/android:api-25-node8-alpha",
+            "keywords": [
+                "sudo",
+                "app",
+                "apt",
+                "get",
+                "gid"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "app",
+                "image": "mozilla/autograph",
+                "image_full": "mozilla/autograph",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "edge",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "app"
+                ]
+            },
+            {
+                "name": "test",
+                "image": "./integration_test",
+                "image_full": "./integration_test",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "edge"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "golang",
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "golang",
+        "circleci/android"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

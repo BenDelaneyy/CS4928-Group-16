@@ -1,0 +1,582 @@
+{
+    "url": "https://github.com/appwrite/appwrite",
+    "name": "appwrite/appwrite",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "php app/http.php -dopcache.preload=opcache.preload=/usr/src/code/app/preload.php",
+            "cmd_keywords": [
+                "php",
+                "preload",
+                "app",
+                "http",
+                "dopcache"
+            ],
+            "from": "php",
+            "from_full": "php:7.4-cli-alpine",
+            "keywords": [
+                "usr",
+                "chmod",
+                "local",
+                "storage",
+                "bin"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/deno-1.5/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "hayd/deno",
+            "from_full": "hayd/deno:alpine-1.5.0",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [
+                "deno"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/ruby-2.7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ruby",
+            "from_full": "ruby:2.7-alpine",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "ruby"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/python-3.8/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3.8-alpine",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/php-7.4/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "php",
+            "from_full": "php:7.4-cli-alpine",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/node-14.5/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:14.5-alpine",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/deno-1.2/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "hayd/deno",
+            "from_full": "hayd/deno:alpine-1.2.0",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [
+                "deno"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/environments/php-8.0/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "php",
+            "from_full": "php:8.0-cli-alpine",
+            "keywords": [
+                "apk",
+                "add",
+                "tar",
+                "mkdir",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/resources/docker/mariadb/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mariadb",
+            "from_full": "mariadb:10.2",
+            "keywords": [
+                "mysql",
+                "chown",
+                "docker",
+                "entrypoint",
+                "initdb"
+            ],
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 18,
+        "services": [
+            {
+                "name": "traefik",
+                "image": "traefik",
+                "image_full": "traefik:2.3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "traefik"
+                ],
+                "depends_on": [
+                    "appwrite"
+                ]
+            },
+            {
+                "name": "appwrite",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mariadb",
+                    "redis",
+                    "clamav",
+                    "influxdb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-usage",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "telegraf"
+                ]
+            },
+            {
+                "name": "appwrite-worker-audits",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-webhooks",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb",
+                    "request-catcher"
+                ]
+            },
+            {
+                "name": "appwrite-worker-tasks",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-deletes",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-certificates",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-functions",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "mariadb"
+                ]
+            },
+            {
+                "name": "appwrite-worker-mails",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "maildev"
+                ]
+            },
+            {
+                "name": "appwrite-schedule",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "mariadb",
+                "image": "appwrite/mariadb",
+                "image_full": "appwrite/mariadb:1.2.0",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:6.0-alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "clamav",
+                "image": "appwrite/clamav",
+                "image_full": "appwrite/clamav:1.2.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "influxdb",
+                "image": "influxdb",
+                "image_full": "influxdb:1.8-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "influxdb"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "telegraf",
+                "image": "appwrite/telegraf",
+                "image_full": "appwrite/telegraf:1.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "maildev",
+                "image": "djfarrelly/maildev",
+                "image_full": "djfarrelly/maildev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "request-catcher",
+                "image": "smarterdm/http-request-catcher",
+                "image_full": "smarterdm/http-request-catcher",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "redis",
+                "mariadb"
+            ],
+            "services": [
+                "mariadb",
+                "redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 18,
+            "edges": 23,
+            "avg_deps_per_service": 1.2777777777777777,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 14,
+            "edges": 4,
+            "avg_deps_per_service": 0.2857142857142857,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 14
+    },
+    "files": [
+        {
+            "path": "/tests/resources/functions/python/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/resources/functions/node/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "node",
+        "deno"
+    ],
+    "buses": [],
+    "langs": [
+        "ruby",
+        "php",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [
+        "influxdb"
+    ],
+    "discos": [
+        "traefik"
+    ],
+    "num_services": 18,
+    "shared_dbs": true,
+    "num_dockers": 9,
+    "images": [
+        "hayd/deno",
+        "node",
+        "mariadb",
+        "php",
+        "python",
+        "ruby"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 3,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 13
+}

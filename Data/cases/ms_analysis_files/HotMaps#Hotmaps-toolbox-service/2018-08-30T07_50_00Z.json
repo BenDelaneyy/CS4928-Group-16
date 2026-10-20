@@ -1,0 +1,260 @@
+{
+    "url": "https://github.com/HotMaps/Hotmaps-toolbox-service",
+    "name": "HotMaps/Hotmaps-toolbox-service",
+    "dockers": [
+        {
+            "path": "/api/dockerfiles/Dockerfile",
+            "cmd": "/usr/bin/supervisord",
+            "cmd_keywords": [
+                "usr",
+                "bin",
+                "supervisord"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "dev",
+                "pip"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "nginx",
+                "image": "./nginx-proxy/",
+                "image_full": "./nginx-proxy/",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dockergen",
+                "image": "jwilder/docker-gen",
+                "image_full": "jwilder/docker-gen:0.7.3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "nginx"
+                ]
+            },
+            {
+                "name": "letsencrypt",
+                "image": "jrcs/letsencrypt-nginx-proxy-companion",
+                "image_full": "jrcs/letsencrypt-nginx-proxy-companion",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "nginx",
+                    "dockergen"
+                ]
+            },
+            {
+                "name": "frontend",
+                "image": "toolbox-client-tmp",
+                "image_full": "toolbox-client-tmp",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "geoserver",
+                "image": "hotmaps-geoserver-dev3",
+                "image_full": "hotmaps-geoserver-dev3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbit",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "api",
+                "image": "./HotMaps-toolbox-service/api",
+                "image_full": "./HotMaps-toolbox-service/api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis"
+                ]
+            },
+            {
+                "name": "monitor",
+                "image": "./HotMaps-toolbox-service/api",
+                "image_full": "./HotMaps-toolbox-service/api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "redis",
+                    "rabbit"
+                ]
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "calculation_module_test",
+                "image": "./calculation_module/base_calculation_module/cm",
+                "image_full": "./calculation_module/base_calculation_module/cm",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "district_heating_potential'",
+                "image": "./calculation_module/dh_potential/cm",
+                "image_full": "./calculation_module/dh_potential/cm",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 6,
+            "avg_deps_per_service": 0.5454545454545454,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 7,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 7
+    },
+    "files": [
+        {
+            "path": "/api/requirements/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "flask"
+    ],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [
+        "gcc"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 11,
+    "shared_dbs": true,
+    "num_dockers": 1,
+    "images": [
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

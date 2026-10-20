@@ -1,0 +1,207 @@
+{
+    "url": "https://github.com/sorry-cypress/sorry-cypress",
+    "name": "sorry-cypress/sorry-cypress",
+    "dockers": [
+        {
+            "path": "/packages/api/Dockerfile",
+            "cmd": "node packages/api/dist",
+            "cmd_keywords": [
+                "node",
+                "packages",
+                "api",
+                "dist"
+            ],
+            "from": "node",
+            "from_full": "node:14-alpine",
+            "keywords": [
+                "yarn",
+                "workspace",
+                "sorry",
+                "cypress",
+                "build"
+            ],
+            "dbs": [
+                "mongo"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/dashboard/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:1-alpine",
+            "keywords": [
+                "yarn",
+                "workspace",
+                "sorry",
+                "cypress",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/director/Dockerfile",
+            "cmd": "node packages/director/dist",
+            "cmd_keywords": [
+                "node",
+                "packages",
+                "director",
+                "dist"
+            ],
+            "from": "node",
+            "from_full": "node:14-alpine",
+            "keywords": [
+                "yarn",
+                "workspace",
+                "sorry",
+                "cypress",
+                "build"
+            ],
+            "dbs": [
+                "mongo"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/api/package.json",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/mongo/package.json",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/dashboard/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/director/package.json",
+            "dbs": [
+                "mongo",
+                "redis"
+            ],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/packages/common/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo",
+        "redis"
+    ],
+    "servers": [
+        "express",
+        "node"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 3,
+    "images": [
+        "nginx",
+        "node"
+    ],
+    "num_dbs": 2,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 10
+}

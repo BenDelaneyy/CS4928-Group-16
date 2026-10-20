@@ -1,0 +1,196 @@
+{
+    "url": "https://github.com/dice-group/Basilisk",
+    "name": "dice-group/Basilisk",
+    "dockers": [
+        {
+            "path": "/repository-service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:17-jdk-alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/benchmark-service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:17-jdk-alpine",
+            "keywords": [
+                "iguana",
+                "zip",
+                "apk",
+                "cache",
+                "add"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "jobs-managing-service",
+                "image": "jobs-managing-service",
+                "image_full": "jobs-managing-service:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "benchmark-service",
+                "image": "benchmark-service",
+                "image_full": "benchmark-service:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "fuseki"
+                ]
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:management",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "fuseki",
+                "image": "fuseki",
+                "image_full": "fuseki",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/repository-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/benchmark-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/commons/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "spring"
+    ],
+    "buses": [
+        "rabbitmq",
+        "amqp"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "openjdk"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 2,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

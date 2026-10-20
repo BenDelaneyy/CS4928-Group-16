@@ -1,0 +1,11 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Scala,162257,0,3945,2968,168,809,139,58,0,[]
+JSON,1426,0,100,96,0,4,0,8,0,[]
+Markdown,9191,0,259,191,0,68,0,6,0,[]
+Docker ignore,33,0,3,3,0,0,0,1,0,[]
+Dockerfile,559,0,29,17,7,5,4,1,0,[]
+License,1162,0,21,17,0,4,0,1,0,[]
+XML,318,0,11,10,0,1,0,1,0,[]
+YAML,1067,0,38,28,4,6,0,1,0,[]
+gitignore,1383,0,85,43,22,20,0,1,0,[]
+Total,177396,0,4491,3373,201,917,143,78,0,

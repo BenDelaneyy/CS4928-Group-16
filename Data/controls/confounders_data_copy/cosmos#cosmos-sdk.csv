@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Go,46019,0,1874,1467,165,242,220,17,0,[]
+JSON,183,0,7,7,0,0,0,1,0,[]
+License,11386,0,204,171,0,33,0,1,0,[]
+Makefile,310,0,16,11,0,5,0,1,0,[]
+gitignore,6,0,1,1,0,0,0,1,0,[]
+Total,57904,0,2102,1657,165,280,220,21,0,

@@ -1,0 +1,177 @@
+{
+    "url": "https://github.com/FAForever/faf-stack",
+    "name": "FAForever/faf-stack",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "faf-db",
+                "image": "git://github.com/FAForever/db.git#feature/docker-improvement",
+                "image_full": "git://github.com/FAForever/db.git#feature/docker-improvement",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-server",
+                "image": "micheljung/faf-server",
+                "image_full": "micheljung/faf-server:0.9.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-api",
+                "image": "micheljung/faf-api",
+                "image_full": "micheljung/faf-api:0.2.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-website",
+                "image": "git://github.com/FAForever/website.git",
+                "image_full": "git://github.com/FAForever/website.git",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "faf-db"
+                ]
+            },
+            {
+                "name": "faf-spring-boot-admin",
+                "image": "aetas/spring-boot-admin-docker",
+                "image_full": "aetas/spring-boot-admin-docker:1.4.1",
+                "dbs": [],
+                "servers": [
+                    "spring"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-turn",
+                "image": "bprodoehl/turnserver",
+                "image_full": "bprodoehl/turnserver",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-influxdb",
+                "image": "influxdb",
+                "image_full": "influxdb:1.1.1-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "influxdb"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-telegraf",
+                "image": "telegraf",
+                "image_full": "telegraf:1.1.2-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "faf-grafana",
+                "image": "grafana/grafana",
+                "image_full": "grafana/grafana:4.1.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "grafana"
+                ],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 3,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 3,
+            "avg_deps_per_service": 0.5,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 6
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [
+        "spring"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [
+        "influxdb",
+        "grafana"
+    ],
+    "discos": [],
+    "num_services": 9,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 2,
+    "num_discos": 0,
+    "num_files": 1
+}

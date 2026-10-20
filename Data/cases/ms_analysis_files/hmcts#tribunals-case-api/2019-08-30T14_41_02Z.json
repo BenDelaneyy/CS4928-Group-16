@@ -1,0 +1,255 @@
+{
+    "url": "https://github.com/hmcts/tribunals-case-api",
+    "name": "hmcts/tribunals-case-api",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "tribunals-case-api.jar",
+            "cmd_keywords": [
+                "tribunals",
+                "case",
+                "api",
+                "jar"
+            ],
+            "from": "hmctspublic.azurecr.io/base/java",
+            "keywords": [],
+            "from_full": "hmctspublic.azurecr.io/base/java:openjdk-8-distroless-1.0",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 12,
+        "services": [
+            {
+                "name": "ccd-user-profile-api",
+                "image": "hmcts/ccd-user-profile-api",
+                "image_full": "hmcts/ccd-user-profile-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ccd-user-profile-database"
+                ]
+            },
+            {
+                "name": "ccd-user-profile-database",
+                "image": "docker.artifactory.reform.hmcts.net/ccd/ccd-user-profile-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/ccd/ccd-user-profile-database:${BRANCH:-master}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ccd-definition-store-api",
+                "image": "hmcts/ccd-definition-store-api",
+                "image_full": "hmcts/ccd-definition-store-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ccd-definition-store-database",
+                    "ccd-user-profile-api"
+                ]
+            },
+            {
+                "name": "ccd-definition-store-database",
+                "image": "docker.artifactory.reform.hmcts.net/ccd/ccd-definition-store-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/ccd/ccd-definition-store-database:${BRANCH:-master}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ccd-data-store-api",
+                "image": "hmcts/ccd-data-store-api",
+                "image_full": "hmcts/ccd-data-store-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ccd-data-store-database",
+                    "ccd-user-profile-api",
+                    "ccd-definition-store-api"
+                ]
+            },
+            {
+                "name": "ccd-data-store-database",
+                "image": "docker.artifactory.reform.hmcts.net/ccd/ccd-data-store-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/ccd/ccd-data-store-database:${BRANCH:-master}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "idam-api",
+                "image": "docker.artifactory.reform.hmcts.net/auth/idam-api",
+                "image_full": "docker.artifactory.reform.hmcts.net/auth/idam-api:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "idam-database",
+                    "smtp-server"
+                ]
+            },
+            {
+                "name": "idam-database",
+                "image": "docker.artifactory.reform.hmcts.net/auth/idam-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/auth/idam-database:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "service-auth-provider-api",
+                "image": "hmcts/service-auth-provider-app",
+                "image_full": "hmcts/service-auth-provider-app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "smtp-server",
+                "image": "mailhog/mailhog",
+                "image_full": "mailhog/mailhog",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "pdf-service-api",
+                "image": "docker.artifactory.reform.hmcts.net/reform/pdf-service-api",
+                "image_full": "docker.artifactory.reform.hmcts.net/reform/pdf-service-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "tribunals-case-api",
+                "image": "hmcts/tribunals-case-api",
+                "image_full": "hmcts/tribunals-case-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "idam-api",
+                    "service-auth-provider-api",
+                    "pdf-service-api",
+                    "smtp-server",
+                    "ccd-data-store-api"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 12,
+            "edges": 13,
+            "avg_deps_per_service": 1.0833333333333333,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "dep_graph_micro": {
+            "nodes": 12,
+            "edges": 13,
+            "avg_deps_per_service": 1.0833333333333333,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "number_of_microservices": 12
+    },
+    "files": [
+        {
+            "path": "/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "spring"
+    ],
+    "buses": [],
+    "langs": [
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 12,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "hmctspublic.azurecr.io/base/java"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

@@ -1,0 +1,233 @@
+{
+    "url": "https://github.com/daggerok/streaming-file-server",
+    "name": "daggerok/streaming-file-server",
+    "dockers": [
+        {
+            "path": "/docker-modules/all/file-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8u131-jre-alpine",
+            "keywords": [
+                "app",
+                "bash",
+                "group",
+                "home",
+                "apk"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-modules/all/file-items-service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8u131-jre-alpine",
+            "keywords": [
+                "app",
+                "bash",
+                "group",
+                "apk",
+                "cache"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-modules/all/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "postgres",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "file-items-service",
+                "image": "127.0.0.1",
+                "image_full": "127.0.0.1:5000/file-items-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "file-server",
+                "image": "127.0.0.1",
+                "image_full": "127.0.0.1:5000/file-server",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "file-items-service"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [
+                "postgres"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/application-modules/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/application-modules/file-server/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/application-modules/file-items-service/build.gradle",
+            "dbs": [
+                "postgresql",
+                "postgres"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-modules/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docs/build.gradle",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgresql",
+        "postgres"
+    ],
+    "servers": [
+        "node",
+        "spring",
+        "busybox"
+    ],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "openjdk"
+    ],
+    "num_dbs": 2,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 10
+}

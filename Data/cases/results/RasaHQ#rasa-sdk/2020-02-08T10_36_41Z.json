@@ -1,0 +1,143 @@
+{
+    "url": "https://github.com/RasaHQ/rasa-sdk",
+    "name": "RasaHQ/rasa-sdk",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "start --actions actions.actions",
+            "cmd_keywords": [
+                "actions",
+                "start"
+            ],
+            "from": "python",
+            "from_full": "python:3.6-slim",
+            "keywords": [
+                "opt",
+                "install",
+                "poetry",
+                "venv",
+                "rasa"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/examples/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "app",
+                "image": "app",
+                "image_full": "app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rasa"
+                ]
+            },
+            {
+                "name": "rasa",
+                "image": "rasa/rasa",
+                "image_full": "rasa/rasa",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "mongo",
+                "image": "mongo",
+                "image_full": "mongo:3.7-jessie",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "duckling",
+                "image": "rasa/duckling",
+                "image_full": "rasa/duckling:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "mongo"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 2,
+            "avg_deps_per_service": 0.5,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "python"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

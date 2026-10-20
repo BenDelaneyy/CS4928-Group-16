@@ -1,0 +1,390 @@
+{
+    "url": "https://github.com/nymtech/nym",
+    "name": "nymtech/nym",
+    "dockers": [
+        {
+            "path": "/docker/wallet-web/Dockerfile",
+            "cmd": "/entrypoint.sh",
+            "cmd_keywords": [
+                "entrypoint"
+            ],
+            "from": "node",
+            "from_full": "node",
+            "keywords": [],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/validator/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:20.04",
+            "keywords": [
+                "apt",
+                "update",
+                "install",
+                "git",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/mixnet_contract/Dockerfile",
+            "cmd": "cd nym/contracts/mixnet && RUSTFLAGS='-C link-arg=-s' cargo build --release --target wasm32-unknown-unknown",
+            "cmd_keywords": [
+                "unknown",
+                "nym",
+                "contracts",
+                "mixnet",
+                "rustflags"
+            ],
+            "from": "rust",
+            "from_full": "rust",
+            "keywords": [
+                "unknown",
+                "rustup",
+                "target",
+                "add",
+                "wasm"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "rust"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/typescript_client/Dockerfile",
+            "cmd": "/entrypoint.sh",
+            "cmd_keywords": [
+                "entrypoint"
+            ],
+            "from": "node",
+            "from_full": "node",
+            "keywords": [
+                "apt",
+                "update",
+                "install",
+                "netcat"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/network_explorer/Dockerfile",
+            "cmd": "yarn dev",
+            "cmd_keywords": [
+                "yarn",
+                "dev"
+            ],
+            "from": "node",
+            "from_full": "node:14",
+            "keywords": [
+                "git",
+                "clone",
+                "https",
+                "oauth",
+                "personal"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/mnemonic_echo/Dockerfile",
+            "cmd": "/entrypoint.sh",
+            "cmd_keywords": [
+                "entrypoint"
+            ],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 9,
+        "services": [
+            {
+                "name": "genesis_validator",
+                "image": "validator",
+                "image_full": "validator:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "secondary_validator",
+                "image": "validator",
+                "image_full": "validator:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "genesis_validator"
+                ]
+            },
+            {
+                "name": "mixnet_contract",
+                "image": "contract",
+                "image_full": "contract:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "contract_uploader",
+                "image": "contract_uploader",
+                "image_full": "contract_uploader:typescript",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "genesis_validator",
+                    "secondary_validator",
+                    "mixnet_contract"
+                ]
+            },
+            {
+                "name": "wallet",
+                "image": "wallet",
+                "image_full": "wallet:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "contract_uploader"
+                ]
+            },
+            {
+                "name": "mnemonic_echo",
+                "image": "mnemonic_echo",
+                "image_full": "mnemonic_echo:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "genesis_validator"
+                ]
+            },
+            {
+                "name": "mongo",
+                "image": "mongo",
+                "image_full": "mongo:latest",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "block_explorer",
+                "image": "block_explorer",
+                "image_full": "block_explorer:v0.41.x-7",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mongo"
+                ]
+            },
+            {
+                "name": "network_explorer",
+                "image": "network_explorer",
+                "image_full": "network_explorer:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "genesis_validator",
+                    "block_explorer"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "mongo"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 9,
+            "edges": 9,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 8,
+            "edges": 8,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "number_of_microservices": 8
+    },
+    "files": [
+        {
+            "path": "/wallet-web/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/webassembly/react-example/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/webassembly/js-example/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/native/examples/js-examples/websocket/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/clients/validator/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/typescript_client/upload_contract/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "rust"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 9,
+    "shared_dbs": false,
+    "num_dockers": 6,
+    "images": [
+        "node",
+        "ubuntu",
+        "alpine",
+        "rust"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 13
+}

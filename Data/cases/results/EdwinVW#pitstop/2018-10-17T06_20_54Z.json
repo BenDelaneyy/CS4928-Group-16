@@ -1,0 +1,514 @@
+{
+    "url": "https://github.com/EdwinVW/pitstop",
+    "name": "EdwinVW/pitstop",
+    "dockers": [
+        {
+            "path": "/src/InvoiceService/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/WebApp/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime",
+            "keywords": [
+                "nodejs",
+                "tar",
+                "node",
+                "npm",
+                "https"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/VehicleManagementAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/AuditlogService/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/CustomerManagementAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/APIGateway/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/WorkshopManagementAPI/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/WorkshopManagementEventHandler/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/NotificationService/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/TimeService/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-runtime",
+            "keywords": [
+                "dotnet",
+                "https",
+                "api",
+                "org",
+                "index"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/src/docker-compose.yml",
+        "num_services": 15,
+        "services": [
+            {
+                "name": "discoveryservice",
+                "image": "consul",
+                "image_full": "consul:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "consul"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "sqlserver",
+                "image": "microsoft/mssql-server-linux",
+                "image_full": "microsoft/mssql-server-linux:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3-management",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mailserver",
+                "image": "djfarrelly/maildev",
+                "image_full": "djfarrelly/maildev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "logserver",
+                "image": "datalust/seq",
+                "image_full": "datalust/seq:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vehiclemanagementapi",
+                "image": "pitstop/vehiclemanagementapi",
+                "image_full": "pitstop/vehiclemanagementapi:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "discoveryservice",
+                    "rabbitmq",
+                    "sqlserver"
+                ]
+            },
+            {
+                "name": "customermanagementapi",
+                "image": "pitstop/customermanagementapi",
+                "image_full": "pitstop/customermanagementapi:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "discoveryservice",
+                    "rabbitmq",
+                    "sqlserver"
+                ]
+            },
+            {
+                "name": "workshopmanagementapi",
+                "image": "pitstop/workshopmanagementapi",
+                "image_full": "pitstop/workshopmanagementapi:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "discoveryservice",
+                    "rabbitmq",
+                    "sqlserver"
+                ]
+            },
+            {
+                "name": "apigateway",
+                "image": "pitstop/apigateway",
+                "image_full": "pitstop/apigateway:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "discoveryservice",
+                    "vehiclemanagementapi",
+                    "customermanagementapi",
+                    "workshopmanagementapi"
+                ]
+            },
+            {
+                "name": "auditlogservice",
+                "image": "pitstop/auditlogservice",
+                "image_full": "pitstop/auditlogservice:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "invoiceservice",
+                "image": "pitstop/invoiceservice",
+                "image_full": "pitstop/invoiceservice:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "sqlserver"
+                ]
+            },
+            {
+                "name": "notificationservice",
+                "image": "pitstop/notificationservice",
+                "image_full": "pitstop/notificationservice:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "sqlserver",
+                    "mailserver"
+                ]
+            },
+            {
+                "name": "timeservice",
+                "image": "pitstop/timeservice",
+                "image_full": "pitstop/timeservice:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "workshopmanagementeventhandler",
+                "image": "pitstop/workshopmanagementeventhandler",
+                "image_full": "pitstop/workshopmanagementeventhandler:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq",
+                    "sqlserver"
+                ]
+            },
+            {
+                "name": "webapp",
+                "image": "pitstop/webapp",
+                "image_full": "pitstop/webapp:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "apigateway"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 15,
+            "edges": 23,
+            "avg_deps_per_service": 1.5333333333333334,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 13,
+            "edges": 11,
+            "avg_deps_per_service": 0.8461538461538461,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "number_of_microservices": 13
+    },
+    "files": [
+        {
+            "path": "/src/WebApp/package.json",
+            "dbs": [],
+            "servers": [
+                "asp"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/WebApp/wwwroot/lib/bootstrap/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node",
+        "asp"
+    ],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "consul"
+    ],
+    "num_services": 15,
+    "shared_dbs": false,
+    "num_dockers": 10,
+    "images": [
+        "microsoft/dotnet"
+    ],
+    "num_dbs": 0,
+    "num_servers": 2,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 13
+}

@@ -1,0 +1,467 @@
+{
+    "url": "https://github.com/nquocnghia/microcalc",
+    "name": "nquocnghia/microcalc",
+    "dockers": [
+        {
+            "path": "/services/add/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:10-alpine",
+            "keywords": [
+                "app",
+                "node",
+                "mkdir",
+                "chown",
+                "npm"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/sub/Dockerfile",
+            "cmd": "php -S 0.0.0.0:8000 -t public",
+            "cmd_keywords": [
+                "php",
+                "public"
+            ],
+            "from": "php",
+            "from_full": "php:7-alpine",
+            "keywords": [
+                "composer",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/robot/Dockerfile",
+            "cmd": "robot --outputdir=/results tests.robot",
+            "cmd_keywords": [
+                "robot",
+                "outputdir",
+                "results",
+                "tests"
+            ],
+            "from": "python",
+            "from_full": "python:3-alpine",
+            "keywords": [
+                "requests",
+                "robotframework",
+                "pip",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/parser/Dockerfile",
+            "cmd": "java -jar /parser.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "parser"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "mvn",
+                "verify",
+                "clean",
+                "package"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/neg/Dockerfile",
+            "cmd": "dotnet /app/app.dll",
+            "cmd_keywords": [
+                "app",
+                "dotnet",
+                "dll"
+            ],
+            "from": "microsoft/dotnet",
+            "from_full": "microsoft/dotnet:2.1-aspnetcore-runtime-alpine",
+            "keywords": [
+                "dotnet",
+                "restore",
+                "publish",
+                "release",
+                "output"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/mod/Dockerfile",
+            "cmd": "java -jar /mod.jar",
+            "cmd_keywords": [
+                "jar",
+                "java",
+                "mod"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "mvn",
+                "verify",
+                "clean",
+                "package"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/mult/Dockerfile",
+            "cmd": "/usr/local/bin/mult",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "mult"
+            ],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "cgo",
+                "mod",
+                "download",
+                "enabled",
+                "goos"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/pow/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:10-alpine",
+            "keywords": [
+                "app",
+                "node",
+                "mkdir",
+                "chown",
+                "npm"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/div/Dockerfile",
+            "cmd": "python main.py",
+            "cmd_keywords": [
+                "python",
+                "main"
+            ],
+            "from": "python",
+            "from_full": "python:3-alpine",
+            "keywords": [
+                "pip",
+                "install",
+                "requirements",
+                "txt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "parser",
+                "image": "${IMAGE_PREFIX}-parser",
+                "image_full": "${IMAGE_PREFIX}-parser",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "add",
+                    "sub",
+                    "div",
+                    "mult",
+                    "neg",
+                    "pow",
+                    "mod"
+                ]
+            },
+            {
+                "name": "add",
+                "image": "${IMAGE_PREFIX}-add",
+                "image_full": "${IMAGE_PREFIX}-add",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sub",
+                "image": "${IMAGE_PREFIX}-sub",
+                "image_full": "${IMAGE_PREFIX}-sub",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "div",
+                "image": "${IMAGE_PREFIX}-div",
+                "image_full": "${IMAGE_PREFIX}-div",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mult",
+                "image": "${IMAGE_PREFIX}-mult",
+                "image_full": "${IMAGE_PREFIX}-mult",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "neg",
+                "image": "${IMAGE_PREFIX}-neg",
+                "image_full": "${IMAGE_PREFIX}-neg",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mult"
+                ]
+            },
+            {
+                "name": "pow",
+                "image": "${IMAGE_PREFIX}-pow",
+                "image_full": "${IMAGE_PREFIX}-pow",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mult"
+                ]
+            },
+            {
+                "name": "mod",
+                "image": "${IMAGE_PREFIX}-mod",
+                "image_full": "${IMAGE_PREFIX}-mod",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mult",
+                    "div",
+                    "sub"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 12,
+            "avg_deps_per_service": 1.5,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 8,
+            "edges": 12,
+            "avg_deps_per_service": 1.5,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 8
+    },
+    "files": [
+        {
+            "path": "/services/div/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/parser/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/mod/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/add/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/pow/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "express",
+        "node",
+        "flask",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [
+        "java",
+        "php",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": false,
+    "num_dockers": 9,
+    "images": [
+        "node",
+        "php",
+        "openjdk",
+        "python",
+        "alpine",
+        "microsoft/dotnet"
+    ],
+    "num_dbs": 0,
+    "num_servers": 4,
+    "num_buses": 0,
+    "num_langs": 3,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 15
+}

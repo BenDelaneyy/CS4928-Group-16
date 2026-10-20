@@ -1,0 +1,320 @@
+{
+    "url": "https://github.com/shopgate/connect-integration-sdk",
+    "name": "shopgate/connect-integration-sdk",
+    "dockers": [],
+    "structure": {
+        "path": "/tools/docker-compose.yml",
+        "num_services": 18,
+        "services": [
+            {
+                "name": "php56",
+                "image": "../",
+                "image_full": "../",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "php73",
+                "image": "../",
+                "image_full": "../",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "etcd",
+                "image": "elcolio/etcd",
+                "image_full": "elcolio/etcd",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "etcd"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "mysql",
+                "image": "mysql",
+                "image_full": "mysql:5.7",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "library/redis",
+                "image_full": "library/redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "auth",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/auth2",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/auth2:2018-02-12_48",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd",
+                    "redis"
+                ]
+            },
+            {
+                "name": "googlepubsub-emulator",
+                "image": "./dockerfiles",
+                "image_full": "./dockerfiles",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "omni-worker",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/worker",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/worker:v1.0.0-beta.11",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "omni-event-receiver",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/event-receiver",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/event-receiver:v1.0.0-beta.11",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "omni-merchant",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/merchant",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/merchant:v1.0.0-beta.14",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "omni-location",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/location",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/location:v1.0.0-alpha.46",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "omni-customer",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/customer",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/omni/customer:v1.0.0-alpha.30",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "order",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/order",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/omni/order:v1.0.0-beta.105",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "elasticsearch",
+                "image": "elasticsearch",
+                "image_full": "elasticsearch:6.8.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "catalog",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/catalog",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/service/catalog:v1.0.0-alpha.78",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "s3",
+                "image": "lphoward/fake-s3",
+                "image_full": "lphoward/fake-s3",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "import",
+                "image": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/import",
+                "image_full": "602824140852.dkr.ecr.us-east-1.amazonaws.com/development/service/import:v1.0.0-alpha.5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "etcd"
+                ]
+            },
+            {
+                "name": "import-script",
+                "image": "../",
+                "image_full": "../",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "s3:s3.amazonaws.com"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "mysql",
+                "redis"
+            ],
+            "services": [
+                "mysql",
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 19,
+            "edges": 11,
+            "avg_deps_per_service": 0.5789473684210527,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 16,
+            "edges": 1,
+            "avg_deps_per_service": 0.0625,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 16
+    },
+    "files": [
+        {
+            "path": "/tools/import/package.json",
+            "dbs": [],
+            "servers": [
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql",
+        "redis"
+    ],
+    "servers": [
+        "express"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [
+        "etcd"
+    ],
+    "num_services": 18,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 2,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 2
+}

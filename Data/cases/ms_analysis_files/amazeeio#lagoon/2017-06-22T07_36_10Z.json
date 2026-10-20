@@ -1,0 +1,82 @@
+{
+    "url": "https://github.com/amazeeio/lagoon",
+    "name": "amazeeio/lagoon",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "yarn run start",
+            "cmd_keywords": [
+                "yarn",
+                "run",
+                "start"
+            ],
+            "from": "amazeeio/centos7-node-builder",
+            "from_full": "amazeeio/centos7-node-builder:8",
+            "keywords": [
+                "yarn",
+                "build",
+                "fix",
+                "permissions",
+                "only"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "express",
+        "node"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "amazeeio/centos7-node-builder"
+    ],
+    "num_dbs": 0,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

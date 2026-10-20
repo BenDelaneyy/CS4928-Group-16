@@ -1,0 +1,10 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+TypeScript,91871,0,2495,2018,185,292,217,27,0,[]
+YAML,11999,0,494,474,20,0,0,4,0,[]
+JSON,3950,0,121,119,0,2,0,3,0,[]
+Groovy,776,0,32,32,0,0,0,1,0,[]
+JavaScript,0,0,0,0,0,0,0,1,0,[]
+Markdown,4083,0,47,39,0,8,0,1,0,[]
+TypeScript Typings,31,0,1,1,0,0,0,1,0,[]
+gitignore,70,0,6,6,0,0,0,1,0,[]
+Total,112780,0,3196,2689,205,302,217,39,0,

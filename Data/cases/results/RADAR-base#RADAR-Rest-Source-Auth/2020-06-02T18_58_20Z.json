@@ -1,0 +1,370 @@
+{
+    "url": "https://github.com/RADAR-base/RADAR-Rest-Source-Auth",
+    "name": "RADAR-base/RADAR-Rest-Source-Auth",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "echo \"The application will start in ${APP_SLEEP}s...\" &&     sleep ${APP_SLEEP} &&     java -Djava.security.egd=file:/dev/./urandom -jar /app.jar",
+            "cmd_keywords": [
+                "app",
+                "sleep",
+                "jar",
+                "echo",
+                "the"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "gradlew",
+                "version",
+                "downloaddependencies",
+                "assemble"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/authorizer-app/Dockerfile",
+            "cmd": "nginx -g daemon off;",
+            "cmd_keywords": [
+                "nginx",
+                "daemon",
+                "off"
+            ],
+            "from": "nginx",
+            "from_full": "nginx:1.17.3-alpine",
+            "keywords": [
+                "npm",
+                "base",
+                "href",
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 12,
+        "services": [
+            {
+                "name": "zookeeper-1",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:5.3.0",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "zookeeper-2",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:5.3.0",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "zookeeper-3",
+                "image": "confluentinc/cp-zookeeper",
+                "image_full": "confluentinc/cp-zookeeper:5.3.0",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka-1",
+                "image": "confluentinc/cp-kafka",
+                "image_full": "confluentinc/cp-kafka:5.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper-1",
+                    "zookeeper-2",
+                    "zookeeper-3"
+                ]
+            },
+            {
+                "name": "kafka-2",
+                "image": "confluentinc/cp-kafka",
+                "image_full": "confluentinc/cp-kafka:5.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper-1",
+                    "zookeeper-2",
+                    "zookeeper-3"
+                ]
+            },
+            {
+                "name": "kafka-3",
+                "image": "confluentinc/cp-kafka",
+                "image_full": "confluentinc/cp-kafka:5.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper-1",
+                    "zookeeper-2",
+                    "zookeeper-3"
+                ]
+            },
+            {
+                "name": "schema-registry-1",
+                "image": "confluentinc/cp-schema-registry",
+                "image_full": "confluentinc/cp-schema-registry:5.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper-1",
+                    "zookeeper-2",
+                    "zookeeper-3",
+                    "kafka-1",
+                    "kafka-2",
+                    "kafka-3"
+                ]
+            },
+            {
+                "name": "rest-proxy-1",
+                "image": "confluentinc/cp-kafka-rest",
+                "image_full": "confluentinc/cp-kafka-rest:5.3.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper-1",
+                    "zookeeper-2",
+                    "zookeeper-3",
+                    "kafka-1",
+                    "kafka-2",
+                    "kafka-3",
+                    "schema-registry-1"
+                ]
+            },
+            {
+                "name": "managementportal-app",
+                "image": "radarbase/management-portal",
+                "image_full": "radarbase/management-portal:0.5.8",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "radarbase-postgresql"
+                ]
+            },
+            {
+                "name": "radarbase-postgresql",
+                "image": "radarbase/radarbase-postgres",
+                "image_full": "radarbase/radarbase-postgres:latest",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "radar-rest-sources-backend",
+                "image": "radarbase/radar-rest-source-auth-backend",
+                "image_full": "radarbase/radar-rest-source-auth-backend:dev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "radarbase-postgresql",
+                    "managementportal-app"
+                ]
+            },
+            {
+                "name": "radar-rest-sources-authorizer",
+                "image": "radarbase/radar-rest-source-authorizer",
+                "image_full": "radarbase/radar-rest-source-authorizer:dev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "radar-rest-sources-backend",
+                    "radarbase-postgresql",
+                    "managementportal-app"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 4,
+            "names": [
+                "zookeeper",
+                "postgres"
+            ],
+            "services": [
+                "zookeeper-1",
+                "zookeeper-2",
+                "zookeeper-3",
+                "radarbase-postgresql"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 12,
+            "edges": 28,
+            "avg_deps_per_service": 2.3333333333333335,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/authorizer-app/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "zookeeper",
+        "postgresql",
+        "postgres"
+    ],
+    "servers": [
+        "node",
+        "spring"
+    ],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "java"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [
+        "zookeeper"
+    ],
+    "num_services": 12,
+    "shared_dbs": true,
+    "num_dockers": 2,
+    "images": [
+        "nginx",
+        "openjdk"
+    ],
+    "num_dbs": 3,
+    "num_servers": 2,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 6
+}

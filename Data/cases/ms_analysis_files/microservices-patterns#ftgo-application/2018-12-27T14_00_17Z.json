@@ -1,0 +1,955 @@
+{
+    "url": "https://github.com/microservices-patterns/ftgo-application",
+    "name": "microservices-patterns/ftgo-application",
+    "dockers": [
+        {
+            "path": "/ftgo-consumer-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-consumer-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "consumer"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/mysql-schema-per-service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "eventuateio/eventuate-tram-sagas-mysql",
+            "from_full": "eventuateio/eventuate-tram-sagas-mysql:0.10.0.M1",
+            "keywords": [
+                "docker",
+                "entrypoint",
+                "initdb",
+                "touch",
+                "schema"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "sql"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-restaurant-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-restaurant-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "restaurant"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/dynamodblocal-init/Dockerfile",
+            "cmd": "./wait-for-dynamodblocal.sh && ./create-dynamodb-tables.sh",
+            "cmd_keywords": [
+                "wait",
+                "for",
+                "dynamodblocal",
+                "create",
+                "dynamodb"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:18.04",
+            "keywords": [
+                "get",
+                "apt",
+                "install",
+                "pip",
+                "python"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-history-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-order-history-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "order"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-api-gateway/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-api-gateway.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "api"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-api-gateway-graphql/Dockerfile",
+            "cmd": "npm run start",
+            "cmd_keywords": [
+                "npm",
+                "run",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:9.11.2-alpine",
+            "keywords": [
+                "npm",
+                "install",
+                "run",
+                "build"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-kitchen-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-kitchen-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "kitchen"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/dynamodblocal/Dockerfile",
+            "cmd": "/usr/bin/java ${JAVA_OPTS} -Djava.library.path=. -jar DynamoDBLocal.jar -dbPath /var/dynamodb_local -sharedDb -port 8000",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "usr",
+                "bin",
+                "opts"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:7-jre",
+            "keywords": [
+                "dynamodb",
+                "local",
+                "tar",
+                "mkdir",
+                "var"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/mysql/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "eventuateio/eventuate-tram-sagas-mysql",
+            "from_full": "eventuateio/eventuate-tram-sagas-mysql:0.10.0.M2",
+            "keywords": [],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/mariadb/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mariadb",
+            "from_full": "mariadb:10.3.8",
+            "keywords": [],
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-order-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "order"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-accounting-service/Dockerfile",
+            "cmd": "java ${JAVA_OPTS} -jar ftgo-accounting-service.jar",
+            "cmd_keywords": [
+                "java",
+                "jar",
+                "opts",
+                "ftgo",
+                "accounting"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8u171-jre-alpine",
+            "keywords": [
+                "apk",
+                "cache",
+                "add",
+                "curl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 15,
+        "services": [
+            {
+                "name": "zookeeper",
+                "image": "eventuateio/eventuateio-local-zookeeper",
+                "image_full": "eventuateio/eventuateio-local-zookeeper:0.30.0.M8",
+                "dbs": [
+                    "zookeeper"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [
+                    "zookeeper"
+                ],
+                "depends_on": []
+            },
+            {
+                "name": "kafka",
+                "image": "eventuateio/eventuateio-local-kafka",
+                "image_full": "eventuateio/eventuateio-local-kafka:0.30.0.M8",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "kafka"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "mysql",
+                "image": "./mysql",
+                "image_full": "./mysql",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "tram-cdc-service",
+                "image": "eventuateio/eventuate-tram-cdc-mysql-service",
+                "image_full": "eventuateio/eventuate-tram-cdc-mysql-service:0.20.0.M7",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka"
+                ]
+            },
+            {
+                "name": "ftgo-consumer-service",
+                "image": "./ftgo-consumer-service",
+                "image_full": "./ftgo-consumer-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka",
+                    "tram-cdc-service"
+                ]
+            },
+            {
+                "name": "ftgo-order-service",
+                "image": "./ftgo-order-service",
+                "image_full": "./ftgo-order-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka",
+                    "tram-cdc-service",
+                    "zipkin"
+                ]
+            },
+            {
+                "name": "ftgo-kitchen-service",
+                "image": "./ftgo-kitchen-service",
+                "image_full": "./ftgo-kitchen-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka",
+                    "zookeeper",
+                    "tram-cdc-service"
+                ]
+            },
+            {
+                "name": "ftgo-restaurant-service",
+                "image": "./ftgo-restaurant-service",
+                "image_full": "./ftgo-restaurant-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka",
+                    "zookeeper",
+                    "tram-cdc-service"
+                ]
+            },
+            {
+                "name": "ftgo-accounting-service",
+                "image": "./ftgo-accounting-service",
+                "image_full": "./ftgo-accounting-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql",
+                    "kafka",
+                    "zookeeper"
+                ]
+            },
+            {
+                "name": "ftgo-order-history-service",
+                "image": "./ftgo-order-history-service",
+                "image_full": "./ftgo-order-history-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "kafka",
+                    "zookeeper",
+                    "tram-cdc-service",
+                    "dynamodblocal",
+                    "dynamodblocal-init"
+                ]
+            },
+            {
+                "name": "ftgo-api-gateway",
+                "image": "./ftgo-api-gateway",
+                "image_full": "./ftgo-api-gateway",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ftgo-api-gateway-graphql",
+                "image": "./ftgo-api-gateway-graphql",
+                "image_full": "./ftgo-api-gateway-graphql",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "zipkin",
+                "image": "openzipkin/zipkin",
+                "image_full": "openzipkin/zipkin:2.5.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dynamodblocal",
+                "image": "./dynamodblocal",
+                "image_full": "./dynamodblocal",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "dynamodblocal-init",
+                "image": "./dynamodblocal-init",
+                "image_full": "./dynamodblocal-init",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "dynamodblocal"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 3,
+            "names": [
+                "mysql",
+                "zookeeper"
+            ],
+            "services": [
+                "zookeeper",
+                "mysql",
+                "tram-cdc-service"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 15,
+            "edges": 27,
+            "avg_deps_per_service": 1.8,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 9,
+            "edges": 4,
+            "avg_deps_per_service": 0.4444444444444444,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 9
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/common-swagger/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-service-api/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-service-contracts/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-consumer-service/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-restaurant-service/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-consumer-service-api/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-history-service/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-api-gateway/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-end-to-end-tests/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-kitchen-service/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-test-util/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/buildSrc/build.gradle",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-kitchen-service-api/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-common-jpa/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-common/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-accounting-service-contracts/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-restaurant-service-aws-lambda/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-kitchen-service-contracts/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-accounting-service-api/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-consumer-service-contracts/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-order-service/build.gradle",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [
+                "prometheus"
+            ],
+            "discos": [
+                "grpc"
+            ]
+        },
+        {
+            "path": "/ftgo-restaurant-service-api/build.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-accounting-service/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ftgo-api-gateway-graphql/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql",
+        "zookeeper"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "spring"
+    ],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "sql",
+        "java",
+        "python"
+    ],
+    "gates": [
+        "gateway"
+    ],
+    "monitors": [
+        "prometheus"
+    ],
+    "discos": [
+        "grpc",
+        "zookeeper"
+    ],
+    "num_services": 15,
+    "shared_dbs": true,
+    "num_dockers": 13,
+    "images": [
+        "node",
+        "mariadb",
+        "ubuntu",
+        "openjdk",
+        "eventuateio/eventuate-tram-sagas-mysql"
+    ],
+    "num_dbs": 2,
+    "num_servers": 3,
+    "num_buses": 1,
+    "num_langs": 3,
+    "num_gates": 1,
+    "num_monitors": 1,
+    "num_discos": 2,
+    "num_files": 40
+}

@@ -1,0 +1,366 @@
+{
+    "url": "https://github.com/hobbit-project/platform",
+    "name": "hobbit-project/platform",
+    "dockers": [
+        {
+            "path": "/hobbit-gui/gui-serverbackend/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jetty",
+            "from_full": "jetty:9.3-jre8",
+            "keywords": [
+                "jetty",
+                "keycloak",
+                "final",
+                "adapter",
+                "dist"
+            ],
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/analysis-component/Dockerfile",
+            "cmd": "java -cp analysis-component.jar org.hobbit.core.run.ComponentStarter org.hobbit.analysis.AnalysisComponent",
+            "cmd_keywords": [
+                "analysis",
+                "org",
+                "hobbit",
+                "java",
+                "component"
+            ],
+            "from": "java",
+            "from_full": "java",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/platform-storage/storage-service/Dockerfile",
+            "cmd": "java -cp target/storage-service.jar org.hobbit.core.run.ComponentStarter org.hobbit.storage.service.StorageService",
+            "cmd_keywords": [
+                "storage",
+                "service",
+                "org",
+                "hobbit",
+                "java"
+            ],
+            "from": "maven",
+            "from_full": "maven",
+            "keywords": [
+                "mkdir",
+                "usr",
+                "src",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/platform-controller/Dockerfile",
+            "cmd": "java -cp target/platform-controller.jar org.hobbit.core.run.ComponentStarter org.hobbit.controller.PlatformController",
+            "cmd_keywords": [
+                "controller",
+                "org",
+                "hobbit",
+                "java",
+                "target"
+            ],
+            "from": "maven",
+            "from_full": "maven",
+            "keywords": [
+                "mkdir",
+                "usr",
+                "src",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "platform-controller",
+                "image": "./platform-controller",
+                "image_full": "./platform-controller",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbit",
+                    "redis",
+                    "storage-service"
+                ]
+            },
+            {
+                "name": "gui",
+                "image": "./hobbit-gui/gui-serverbackend",
+                "image_full": "./hobbit-gui/gui-serverbackend",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "platform-controller",
+                    "rabbit",
+                    "virtuoso"
+                ]
+            },
+            {
+                "name": "keycloak",
+                "image": "git.project-hobbit.eu",
+                "image_full": "git.project-hobbit.eu:4567/gitadmin/hobbit-keycloak:1.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "analysis",
+                "image": "./analysis-component",
+                "image_full": "./analysis-component",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbit"
+                ]
+            },
+            {
+                "name": "rabbit",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:management",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "virtuoso",
+                "image": "openlink/virtuoso_opensource",
+                "image_full": "openlink/virtuoso_opensource:v07.20.3217",
+                "dbs": [
+                    "openlink"
+                ],
+                "servers": [
+                    "virtuoso"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "storage-service",
+                "image": "./platform-storage/storage-service",
+                "image_full": "./platform-storage/storage-service",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "virtuoso"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "redis",
+                "openlink"
+            ],
+            "services": [
+                "redis",
+                "virtuoso"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 8,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 2,
+            "avg_deps_per_service": 0.4,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/hobbit-gui/gui-serverbackend/pom.xml",
+            "dbs": [
+                "foundation"
+            ],
+            "servers": [
+                "glassfish",
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/analysis-component/pom.xml",
+            "dbs": [
+                "foundation"
+            ],
+            "servers": [],
+            "buses": [
+                "rabbitmq",
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/platform-storage/storage-service/pom.xml",
+            "dbs": [
+                "foundation"
+            ],
+            "servers": [],
+            "buses": [
+                "rabbitmq",
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/platform-controller/pom.xml",
+            "dbs": [
+                "foundation",
+                "redis"
+            ],
+            "servers": [],
+            "buses": [
+                "rabbitmq",
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/hobbit-gui/gui-client/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "foundation",
+        "redis",
+        "openlink"
+    ],
+    "servers": [
+        "jetty",
+        "virtuoso",
+        "node",
+        "glassfish"
+    ],
+    "buses": [
+        "rabbitmq",
+        "amqp"
+    ],
+    "langs": [
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": true,
+    "num_dockers": 4,
+    "images": [
+        "maven",
+        "java",
+        "jetty"
+    ],
+    "num_dbs": 3,
+    "num_servers": 4,
+    "num_buses": 2,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 10
+}

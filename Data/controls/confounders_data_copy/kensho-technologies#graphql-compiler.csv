@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,621471,0,14905,13145,1010,750,440,45,0,[]
+Markdown,50644,0,1202,1005,0,197,0,5,0,[]
+Plain Text,11548,0,215,182,0,33,0,3,0,[]
+YAML,419,0,18,18,0,0,0,1,0,[]
+gitignore,579,0,45,24,11,10,0,1,0,[]
+Total,684661,0,16385,14374,1021,990,440,55,0,

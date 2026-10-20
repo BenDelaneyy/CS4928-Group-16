@@ -1,0 +1,167 @@
+{
+    "url": "https://github.com/avalonmediasystem/avalon",
+    "name": "avalonmediasystem/avalon",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "db",
+                "image": "avalonmediasystem/db",
+                "image_full": "avalonmediasystem/db:fedora4",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "fedora",
+                "image": "avalonmediasystem/fedora",
+                "image_full": "avalonmediasystem/fedora:4.7.x",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db"
+                ]
+            },
+            {
+                "name": "solr",
+                "image": "avalonmediasystem/solr",
+                "image_full": "avalonmediasystem/solr:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "matterhorn",
+                "image": "avalonmediasystem/matterhorn",
+                "image_full": "avalonmediasystem/matterhorn",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rtmp",
+                "image": "avalonmediasystem/red5",
+                "image_full": "avalonmediasystem/red5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "hls",
+                "image": "avalonmediasystem/nginx",
+                "image_full": "avalonmediasystem/nginx",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "avalon",
+                "image": "avalonmediasystem/avalon",
+                "image_full": "avalonmediasystem/avalon:6.0-dev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db",
+                    "fedora",
+                    "solr",
+                    "redis"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 5,
+            "avg_deps_per_service": 0.625,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 4,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 6
+    },
+    "files": [],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

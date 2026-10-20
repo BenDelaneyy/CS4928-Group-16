@@ -1,0 +1,141 @@
+{
+    "url": "https://github.com/CodelyTV/php-ddd-example",
+    "name": "CodelyTV/php-ddd-example",
+    "dockers": [
+        {
+            "path": "/etc/infrastructure/php/Dockerfile",
+            "cmd": "sh -c composer install && php-fpm",
+            "cmd_keywords": [
+                "composer",
+                "install",
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.2.10-fpm-alpine",
+            "keywords": [
+                "apk",
+                "rabbitmq",
+                "amqp",
+                "apcu",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "rabbitmq"
+            ],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "nginx",
+                "image": "nginx",
+                "image_full": "nginx:1.15.5-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "php"
+                ]
+            },
+            {
+                "name": "php",
+                "image": "etc/infrastructure/php",
+                "image_full": "etc/infrastructure/php",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mysql"
+                ]
+            },
+            {
+                "name": "mysql",
+                "image": "mysql",
+                "image_full": "mysql:5.7.23",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mysql"
+            ],
+            "services": [
+                "mysql"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 2,
+            "avg_deps_per_service": 0.6666666666666666,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 1,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 1
+    },
+    "files": [],
+    "dbs": [
+        "mysql"
+    ],
+    "servers": [],
+    "buses": [
+        "rabbitmq"
+    ],
+    "langs": [
+        "php"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "php"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}

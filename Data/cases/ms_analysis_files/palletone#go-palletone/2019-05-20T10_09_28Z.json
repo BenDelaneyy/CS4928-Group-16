@@ -1,0 +1,184 @@
+{
+    "url": "https://github.com/palletone/go-palletone",
+    "name": "palletone/go-palletone",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "apk",
+                "add",
+                "cache",
+                "make",
+                "gcc"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vm/baseimages/platforms/golang/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "palletone/baseimg",
+            "from_full": "palletone/baseimg",
+            "keywords": [
+                "tar",
+                "download",
+                "log",
+                "linux",
+                "amd"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vm/baseimages/dev/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "palletone/baseimg",
+            "from_full": "palletone/baseimg",
+            "keywords": [
+                "tar",
+                "download",
+                "log",
+                "linux",
+                "amd"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vm/baseimages/common/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu",
+            "keywords": [
+                "apt",
+                "get",
+                "update",
+                "install",
+                "yqq"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/aristanetworks/goarista/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "golang",
+            "from_full": "golang:1.7.3",
+            "keywords": [
+                "cmd",
+                "ockafka",
+                "mkdir",
+                "src",
+                "github"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "gcc",
+        "golang",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 6,
+    "images": [
+        "golang",
+        "palletone/baseimg",
+        "alpine",
+        "ubuntu"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 3,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

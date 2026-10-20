@@ -1,0 +1,382 @@
+{
+    "url": "https://github.com/decentralized-identity/universal-registrar",
+    "name": "decentralized-identity/universal-registrar",
+    "dockers": [
+        {
+            "path": "/drivers/v1/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-v1/docker/run-driver-did-v1.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "opt",
+                "docker",
+                "run"
+            ],
+            "from": "universalregistrar/base-ubuntu",
+            "from_full": "universalregistrar/base-ubuntu",
+            "keywords": [
+                "install",
+                "did",
+                "apt",
+                "get",
+                "opt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/sov/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-sov/docker/run-driver-did-sov.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "sov",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/base-ubuntu",
+            "from_full": "universalregistrar/base-ubuntu",
+            "keywords": [
+                "apt",
+                "install",
+                "get",
+                "sdk",
+                "opt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-btcr/docker/run-driver-did-btcr.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "btcr",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/base-alpine",
+            "from_full": "universalregistrar/base-alpine",
+            "keywords": [
+                "opt",
+                "mvn",
+                "clean",
+                "driver",
+                "did"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/erc725/docker/Dockerfile",
+            "cmd": "\"/opt/driver-did-erc725/docker/run-driver-did-erc725.sh\"",
+            "cmd_keywords": [
+                "driver",
+                "did",
+                "erc",
+                "opt",
+                "docker"
+            ],
+            "from": "universalregistrar/base-ubuntu",
+            "from_full": "universalregistrar/base-ubuntu",
+            "keywords": [
+                "apt",
+                "install",
+                "get",
+                "driver",
+                "did"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/driver/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "universalregistrar/base",
+            "from_full": "universalregistrar/base",
+            "keywords": [
+                "uni",
+                "registrar",
+                "opt",
+                "java",
+                "mvn"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "driver-did-btcr",
+                "image": "universalregistrar/driver-did-btcr",
+                "image_full": "universalregistrar/driver-did-btcr:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "driver-did-sov",
+                "image": "universalregistrar/driver-did-sov",
+                "image_full": "universalregistrar/driver-did-sov:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "driver-did-v1",
+                "image": "universalregistrar/driver-did-v1",
+                "image_full": "universalregistrar/driver-did-v1:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "driver-did-erc725",
+                "image": "universalregistrar/driver-did-erc725",
+                "image_full": "universalregistrar/driver-did-erc725:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "uni-registrar-web",
+                "image": "universalregistrar/uni-registrar-web",
+                "image_full": "universalregistrar/uni-registrar-web:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/drivers/v1/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/sov/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/btcr/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/drivers/erc725/pom.xml",
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/uni-registrar-web/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring",
+                "jetty"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/driver/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/uni-registrar-local/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/uni-registrar-client/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/driver-http/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/examples/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/registrar/java/uni-registrar-core/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "spring",
+        "jetty"
+    ],
+    "buses": [],
+    "langs": [
+        "python",
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "universalregistrar/base",
+        "universalregistrar/base-alpine",
+        "universalregistrar/base-ubuntu"
+    ],
+    "num_dbs": 0,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 18
+}

@@ -1,0 +1,411 @@
+{
+    "url": "https://github.com/ovh/cds",
+    "name": "ovh/cds",
+    "dockers": [
+        {
+            "path": "/engine/api/Dockerfile",
+            "cmd": "/app/api-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "api",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "apt",
+                "curl",
+                "app",
+                "api"
+            ],
+            "dbs": [
+                "sql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "sql"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/engine/worker/Dockerfile",
+            "cmd": "/app/worker-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "worker",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "apt",
+                "curl",
+                "app",
+                "get"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/engine/hatchery/Dockerfile",
+            "cmd": "/app/hatchery-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "hatchery",
+                "linux",
+                "amd"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "apt",
+                "curl",
+                "app",
+                "get"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/golang.org/x/net/http2/Dockerfile",
+            "cmd": "-h",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:trusty",
+            "keywords": [
+                "dev",
+                "install",
+                "apt",
+                "get",
+                "make"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/vendor/github.com/ovh/tat/Dockerfile",
+            "cmd": "/app/tat-linux-amd64",
+            "cmd_keywords": [
+                "app",
+                "tat",
+                "linux",
+                "amd"
+            ],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [
+                "tat",
+                "app",
+                "apk",
+                "deps",
+                "wget"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/Dockerfile",
+            "cmd": "/app/setup",
+            "cmd_keywords": [
+                "app",
+                "setup"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "grep",
+                "caddy",
+                "apt",
+                "curl",
+                "wget"
+            ],
+            "dbs": [],
+            "servers": [
+                "caddy"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/contrib/uservices/cds2xmpp/Dockerfile",
+            "cmd": "/app/service",
+            "cmd_keywords": [
+                "app",
+                "service"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "app",
+                "service",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/contrib/uservices/cds2tat/Dockerfile",
+            "cmd": "/app/api",
+            "cmd_keywords": [
+                "app",
+                "api"
+            ],
+            "from": "debian",
+            "from_full": "debian:jessie",
+            "keywords": [
+                "apt",
+                "get",
+                "app",
+                "api",
+                "update"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "cds-db",
+                "image": "postgres",
+                "image_full": "postgres:9.6.2",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cds-cache",
+                "image": "redis",
+                "image_full": "redis:alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "cds-migrate",
+                "image": "ovhcom/cds-api",
+                "image_full": "ovhcom/cds-api:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-db"
+                ]
+            },
+            {
+                "name": "cds-api",
+                "image": "ovhcom/cds-api",
+                "image_full": "ovhcom/cds-api:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-db",
+                    "cds-cache"
+                ]
+            },
+            {
+                "name": "cds-ui",
+                "image": "ovhcom/cds-ui",
+                "image_full": "ovhcom/cds-ui:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            },
+            {
+                "name": "cds-hatchery-swarm",
+                "image": "ovhcom/cds-hatchery",
+                "image_full": "ovhcom/cds-hatchery:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            },
+            {
+                "name": "cds-hatchery-local",
+                "image": "ovhcom/cds-hatchery",
+                "image_full": "ovhcom/cds-hatchery:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "cds-api"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "postgres",
+                "redis"
+            ],
+            "services": [
+                "cds-db",
+                "cds-cache"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 6,
+            "avg_deps_per_service": 0.8571428571428571,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 3,
+            "avg_deps_per_service": 0.6,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/vendor/github.com/blang/semver/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docs/themes/docdock/static/revealjs/plugin/multiplex/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "sql",
+        "postgres",
+        "redis"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "caddy"
+    ],
+    "buses": [],
+    "langs": [
+        "sql",
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": true,
+    "num_dockers": 8,
+    "images": [
+        "ubuntu",
+        "alpine",
+        "debian"
+    ],
+    "num_dbs": 3,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 12
+}

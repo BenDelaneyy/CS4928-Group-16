@@ -1,0 +1,295 @@
+{
+    "url": "https://github.com/appwrite/appwrite",
+    "name": "appwrite/appwrite",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "/bin/bash /entrypoint.sh",
+            "cmd_keywords": [
+                "bin",
+                "bash",
+                "entrypoint"
+            ],
+            "from": "ubuntu",
+            "from_full": "ubuntu:18.04",
+            "keywords": [
+                "php",
+                "apt",
+                "version",
+                "install",
+                "get"
+            ],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/resources/docker/mariadb/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mariadb",
+            "from_full": "mariadb:10.2",
+            "keywords": [
+                "mysql",
+                "chown",
+                "docker",
+                "entrypoint",
+                "initdb"
+            ],
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "appwrite",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "mariadb",
+                    "redis",
+                    "smtp",
+                    "clamav",
+                    "influxdb",
+                    "telegraf",
+                    "maildev"
+                ]
+            },
+            {
+                "name": "mariadb",
+                "image": "appwrite/mariadb",
+                "image_full": "appwrite/mariadb:1.0.2",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "smtp",
+                "image": "appwrite/smtp",
+                "image_full": "appwrite/smtp:1.0.1",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "clamav",
+                "image": "appwrite/clamav",
+                "image_full": "appwrite/clamav:1.0.7",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis:5.0",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "influxdb",
+                "image": "influxdb",
+                "image_full": "influxdb:1.6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "influxdb"
+                ],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "telegraf",
+                "image": "appwrite/telegraf",
+                "image_full": "appwrite/telegraf:1.0.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "maildev",
+                "image": "djfarrelly/maildev",
+                "image_full": "djfarrelly/maildev",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "redis",
+                "mariadb"
+            ],
+            "services": [
+                "mariadb",
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 7,
+            "avg_deps_per_service": 0.875,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 4,
+            "avg_deps_per_service": 0.8,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/app/sdks/python/requirements.txt",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/javascript/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/nodejs/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/node/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/app/sdks/js/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "node"
+    ],
+    "buses": [],
+    "langs": [
+        "bash"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [
+        "influxdb"
+    ],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "mariadb",
+        "ubuntu"
+    ],
+    "num_dbs": 1,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 1,
+    "num_discos": 0,
+    "num_files": 9
+}

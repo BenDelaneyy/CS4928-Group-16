@@ -1,0 +1,6 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+C#,20106,0,698,515,81,102,7,21,0,[]
+MSBuild,25854,0,418,408,0,10,19,5,0,[]
+Markdown,392,0,18,13,0,5,0,1,0,[]
+gitignore,89073,0,1144,1140,3,1,0,1,0,[]
+Total,135425,0,2278,2076,84,118,26,28,0,

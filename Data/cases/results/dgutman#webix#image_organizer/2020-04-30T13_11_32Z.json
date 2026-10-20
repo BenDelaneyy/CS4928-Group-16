@@ -1,0 +1,109 @@
+{
+    "url": "https://github.com/dgutman/webix_image_organizer",
+    "name": "dgutman/webix_image_organizer",
+    "dockers": [
+        {
+            "path": "/services/Dockerfile",
+            "cmd": "flask run --host=0.0.0.0",
+            "cmd_keywords": [
+                "flask",
+                "run",
+                "host"
+            ],
+            "from": "jjanzic/docker-python3-opencv",
+            "from_full": "jjanzic/docker-python3-opencv",
+            "keywords": [
+                "apt",
+                "get",
+                "install",
+                "tesseract",
+                "ocr"
+            ],
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/services/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tagger/tagger-for-david/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "mongoose",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node",
+        "mongoose",
+        "express",
+        "flask"
+    ],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "jjanzic/docker-python3-opencv"
+    ],
+    "num_dbs": 0,
+    "num_servers": 4,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

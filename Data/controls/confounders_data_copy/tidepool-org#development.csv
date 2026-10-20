@@ -1,0 +1,6 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+BASH,4924,0,87,72,1,14,27,1,0,[]
+Markdown,49076,0,812,549,0,263,0,1,0,[]
+YAML,30446,0,558,411,125,22,0,1,0,[]
+gitignore,28,0,1,1,0,0,0,1,0,[]
+Total,84474,0,1458,1033,126,299,27,4,0,

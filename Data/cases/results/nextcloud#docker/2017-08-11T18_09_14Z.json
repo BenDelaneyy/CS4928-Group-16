@@ -1,0 +1,335 @@
+{
+    "url": "https://github.com/nextcloud/docker",
+    "name": "nextcloud/docker",
+    "dockers": [
+        {
+            "path": "/12.0/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "opcache",
+                "usr"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/12.0/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "opcache",
+                "usr"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/11.0/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-fpm",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "opcache",
+                "usr"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/11.0/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:7.1-apache",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "opcache",
+                "usr"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/10.0/fpm/Dockerfile",
+            "cmd": "php-fpm",
+            "cmd_keywords": [
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "from_full": "php:5.6-fpm",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "usr",
+                "opcache"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/10.0/apache/Dockerfile",
+            "cmd": "apache2-foreground",
+            "cmd_keywords": [
+                "apache",
+                "foreground"
+            ],
+            "from": "php",
+            "from_full": "php:5.6-apache",
+            "keywords": [
+                "nextcloud",
+                "dev",
+                "tar",
+                "usr",
+                "opcache"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/.examples/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "proxy",
+                "image": "jwilder/nginx-proxy",
+                "image_full": "jwilder/nginx-proxy",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "letsencrypt-companion",
+                "image": "alastaircoote/docker-letsencrypt-nginx-proxy-companion",
+                "image_full": "alastaircoote/docker-letsencrypt-nginx-proxy-companion",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "web",
+                "image": "nginx",
+                "image_full": "nginx",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "nginx"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "app",
+                    "collabora"
+                ]
+            },
+            {
+                "name": "app",
+                "image": "nextcloud",
+                "image_full": "nextcloud:fpm",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db"
+                ]
+            },
+            {
+                "name": "db",
+                "image": "mariadb",
+                "image_full": "mariadb",
+                "dbs": [
+                    "mariadb"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "redis",
+                "image": "redis",
+                "image_full": "redis",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "collabora",
+                "image": "collabora/code",
+                "image_full": "collabora/code",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "redis",
+                "mariadb"
+            ],
+            "services": [
+                "db",
+                "redis"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 3,
+            "avg_deps_per_service": 0.42857142857142855,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 2
+    },
+    "files": [],
+    "dbs": [
+        "mysql",
+        "redis"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "php"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": false,
+    "num_dockers": 6,
+    "images": [
+        "php"
+    ],
+    "num_dbs": 2,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 7
+}

@@ -1,0 +1,461 @@
+{
+    "url": "https://github.com/digirati-co-uk/madoc-platform",
+    "name": "digirati-co-uk/madoc-platform",
+    "dockers": [
+        {
+            "path": "/services/sorting-room/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "nginx",
+            "from_full": "nginx:stable-alpine",
+            "keywords": [
+                "yarn",
+                "install",
+                "grunt",
+                "dist"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc-ts/Dockerfile",
+            "cmd": "pm2-runtime start ./ecosystem.config.js",
+            "cmd_keywords": [
+                "runtime",
+                "start",
+                "ecosystem",
+                "config"
+            ],
+            "from": "node",
+            "from_full": "node:12-alpine",
+            "keywords": [
+                "node",
+                "home",
+                "app",
+                "service",
+                "jwt"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/shared-postgres/Dockerfile",
+            "cmd": "postgres",
+            "cmd_keywords": [
+                "postgres"
+            ],
+            "from": "library/postgres",
+            "from_full": "library/postgres",
+            "keywords": [],
+            "dbs": [
+                "postgres"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "digirati/madoc-omeka-s",
+            "from_full": "digirati/madoc-omeka-s:latest",
+            "keywords": [
+                "madoc",
+                "installer"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/tasks-api/Dockerfile",
+            "cmd": "pm2-runtime start ./ecosystem.config.js --only tasks-api-prod",
+            "cmd_keywords": [
+                "runtime",
+                "start",
+                "ecosystem",
+                "config",
+                "only"
+            ],
+            "from": "node",
+            "from_full": "node:12-alpine",
+            "keywords": [
+                "yarn",
+                "install",
+                "build",
+                "npm",
+                "dev"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/gateway/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "tykio/tyk-gateway",
+            "from_full": "tykio/tyk-gateway:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "tyk"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/certs/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "apk",
+                "cache",
+                "update",
+                "add",
+                "openssl"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc-database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mysql",
+            "from_full": "mysql:5.7",
+            "keywords": [],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "gateway",
+                "image": "services/gateway",
+                "image_full": "services/gateway",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "certs",
+                    "gateway-redis"
+                ]
+            },
+            {
+                "name": "madoc",
+                "image": "services/madoc",
+                "image_full": "services/madoc",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "madoc-database"
+                ]
+            },
+            {
+                "name": "certs",
+                "image": "services/certs",
+                "image_full": "services/certs",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "madoc-ts",
+                "image": "services/madoc-ts",
+                "image_full": "services/madoc-ts",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "certs"
+                ]
+            },
+            {
+                "name": "tasks-api",
+                "image": "services/tasks-api",
+                "image_full": "services/tasks-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "shared-postgres",
+                    "gateway-redis"
+                ]
+            },
+            {
+                "name": "model-api",
+                "image": "digirati/capture-models",
+                "image_full": "digirati/capture-models:v0.4.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "shared-postgres"
+                ]
+            },
+            {
+                "name": "shared-postgres",
+                "image": "services/shared-postgres",
+                "image_full": "services/shared-postgres",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sorting-room",
+                "image": "services/sorting-room",
+                "image_full": "services/sorting-room",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "gateway-redis",
+                "image": "redis",
+                "image_full": "redis:5-alpine",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "madoc-database",
+                "image": "services/madoc-database",
+                "image_full": "services/madoc-database",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "config-service",
+                "image": "digirati/madoc_config_service_django",
+                "image_full": "digirati/madoc_config_service_django:175410fc5b7dbef4cc259686564fbedeb60c8789",
+                "dbs": [],
+                "servers": [
+                    "django"
+                ],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "shared-postgres"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 2,
+            "names": [
+                "postgres",
+                "redis"
+            ],
+            "services": [
+                "shared-postgres",
+                "gateway-redis"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 8,
+            "avg_deps_per_service": 0.7272727272727273,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 7,
+            "edges": 2,
+            "avg_deps_per_service": 0.2857142857142857,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 7
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/sorting-room/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc-ts/package.json",
+            "dbs": [
+                "mysql",
+                "postgres"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/madoc/packages/default-theme/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/tasks-api/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mysql",
+        "postgres",
+        "redis"
+    ],
+    "servers": [
+        "node",
+        "django"
+    ],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [
+        "tyk",
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 11,
+    "shared_dbs": true,
+    "num_dockers": 8,
+    "images": [
+        "node",
+        "library/postgres",
+        "digirati/madoc-omeka-s",
+        "tykio/tyk-gateway",
+        "nginx",
+        "mysql",
+        "alpine"
+    ],
+    "num_dbs": 3,
+    "num_servers": 2,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 2,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 14
+}

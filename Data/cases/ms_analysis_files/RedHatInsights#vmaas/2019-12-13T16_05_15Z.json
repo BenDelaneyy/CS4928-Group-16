@@ -1,0 +1,292 @@
+{
+    "url": "https://github.com/RedHatInsights/vmaas",
+    "name": "RedHatInsights/vmaas",
+    "dockers": [
+        {
+            "path": "/database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "registry.access.redhat.com/rhscl/postgresql-10-rhel7",
+            "from_full": "registry.access.redhat.com/rhscl/postgresql-10-rhel7",
+            "keywords": [
+                "rpm",
+                "list",
+                "manifest",
+                "tmp",
+                "txt"
+            ],
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/reposcan/Dockerfile",
+            "cmd": "/reposcan/entrypoint.sh",
+            "cmd_keywords": [
+                "reposcan",
+                "entrypoint"
+            ],
+            "from": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "from_full": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "keywords": [
+                "rpm",
+                "list",
+                "txt",
+                "manifest",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/websocket/Dockerfile",
+            "cmd": "/websocket/entrypoint.sh",
+            "cmd_keywords": [
+                "websocket",
+                "entrypoint"
+            ],
+            "from": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "from_full": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "keywords": [
+                "rpm",
+                "list",
+                "txt",
+                "manifest",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webapp/Dockerfile",
+            "cmd": "/webapp/entrypoint.sh",
+            "cmd_keywords": [
+                "webapp",
+                "entrypoint"
+            ],
+            "from": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "from_full": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "keywords": [
+                "rpm",
+                "list",
+                "txt",
+                "manifest",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/webapp_utils/Dockerfile",
+            "cmd": "/webapp_utils/entrypoint.sh",
+            "cmd_keywords": [
+                "webapp",
+                "utils",
+                "entrypoint"
+            ],
+            "from": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "from_full": "registry.access.redhat.com/ubi8/ubi-minimal",
+            "keywords": [
+                "rpm",
+                "list",
+                "txt",
+                "manifest",
+                "tmp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 7,
+        "services": [
+            {
+                "name": "vmaas_database",
+                "image": "vmaas/database",
+                "image_full": "vmaas/database:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_websocket",
+                "image": "vmaas/websocket",
+                "image_full": "vmaas/websocket:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "vmaas_reposcan",
+                "image": "vmaas/reposcan",
+                "image_full": "vmaas/reposcan:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_database"
+                ]
+            },
+            {
+                "name": "vmaas_webapp",
+                "image": "vmaas/webapp",
+                "image_full": "vmaas/webapp:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_websocket",
+                    "vmaas_reposcan"
+                ]
+            },
+            {
+                "name": "vmaas_webapp_utils",
+                "image": "vmaas/webapp_utils",
+                "image_full": "vmaas/webapp_utils:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_webapp"
+                ]
+            },
+            {
+                "name": "vmaas_prometheus",
+                "image": "prom/prometheus",
+                "image_full": "prom/prometheus:v2.1.0",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "prometheus"
+                ],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_reposcan",
+                    "vmaas_webapp"
+                ]
+            },
+            {
+                "name": "vmaas_grafana",
+                "image": "grafana/grafana",
+                "image_full": "grafana/grafana:6.2.5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [
+                    "grafana"
+                ],
+                "discos": [],
+                "depends_on": [
+                    "vmaas_prometheus"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 7,
+            "edges": 8,
+            "avg_deps_per_service": 1.1428571428571428,
+            "acyclic": true,
+            "longest_path": 4
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 5,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 3
+        },
+        "number_of_microservices": 5
+    },
+    "files": [],
+    "dbs": [
+        "postgresql"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [
+        "prometheus",
+        "grafana"
+    ],
+    "discos": [],
+    "num_services": 7,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "registry.access.redhat.com/ubi8/ubi-minimal",
+        "registry.access.redhat.com/rhscl/postgresql-10-rhel7"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 2,
+    "num_discos": 0,
+    "num_files": 6
+}

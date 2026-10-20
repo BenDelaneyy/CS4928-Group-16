@@ -1,0 +1,6 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+JSON,29617,0,673,673,0,0,0,1,0,[]
+License,11357,0,201,169,0,32,0,1,0,[]
+Markdown,20148,0,236,193,0,43,0,1,0,[]
+Shell,4198,0,142,121,3,18,4,1,0,[]
+Total,65320,0,1252,1156,3,93,4,4,0,

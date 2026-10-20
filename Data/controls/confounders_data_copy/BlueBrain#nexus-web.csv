@@ -1,0 +1,12 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+TypeScript,157239,0,5665,5064,153,448,431,75,0,[]
+LESS,8938,0,515,418,45,52,0,16,0,[]
+JavaScript,4021,0,168,151,9,8,0,6,0,[]
+JSON,603755,0,16172,16172,0,0,0,4,0,[]
+Markdown,8495,0,297,207,0,90,0,3,0,[]
+Docker ignore,38,0,3,3,0,0,0,1,0,[]
+Dockerfile,241,0,11,9,0,2,1,1,0,[]
+SVG,2396,0,1,1,0,0,0,1,0,[]
+TypeScript Typings,656,0,33,28,3,2,1,1,0,[]
+gitignore,74,0,7,7,0,0,0,1,0,[]
+Total,785853,0,22872,22060,210,602,433,109,0,

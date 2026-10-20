@@ -1,0 +1,277 @@
+{
+    "url": "https://github.com/tmtsoftware/csw",
+    "name": "tmtsoftware/csw",
+    "dockers": [
+        {
+            "path": "/scripts/logging_aggregator/dev/kibana/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/kibana/kibana",
+            "keywords": [],
+            "from_full": "docker.elastic.co/kibana/kibana:${ELK_VERSION}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/logging_aggregator/dev/filebeat/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/beats/filebeat",
+            "keywords": [],
+            "from_full": "docker.elastic.co/beats/filebeat:${ELK_VERSION}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/logging_aggregator/dev/elasticsearch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/elasticsearch/elasticsearch",
+            "keywords": [],
+            "from_full": "docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/scripts/logging_aggregator/dev/logstash/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/logstash/logstash",
+            "keywords": [
+                "logstash",
+                "plugin",
+                "install",
+                "filter",
+                "input"
+            ],
+            "from_full": "docker.elastic.co/logstash/logstash:${ELK_VERSION}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/integration/scripts/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "adoptopenjdk/openjdk11",
+            "from_full": "adoptopenjdk/openjdk11",
+            "keywords": [
+                "sbt",
+                "version",
+                "scala",
+                "deb",
+                "root"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "scala"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 8,
+        "services": [
+            {
+                "name": "seed",
+                "image": "csw-location",
+                "image_full": "csw-location:${TAG_ID}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "config",
+                "image": "csw-config-server",
+                "image_full": "csw-config-server:${TAG_ID}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "seed"
+                ]
+            },
+            {
+                "name": "location-agent",
+                "image": "csw-location-agent",
+                "image_full": "csw-location-agent:${TAG_ID}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "sentinel"
+                ]
+            },
+            {
+                "name": "event_master",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "event_slave",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "event_master"
+                ]
+            },
+            {
+                "name": "alarm_master",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "alarm_slave",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "alarm_master"
+                ]
+            },
+            {
+                "name": "sentinel",
+                "image": "redis",
+                "image_full": "redis:latest",
+                "dbs": [
+                    "redis"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "event_master",
+                    "alarm_master"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 5,
+            "names": [
+                "redis"
+            ],
+            "services": [
+                "event_master",
+                "event_slave",
+                "alarm_master",
+                "alarm_slave",
+                "sentinel"
+            ],
+            "shared_dbs": true
+        },
+        "dep_graph_full": {
+            "nodes": 8,
+            "edges": 6,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 1,
+            "avg_deps_per_service": 0.3333333333333333,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "scala"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 8,
+    "shared_dbs": true,
+    "num_dockers": 5,
+    "images": [
+        "adoptopenjdk/openjdk11",
+        "docker.elastic.co/beats/filebeat",
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana",
+        "docker.elastic.co/logstash/logstash"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

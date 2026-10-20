@@ -1,0 +1,1242 @@
+{
+    "url": "https://github.com/amazeeio/lagoon",
+    "name": "amazeeio/lagoon",
+    "dockers": [
+        {
+            "path": "/images/centos7-nginx1-drupal/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "fix",
+                "permissions",
+                "etc",
+                "nginx"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-nginx1",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/oc-build-deploy-dind/Dockerfile",
+            "cmd": "build-deploy",
+            "cmd_keywords": [
+                "build",
+                "deploy"
+            ],
+            "from": "docker",
+            "from_full": "docker:stable",
+            "keywords": [
+                "glibc",
+                "apk",
+                "openshift",
+                "origin",
+                "client"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "centos",
+            "from_full": "centos:centos7",
+            "keywords": [
+                "bin",
+                "tini",
+                "fix",
+                "permissions",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-node8/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "yum",
+                "curl",
+                "https",
+                "com"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-nginx1/Dockerfile",
+            "cmd": "nginx",
+            "cmd_keywords": [
+                "nginx"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "nginx",
+                "echo",
+                "fix",
+                "permissions",
+                "etc"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-node6-builder/Dockerfile",
+            "cmd": "/usr/local/bin/docker-sleep",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "docker",
+                "sleep"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yum",
+                "install",
+                "clean",
+                "all",
+                "gcc"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-node6",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-php7.0-drupal-builder/Dockerfile",
+            "cmd": "/usr/local/bin/docker-sleep",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "docker",
+                "sleep"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "composer",
+                "yum",
+                "tmp",
+                "setup",
+                "php"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-php7.0-drupal",
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-mariadb10-drupal/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-mariadb10",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-php7.0-drupal/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-php7.0",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-node8-builder/Dockerfile",
+            "cmd": "/usr/local/bin/docker-sleep",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "bin",
+                "docker",
+                "sleep"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yum",
+                "install",
+                "clean",
+                "all",
+                "gcc"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-node8",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-mariadb10/Dockerfile",
+            "cmd": "mysqld",
+            "cmd_keywords": [
+                "mysqld"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "mariadb",
+                "yum",
+                "var",
+                "echo",
+                "mysql"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [
+                "mariadb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/commons/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine",
+            "keywords": [
+                "apk",
+                "bin",
+                "cache",
+                "curl",
+                "echo"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-node6/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "yum",
+                "curl",
+                "https",
+                "com"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/centos7-php7.0/Dockerfile",
+            "cmd": "/usr/sbin/php-fpm -F -R",
+            "cmd_keywords": [
+                "usr",
+                "sbin",
+                "php",
+                "fpm"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "php",
+                "yum",
+                "pecl",
+                "fix",
+                "permissions"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [
+                "enterprise"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/yarn-workspace-builder/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "build",
+                "only",
+                "true",
+                "yarn",
+                "install"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-node8-builder",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/php/cli-alpine/Dockerfile",
+            "cmd": "/bin/docker-sleep",
+            "cmd_keywords": [
+                "bin",
+                "docker",
+                "sleep"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "usr",
+                "local",
+                "bin",
+                "drush",
+                "apk"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/php:${PHP_VERSION}-fpm-alpine",
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/images/php/fpm-alpine/Dockerfile",
+            "cmd": "/usr/local/sbin/php-fpm -F -R",
+            "cmd_keywords": [
+                "usr",
+                "local",
+                "sbin",
+                "php",
+                "fpm"
+            ],
+            "from": "php",
+            "keywords": [
+                "apk",
+                "dev",
+                "php",
+                "install",
+                "cache"
+            ],
+            "from_full": "php:${PHP_VERSION}-fpm-alpine",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cli/Dockerfile",
+            "cmd": "exec /bin/bash -c \"trap : TERM INT; sleep infinity & wait\"",
+            "cmd_keywords": [
+                "exec",
+                "bin",
+                "bash",
+                "trap",
+                "term"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yum",
+                "install",
+                "openssh",
+                "clients",
+                "clean"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-node8",
+            "dbs": [
+                "infinity"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/helpers/drush-alias/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "amazeeio/centos7-nginx",
+            "from_full": "amazeeio/centos7-nginx:1.10",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/local-dev/git/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "unixtastic/git-ssh-server",
+            "from_full": "unixtastic/git-ssh-server",
+            "keywords": [
+                "git",
+                "bare",
+                "init",
+                "ssh",
+                "apt"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [
+                "nginx"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/local-dev/hiera-watcher-pusher/Dockerfile",
+            "cmd": "/home/hiera-watch-push.sh",
+            "cmd_keywords": [
+                "home",
+                "hiera",
+                "watch",
+                "push"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "git",
+                "yum",
+                "config",
+                "global",
+                "user"
+            ],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/webhook-handler/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/api/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "app",
+                "env",
+                "defaults",
+                "install"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8-builder:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/kibana/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/kibana/kibana",
+            "from_full": "docker.elastic.co/kibana/kibana:5.4.0",
+            "keywords": [
+                "usr",
+                "fix",
+                "permissions",
+                "bin",
+                "local"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/rabbitmq/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "rabbitmq",
+            "from_full": "rabbitmq:3-management",
+            "keywords": [
+                "rabbitmq",
+                "plugins",
+                "enable",
+                "offline",
+                "delayed"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "rabbitmq"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/webhooks2tasks/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/elasticsearch/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/elasticsearch/elasticsearch",
+            "from_full": "docker.elastic.co/elasticsearch/elasticsearch:5.4.0",
+            "keywords": [
+                "usr",
+                "fix",
+                "permissions",
+                "bin",
+                "local"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/logstash/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "docker.elastic.co/logstash/logstash",
+            "from_full": "docker.elastic.co/logstash/logstash:5.4.0",
+            "keywords": [
+                "usr",
+                "fix",
+                "permissions",
+                "bin",
+                "local"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftremove/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/logs2slack/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/auth-ssh/Dockerfile",
+            "cmd": "/usr/sbin/sshd -e -D -f /etc/ssh/sshd_config",
+            "cmd_keywords": [
+                "sshd",
+                "usr",
+                "sbin",
+                "etc",
+                "ssh"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "openssh",
+                "ssh",
+                "home",
+                "rpmbuild",
+                "devel"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "gcc"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/auth-database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "amazeeio/centos7-couchdb",
+            "from_full": "amazeeio/centos7-couchdb:1.6.1",
+            "keywords": [],
+            "dbs": [
+                "couchdb"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/auth-server/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/postgres/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "postgres",
+            "from_full": "postgres:9.2-alpine",
+            "keywords": [],
+            "dbs": [
+                "postgres"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/hacky-rest2tasks-ui/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "build",
+                "only",
+                "true",
+                "install"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftbuilddeploymonitor/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/rest2tasks/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftbuilddeploy/Dockerfile",
+            "cmd": "yarn start",
+            "cmd_keywords": [
+                "yarn",
+                "start"
+            ],
+            "from": "${IMAGE_REPO",
+            "keywords": [
+                "yarn",
+                "install",
+                "pure",
+                "lockfile",
+                "cache"
+            ],
+            "from_full": "${IMAGE_REPO:-amazeeiolagoon}/centos7-node8:${AMAZEEIO_GIT_BRANCH:-latest}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/Dockerfile",
+            "cmd": "exec /bin/bash -c \"trap : TERM INT; sleep infinity & wait\"",
+            "cmd_keywords": [
+                "exec",
+                "bin",
+                "bash",
+                "trap",
+                "term"
+            ],
+            "from": "williamyeh/ansible",
+            "from_full": "williamyeh/ansible:centos7",
+            "keywords": [
+                "git",
+                "yum",
+                "config",
+                "global",
+                "user"
+            ],
+            "dbs": [
+                "infinity"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/files/nginx/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${IMAGE_REPO",
+            "keywords": [],
+            "from_full": "${IMAGE_REPO:-lagoon}/centos7-nginx1",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/helpers/drush-alias/docker-compose.yml",
+        "num_services": 2,
+        "services": [
+            {
+                "name": "nginx",
+                "image": ".",
+                "image_full": ".",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "testing",
+                "image": "drupaldocker/drush",
+                "image_full": "drupaldocker/drush:8-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 2,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 2
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cli/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/node-packages/lagoon-commons/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/webhook-handler/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/api/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/webhooks2tasks/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftremove/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/logs2slack/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/auth-server/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/hacky-rest2tasks-ui/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftbuilddeploymonitor/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/rest2tasks/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/services/openshiftbuilddeploy/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/files/node8/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/tests/files/node6_subfolder/subfolder/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres",
+        "redis",
+        "infinity",
+        "enterprise",
+        "mysql"
+    ],
+    "servers": [
+        "express",
+        "node"
+    ],
+    "buses": [
+        "rabbitmq",
+        "amqp"
+    ],
+    "langs": [
+        "gcc",
+        "bash",
+        "php"
+    ],
+    "gates": [
+        "nginx"
+    ],
+    "monitors": [],
+    "discos": [],
+    "num_services": 2,
+    "shared_dbs": false,
+    "num_dockers": 40,
+    "images": [
+        "postgres",
+        "rabbitmq",
+        "unixtastic/git-ssh-server",
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana",
+        "amazeeio/centos7-couchdb",
+        "williamyeh/ansible",
+        "php",
+        "docker",
+        "centos",
+        "docker.elastic.co/logstash/logstash",
+        "${IMAGE_REPO",
+        "alpine",
+        "amazeeio/centos7-nginx"
+    ],
+    "num_dbs": 5,
+    "num_servers": 2,
+    "num_buses": 2,
+    "num_langs": 3,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 56
+}

@@ -1,0 +1,13 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,15906,0,538,177,230,131,9,9,0,[]
+ReStructuredText,7698,0,281,180,0,101,0,9,0,[]
+JSON,2502,0,157,157,0,0,0,2,0,[]
+Makefile,9417,0,274,217,6,51,5,2,0,[]
+YAML,1147,0,22,21,1,0,0,2,0,[]
+Autoconf,262,0,12,9,0,3,0,1,0,[]
+Batch,6467,0,242,212,1,29,77,1,0,[]
+INI,542,0,24,16,4,4,0,1,0,[]
+License,1072,0,9,5,0,4,0,1,0,[]
+Plain Text,191,0,13,13,0,0,0,1,0,[]
+gitignore,830,0,65,40,14,11,0,1,0,[]
+Total,46034,0,1637,1047,256,334,91,30,0,

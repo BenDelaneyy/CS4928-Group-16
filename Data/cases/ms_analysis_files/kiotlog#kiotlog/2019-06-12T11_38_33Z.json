@@ -1,0 +1,217 @@
+{
+    "url": "https://github.com/kiotlog/kiotlog",
+    "name": "kiotlog/kiotlog",
+    "dockers": [
+        {
+            "path": "/HttpReceiver/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch-slim",
+            "keywords": [
+                "apt",
+                "dotnet",
+                "install",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/HttpReceiver/docker/busybox/Dockerfile",
+            "cmd": "--host 0.0.0.0 --mqttbroker mqtt 1883",
+            "cmd_keywords": [
+                "host",
+                "mqttbroker",
+                "mqtt"
+            ],
+            "from": "busybox",
+            "from_full": "busybox:glibc",
+            "keywords": [
+                "apt",
+                "set",
+                "install",
+                "mono",
+                "project"
+            ],
+            "dbs": [],
+            "servers": [
+                "busybox"
+            ],
+            "buses": [
+                "mqtt"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/HttpReceiver/docker/alpine/Dockerfile",
+            "cmd": "/sfhr --host 0.0.0.0 --mqttbroker mqtt 1883",
+            "cmd_keywords": [
+                "sfhr",
+                "host",
+                "mqttbroker",
+                "mqtt"
+            ],
+            "from": "alpine",
+            "from_full": "alpine:latest",
+            "keywords": [
+                "apk",
+                "glibc",
+                "sgerrand",
+                "wget",
+                "https"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "mqtt"
+            ],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/Decoder/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch-slim",
+            "keywords": [
+                "dotnet",
+                "apt",
+                "true",
+                "install",
+                "restore"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/KlsnReceiver/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "debian",
+            "from_full": "debian:stretch-slim",
+            "keywords": [
+                "apt",
+                "dotnet",
+                "install",
+                "restore",
+                "publish"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "Decoder",
+                "image": "kiotlog/decoder",
+                "image_full": "kiotlog/decoder",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "HttpReceiver",
+                "image": "kiotlog/httpreceiver",
+                "image_full": "kiotlog/httpreceiver",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "KlsnReceiver",
+                "image": "kiotlog/klsnreceiver",
+                "image_full": "kiotlog/klsnreceiver",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [
+        "busybox"
+    ],
+    "buses": [
+        "mqtt"
+    ],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "busybox",
+        "alpine",
+        "debian"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 1,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

@@ -1,0 +1,487 @@
+{
+    "url": "https://github.com/SoftwareAG/sagdevops-templates",
+    "name": "SoftwareAG/sagdevops-templates",
+    "dockers": [
+        {
+            "path": "/templates/sag-exx-broker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "sagadmin",
+                "home",
+                "provision",
+                "groupadd",
+                "useradd"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-spm-config/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-msc-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-is-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-exx-c-rpc-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-exx-xml-rpc-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "sagadmin",
+                "home",
+                "provision",
+                "groupadd",
+                "useradd"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-tc-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "sagadmin",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-um-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-abe/Dockerfile",
+            "cmd": "build.sh",
+            "cmd_keywords": [
+                "build"
+            ],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/templates/sag-ninja-server/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "test",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/containers/cloud-streams/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "base",
+                "template",
+                "sag"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/containers/generic/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "provision",
+                "template",
+                "cleanup"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/containers/universal-messaging/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "template",
+                "provision",
+                "profiles",
+                "cce"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/infrastructure/base-centos/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "centos",
+            "from_full": "centos:7",
+            "keywords": [
+                "sagadmin",
+                "groupadd",
+                "useradd",
+                "sag",
+                "home"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/infrastructure/commandcentral-builder/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$CC_SERVER_IMAGE",
+            "keywords": [
+                "home",
+                "provision"
+            ],
+            "from_full": "$CC_SERVER_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/infrastructure/commandcentral-node/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "$BASE_IMAGE",
+            "keywords": [
+                "home",
+                "sag",
+                "yum",
+                "mkdir",
+                "chown"
+            ],
+            "from_full": "$BASE_IMAGE",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/infrastructure/java-centos/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "daerepository03.eur.ad.sag",
+            "from_full": "daerepository03.eur.ad.sag:4443/ibit/java:10.3",
+            "keywords": [
+                "env",
+                "java",
+                "version"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "cc",
+                "image": "${CC_BUILDER_IMAGE}",
+                "image_full": "${CC_BUILDER_IMAGE}:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sagcc",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "sagccant",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "antcc",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}-antcc",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "apply",
+                "image": "${CC_CLIENT_IMAGE}",
+                "image_full": "${CC_CLIENT_IMAGE}:${CC_TAG}-alpine",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "build",
+                "image": "daerepository03.eur.ad.sag",
+                "image_full": "daerepository03.eur.ad.sag:4443/ccdevops/asset-builder:$TAG",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 6,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 6
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "bash",
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 17,
+    "images": [
+        "$BASE_IMAGE",
+        "$CC_SERVER_IMAGE",
+        "daerepository03.eur.ad.sag",
+        "centos"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 18
+}

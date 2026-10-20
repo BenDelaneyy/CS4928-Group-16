@@ -1,0 +1,12 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Markdown,1707,0,68,55,0,13,0,4,0,[]
+CSS,6571,0,272,262,0,10,0,3,0,[]
+Gemfile,57,0,4,3,0,1,0,1,0,[]
+JSON,520,0,20,20,0,0,0,1,0,[]
+JavaScript,3976,0,135,113,9,13,11,1,0,[]
+Plain Text,146,0,9,9,0,0,0,1,0,[]
+Python,2779,0,82,57,8,17,3,1,0,[]
+Ruby,1621,0,56,47,0,9,0,1,0,[]
+Ruby HTML,5978,0,152,138,0,14,10,1,0,[]
+gitignore,578,0,37,16,11,10,0,1,0,[]
+Total,23933,0,835,720,28,87,24,15,0,

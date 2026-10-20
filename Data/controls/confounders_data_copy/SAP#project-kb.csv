@@ -1,0 +1,8 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+Python,15372,0,466,285,126,55,28,5,0,[]
+CSV,391445,0,4288,4288,0,0,0,3,0,[]
+Markdown,6731,0,114,70,0,44,0,2,0,[]
+Plain Text,12517,0,210,174,0,36,0,2,0,[]
+Jupyter,27418,0,787,787,0,0,0,1,0,[]
+Shell,549083,0,3265,2733,532,0,64,1,0,[]
+Total,1002566,0,9130,8337,658,135,92,14,0,

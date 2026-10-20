@@ -1,0 +1,7 @@
+Name,Bytes,CodeBytes,Lines,Code,Comment,Blank,Complexity,Count,WeightedComplexity,Files
+F#,221882,0,4410,3388,422,600,320,41,0,[]
+MSBuild,116027,0,2525,2460,60,5,232,14,0,[]
+Batch,301,0,18,15,0,3,4,1,0,[]
+Markdown,2707,0,33,28,0,5,0,1,0,[]
+gitignore,716,0,47,22,14,11,0,1,0,[]
+Total,341633,0,7033,5913,496,624,556,58,0,

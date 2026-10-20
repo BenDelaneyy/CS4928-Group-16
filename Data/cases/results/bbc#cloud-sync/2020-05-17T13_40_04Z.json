@@ -1,0 +1,444 @@
+{
+    "url": "https://github.com/bbc/cloud-sync",
+    "name": "bbc/cloud-sync",
+    "dockers": [
+        {
+            "path": "/consul/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:16.04",
+            "keywords": [
+                "zip",
+                "webui",
+                "unzip",
+                "consul",
+                "apt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/secure-wallclock-service/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "usr",
+                "mkdir",
+                "src",
+                "local"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/examples/synchronisedvideo/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:carbon",
+            "keywords": [
+                "npm",
+                "install",
+                "mkdir",
+                "logs",
+                "usr"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/wallclock-service/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "usr",
+                "local",
+                "lib",
+                "node"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/timelineobserver/TimelineObserver/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "maven",
+                "usr",
+                "mvn",
+                "tar",
+                "mkdir"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "bash"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/statscontroller/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "usr",
+                "mkdir",
+                "src",
+                "local"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/sessioncontroller/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "usr",
+                "lib",
+                "mkdir",
+                "src"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/synccontroller/Dockerfile",
+            "cmd": "npm start",
+            "cmd_keywords": [
+                "npm",
+                "start"
+            ],
+            "from": "node",
+            "from_full": "node:8",
+            "keywords": [
+                "npm",
+                "usr",
+                "lib",
+                "mkdir",
+                "src"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/redis/Dockerfile",
+            "cmd": "redis-server /usr/local/etc/redis/redis.conf",
+            "cmd_keywords": [
+                "redis",
+                "server",
+                "usr",
+                "local",
+                "etc"
+            ],
+            "from": "redis",
+            "from_full": "redis",
+            "keywords": [],
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [
+        {
+            "path": "/src/timelineobserver/TimelineObserver/pom.xml",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/secure-wallclock-service/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/examples/synchronisedvideo/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/examples/messagingadapter/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/examples/node-test-client/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/wallclock-service/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/wallclock-service/examples/client-browser/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/src/statscontroller/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [
+                "influxdb"
+            ],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/src/sessioncontroller/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [
+                "mqtt"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        },
+        {
+            "path": "/src/synccontroller/package.json",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "consul"
+            ]
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "node",
+        "express"
+    ],
+    "buses": [
+        "mqtt"
+    ],
+    "langs": [
+        "bash"
+    ],
+    "gates": [],
+    "monitors": [
+        "influxdb"
+    ],
+    "discos": [
+        "consul"
+    ],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 9,
+    "images": [
+        "node",
+        "ubuntu",
+        "redis",
+        "openjdk"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 1,
+    "num_discos": 1,
+    "num_files": 22
+}

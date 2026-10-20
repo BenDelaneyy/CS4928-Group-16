@@ -1,0 +1,187 @@
+{
+    "url": "https://github.com/PecanProject/BETYdb-YABA",
+    "name": "PecanProject/BETYdb-YABA",
+    "dockers": [
+        {
+            "path": "/app/Dockerfile",
+            "cmd": "python server.py",
+            "cmd_keywords": [
+                "python",
+                "server"
+            ],
+            "from": "python",
+            "from_full": "python:3.7.2-slim",
+            "keywords": [
+                "install",
+                "apt",
+                "get",
+                "git",
+                "pip"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/client/Dockerfile",
+            "cmd": "python client.py",
+            "cmd_keywords": [
+                "python",
+                "client"
+            ],
+            "from": "python",
+            "from_full": "python:3.7.2-slim",
+            "keywords": [
+                "pip",
+                "install",
+                "requirements",
+                "txt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "postgres",
+                "image": "mdillon/postgis",
+                "image_full": "mdillon/postgis:9.5",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "bety",
+                "image": "pecan/bety",
+                "image_full": "pecan/bety:${BRANCH:-latest}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "yaba_api",
+                "image": "./app",
+                "image_full": "./app",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "postgres"
+                ]
+            },
+            {
+                "name": "yaba_client",
+                "image": "./client",
+                "image_full": "./client",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "yaba_api"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/app/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/client/requirements.txt",
+            "dbs": [],
+            "servers": [
+                "flask"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "flask"
+    ],
+    "buses": [],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "python"
+    ],
+    "num_dbs": 0,
+    "num_servers": 1,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 5
+}

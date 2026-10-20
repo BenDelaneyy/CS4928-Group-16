@@ -1,0 +1,202 @@
+{
+    "url": "https://github.com/dainst/cilantro",
+    "name": "dainst/cilantro",
+    "dockers": [
+        {
+            "path": "/cilantro-nlp-worker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "ubuntu",
+            "from_full": "ubuntu:18.04",
+            "keywords": [
+                "wget",
+                "http",
+                "treetagger",
+                "data",
+                "nlp"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-service/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:alpine",
+            "keywords": [
+                "set",
+                "install",
+                "pipenv",
+                "mkdir",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-test/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "install",
+                "dev",
+                "apt",
+                "get",
+                "pipenv"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-default-worker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "install",
+                "dev",
+                "apt",
+                "get",
+                "set"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-ojs2/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "php",
+            "from_full": "php:5.6.36-apache-jessie",
+            "keywords": [
+                "ojs",
+                "git",
+                "var",
+                "www",
+                "html"
+            ],
+            "dbs": [
+                "mysql"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "php"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-monitor/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "mher/flower",
+            "from_full": "mher/flower:latest",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/cilantro-convert-worker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "from_full": "python:3",
+            "keywords": [
+                "install",
+                "dev",
+                "apt",
+                "get",
+                "set"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [
+        "mysql"
+    ],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "python",
+        "php"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 7,
+    "images": [
+        "ubuntu",
+        "python",
+        "mher/flower",
+        "php"
+    ],
+    "num_dbs": 1,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 2,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 8
+}

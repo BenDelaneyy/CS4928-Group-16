@@ -1,0 +1,223 @@
+{
+    "url": "https://github.com/cuappdev/ithaca-transit-backend",
+    "name": "cuappdev/ithaca-transit-backend",
+    "dockers": [
+        {
+            "path": "/docker-compose/ghopper/Dockerfile",
+            "cmd": "java -Xmx1g -Xms1g -jar graphhopper/web/target/graphhopper-web-*-with-dep.jar datareader.file=map.osm gtfs.file=tcat-ny-us.zip jetty.port=8988 jetty.resourcebase=./graphhopper/web/src/main/webapp graph.flag_encoders=pt prepare.ch.weightings=no graph.location=./graph-cache",
+            "cmd_keywords": [
+                "graphhopper",
+                "web",
+                "graph",
+                "jar",
+                "file"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8",
+            "keywords": [
+                "git",
+                "tcat",
+                "https",
+                "com",
+                "graphhopper"
+            ],
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/node/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:10",
+            "keywords": [
+                "usr",
+                "src",
+                "app",
+                "git",
+                "mkdir"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/ghopper-walking/Dockerfile",
+            "cmd": "java -Xmx1g -Xms1g -jar graphhopper/web/target/graphhopper-web-*-with-dep.jar datareader.file=map.osm jetty.port=8987 jetty.resourcebase=./graphhopper/web/src/main/webapp graph.flag_encoders=foot prepare.ch.weightings=no graph.location=./graph-cache",
+            "cmd_keywords": [
+                "graphhopper",
+                "web",
+                "graph",
+                "jar",
+                "jetty"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8",
+            "keywords": [
+                "git",
+                "graphhopper",
+                "usr",
+                "src",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [
+                "jetty"
+            ],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/map/Dockerfile",
+            "cmd": "./map-matching.sh action=start-server",
+            "cmd_keywords": [
+                "map",
+                "matching",
+                "action",
+                "start",
+                "server"
+            ],
+            "from": "openjdk",
+            "from_full": "openjdk:8",
+            "keywords": [
+                "git",
+                "map",
+                "usr",
+                "src",
+                "app"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "ghopper",
+                "image": "ghopper",
+                "image_full": "ghopper",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "map",
+                "image": "map",
+                "image_full": "map",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ghopper-walking",
+                "image": "ghopper-walking",
+                "image_full": "ghopper-walking",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 0,
+            "avg_deps_per_service": 0.0,
+            "acyclic": true,
+            "longest_path": 0
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/package.json",
+            "dbs": [],
+            "servers": [
+                "node",
+                "express"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [
+        "node",
+        "jetty",
+        "express"
+    ],
+    "buses": [],
+    "langs": [
+        "java"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 4,
+    "images": [
+        "node",
+        "openjdk"
+    ],
+    "num_dbs": 0,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 6
+}

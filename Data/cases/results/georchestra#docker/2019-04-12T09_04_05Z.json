@@ -1,0 +1,203 @@
+{
+    "url": "https://github.com/georchestra/docker",
+    "name": "georchestra/docker",
+    "dockers": [],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "database",
+                "image": "georchestra/database",
+                "image_full": "georchestra/database:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "ldap",
+                "image": "georchestra/ldap",
+                "image_full": "georchestra/ldap:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "proxy",
+                "image": "georchestra/security-proxy",
+                "image_full": "georchestra/security-proxy:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ldap",
+                    "database"
+                ]
+            },
+            {
+                "name": "cas",
+                "image": "georchestra/cas",
+                "image_full": "georchestra/cas:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ldap"
+                ]
+            },
+            {
+                "name": "header",
+                "image": "georchestra/header",
+                "image_full": "georchestra/header:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "mapfishapp",
+                "image": "georchestra/mapfishapp",
+                "image_full": "georchestra/mapfishapp:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "database"
+                ]
+            },
+            {
+                "name": "extractorapp",
+                "image": "georchestra/extractorapp",
+                "image_full": "georchestra/extractorapp:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "database"
+                ]
+            },
+            {
+                "name": "geoserver",
+                "image": "georchestra/geoserver",
+                "image_full": "georchestra/geoserver:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ldap"
+                ]
+            },
+            {
+                "name": "console",
+                "image": "georchestra/console",
+                "image_full": "georchestra/console:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ldap",
+                    "database"
+                ]
+            },
+            {
+                "name": "geonetwork",
+                "image": "georchestra/geonetwork",
+                "image_full": "georchestra/geonetwork:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "ldap",
+                    "database"
+                ]
+            },
+            {
+                "name": "analytics",
+                "image": "georchestra/analytics",
+                "image_full": "georchestra/analytics:18.06",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "database"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 11,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 11,
+            "edges": 11,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 11
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 11,
+    "shared_dbs": false,
+    "num_dockers": 0,
+    "images": [],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 1
+}

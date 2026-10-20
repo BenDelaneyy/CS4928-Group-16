@@ -1,0 +1,654 @@
+{
+    "url": "https://github.com/xebialabs/e-commerce-microservice",
+    "name": "xebialabs/e-commerce-microservice",
+    "dockers": [
+        {
+            "path": "/store/src/main/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "jhipster",
+                "entrypoint",
+                "adduser",
+                "bin",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/src/main/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "jhipster",
+                "entrypoint",
+                "adduser",
+                "bin",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/src/main/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre-alpine",
+            "keywords": [
+                "jhipster",
+                "entrypoint",
+                "adduser",
+                "bin",
+                "chmod"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/xebialabs/jenkins/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "jenkins/jenkins",
+            "from_full": "jenkins/jenkins:2.138.1",
+            "keywords": [
+                "apt",
+                "get",
+                "docker",
+                "gpg",
+                "install"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/xebialabs/xl-deploy/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "xebialabs/xl-deploy",
+            "from_full": "xebialabs/xl-deploy:8.6.1",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/xebialabs/xl-cli/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "alpine",
+            "from_full": "alpine:3.7",
+            "keywords": [
+                "bin",
+                "usr",
+                "local",
+                "wait",
+                "for"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker-compose/xebialabs/xl-release/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "xebialabs/xl-release",
+            "from_full": "xebialabs/xl-release:8.6.1",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose/docker-compose.yml",
+        "num_services": 11,
+        "services": [
+            {
+                "name": "invoice-app",
+                "image": "ecommerce-invoice",
+                "image_full": "ecommerce-invoice",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "invoice-mysql",
+                "image": "mysql",
+                "image_full": "mysql:5.7.20",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "notification-app",
+                "image": "ecommerce-notification",
+                "image_full": "ecommerce-notification",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "notification-mongodb",
+                "image": "mongo",
+                "image_full": "mongo:3.6.3",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "store-app",
+                "image": "ecommerce-store",
+                "image_full": "ecommerce-store",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "store-mysql",
+                "image": "mysql",
+                "image_full": "mysql:5.7.20",
+                "dbs": [
+                    "mysql"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "jhipster-registry",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "jhipster-elasticsearch",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "jhipster-logstash",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "jhipster-elasticsearch"
+                ]
+            },
+            {
+                "name": "jhipster-console",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "jhipster-elasticsearch"
+                ]
+            },
+            {
+                "name": "jhipster-import-dashboards",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "jhipster-elasticsearch"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 3,
+            "names": [
+                "mongo",
+                "mysql"
+            ],
+            "services": [
+                "invoice-mysql",
+                "notification-mongodb",
+                "store-mysql"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 11,
+            "edges": 3,
+            "avg_deps_per_service": 0.2727272727272727,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 8,
+            "edges": 3,
+            "avg_deps_per_service": 0.375,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 8
+    },
+    "files": [
+        {
+            "path": "/store/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/build.gradle",
+            "dbs": [
+                "mysql",
+                "hazelcast"
+            ],
+            "servers": [
+                "node",
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "zuul"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/store/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/gradle/liquibase.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "node",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/build.gradle",
+            "dbs": [
+                "mysql",
+                "hazelcast"
+            ],
+            "servers": [
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/invoice/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/gradle/liquibase.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/build.gradle",
+            "dbs": [
+                "mongo",
+                "mongodb"
+            ],
+            "servers": [
+                "tomcat",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/notification/gradle/zipkin.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/gradle/docker.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/gradle/profile_dev.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/gradle/sonar.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/gradle/profile_prod.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/store/package.json",
+            "dbs": [
+                "max",
+                "solid"
+            ],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/invoice/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/notification/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo",
+        "mysql",
+        "solid",
+        "max",
+        "hazelcast"
+    ],
+    "servers": [
+        "node",
+        "tomcat",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [
+        "zuul"
+    ],
+    "monitors": [],
+    "discos": [
+        "eureka"
+    ],
+    "num_services": 11,
+    "shared_dbs": false,
+    "num_dockers": 7,
+    "images": [
+        "xebialabs/xl-release",
+        "openjdk",
+        "alpine",
+        "jenkins/jenkins",
+        "xebialabs/xl-deploy"
+    ],
+    "num_dbs": 5,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 34
+}

@@ -1,0 +1,133 @@
+{
+    "url": "https://github.com/BuoyantIO/emojivoto",
+    "name": "BuoyantIO/emojivoto",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "buoyantio/emojivoto-svc-base",
+            "from_full": "buoyantio/emojivoto-svc-base:v6",
+            "keywords": [],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 4,
+        "services": [
+            {
+                "name": "web",
+                "image": "buoyantio/emojivoto-web",
+                "image_full": "buoyantio/emojivoto-web:v6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "voting-svc",
+                    "emoji-svc"
+                ]
+            },
+            {
+                "name": "vote-bot",
+                "image": "buoyantio/emojivoto-web",
+                "image_full": "buoyantio/emojivoto-web:v6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "web"
+                ]
+            },
+            {
+                "name": "emoji-svc",
+                "image": "buoyantio/emojivoto-emoji-svc",
+                "image_full": "buoyantio/emojivoto-emoji-svc:v6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "voting-svc",
+                "image": "buoyantio/emojivoto-voting-svc",
+                "image_full": "buoyantio/emojivoto-voting-svc:v6",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 4,
+            "edges": 3,
+            "avg_deps_per_service": 0.75,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 4
+    },
+    "files": [
+        {
+            "path": "/emojivoto-web/webapp/package.json",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 4,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "buoyantio/emojivoto-svc-base"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 3
+}

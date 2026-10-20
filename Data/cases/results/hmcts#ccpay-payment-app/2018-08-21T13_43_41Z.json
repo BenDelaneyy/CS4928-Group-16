@@ -1,0 +1,299 @@
+{
+    "url": "https://github.com/hmcts/ccpay-payment-app",
+    "name": "hmcts/ccpay-payment-app",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "openjdk",
+            "from_full": "openjdk:8-jre",
+            "keywords": [
+                "wait",
+                "for",
+                "usr",
+                "local",
+                "bin"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/database/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "postgres",
+            "from_full": "postgres:9.6",
+            "keywords": [],
+            "dbs": [
+                "postgres"
+            ],
+            "servers": [],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 5,
+        "services": [
+            {
+                "name": "payments-api",
+                "image": "docker.artifactory.reform.hmcts.net/common-components/payments-api",
+                "image_full": "docker.artifactory.reform.hmcts.net/common-components/payments-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "payments-database",
+                    "service-auth-provider-api",
+                    "idam-api"
+                ]
+            },
+            {
+                "name": "payments-database",
+                "image": "docker.artifactory.reform.hmcts.net/common-components/payments-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/common-components/payments-database",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "idam-api",
+                "image": "docker.artifactory.reform.hmcts.net/auth/idam-api",
+                "image_full": "docker.artifactory.reform.hmcts.net/auth/idam-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "idam-database"
+                ]
+            },
+            {
+                "name": "idam-database",
+                "image": "docker.artifactory.reform.hmcts.net/auth/idam-database",
+                "image_full": "docker.artifactory.reform.hmcts.net/auth/idam-database",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "service-auth-provider-api",
+                "image": "docker.artifactory.reform.hmcts.net/auth/service-auth-provider-api",
+                "image_full": "docker.artifactory.reform.hmcts.net/auth/service-auth-provider-api",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 5,
+            "edges": 4,
+            "avg_deps_per_service": 0.8,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 5,
+            "edges": 4,
+            "avg_deps_per_service": 0.8,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 5
+    },
+    "files": [
+        {
+            "path": "/settings.gradle",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/build.gradle",
+            "dbs": [
+                "max"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/api/build.gradle",
+            "dbs": [
+                "hsqldb",
+                "postgresql"
+            ],
+            "servers": [
+                "jboss",
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/gov-pay-client/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/model/build.gradle",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/api-contract/build.gradle",
+            "dbs": [],
+            "servers": [
+                "glassfish"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "max",
+                "hsqldb",
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/api/pom.xml",
+            "dbs": [
+                "hsqldb",
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/gov-pay-client/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/model/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/api-contract/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgres",
+        "max",
+        "postgresql"
+    ],
+    "servers": [
+        "glassfish",
+        "jboss",
+        "spring"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 5,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "postgres",
+        "openjdk"
+    ],
+    "num_dbs": 3,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 14
+}

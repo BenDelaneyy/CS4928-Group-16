@@ -1,0 +1,342 @@
+{
+    "url": "https://github.com/mwinteringham/restful-booker-platform",
+    "name": "mwinteringham/restful-booker-platform",
+    "dockers": [
+        {
+            "path": "/booking/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:5",
+            "keywords": [
+                "npm",
+                "install",
+                "frontail",
+                "touch",
+                "booking"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/search/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:5",
+            "keywords": [
+                "npm",
+                "install",
+                "frontail",
+                "touch",
+                "search"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/hotel/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:5",
+            "keywords": [
+                "npm",
+                "install",
+                "frontail",
+                "touch",
+                "hotel"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/auth/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:5",
+            "keywords": [
+                "npm",
+                "install",
+                "frontail",
+                "touch",
+                "auth"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "node",
+            "from_full": "node:5",
+            "keywords": [
+                "npm",
+                "install",
+                "frontail",
+                "touch",
+                "log"
+            ],
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "langs": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 6,
+        "services": [
+            {
+                "name": "db",
+                "image": "mongo",
+                "image_full": "mongo",
+                "dbs": [
+                    "mongo"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "auth",
+                "image": "./auth",
+                "image_full": "./auth",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "search",
+                "image": "./search",
+                "image_full": "./search",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db:database"
+                ]
+            },
+            {
+                "name": "booking",
+                "image": "./booking",
+                "image_full": "./booking",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db:database",
+                    "auth:auth"
+                ]
+            },
+            {
+                "name": "hotel",
+                "image": "./hotel",
+                "image_full": "./hotel",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "db:database",
+                    "auth:auth",
+                    "search:search"
+                ]
+            },
+            {
+                "name": "ui",
+                "image": "./ui",
+                "image_full": "./ui",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "hotel:hotel",
+                    "search:search",
+                    "auth:auth"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "mongo"
+            ],
+            "services": [
+                "db"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 10,
+            "edges": 9,
+            "avg_deps_per_service": 0.9,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 9,
+            "edges": 9,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 9
+    },
+    "files": [
+        {
+            "path": "/booking/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node",
+                "mongoose"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/search/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node",
+                "mongoose"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/hotel/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node",
+                "mongoose"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/auth/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/ui/package.json",
+            "dbs": [],
+            "servers": [
+                "express",
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/new-ui/package.json",
+            "dbs": [],
+            "servers": [
+                "node"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "mongo"
+    ],
+    "servers": [
+        "express",
+        "node",
+        "mongoose"
+    ],
+    "buses": [],
+    "langs": [],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 6,
+    "shared_dbs": false,
+    "num_dockers": 5,
+    "images": [
+        "node"
+    ],
+    "num_dbs": 1,
+    "num_servers": 3,
+    "num_buses": 0,
+    "num_langs": 0,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 12
+}

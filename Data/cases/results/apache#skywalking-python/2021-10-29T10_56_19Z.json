@@ -1,0 +1,168 @@
+{
+    "url": "https://github.com/apache/skywalking-python",
+    "name": "apache/skywalking-python",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "python",
+            "keywords": [
+                "make",
+                "setup",
+                "test",
+                "install"
+            ],
+            "from_full": "python:${SW_PYTHON_VERSION}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/docker/Dockerfile",
+            "cmd": "",
+            "cmd_keywords": [],
+            "from": "${BASE_IMAGE}",
+            "keywords": [
+                "python",
+                "agent",
+                "pip",
+                "install",
+                "cache"
+            ],
+            "from_full": "${BASE_IMAGE}",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "python"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/tests/plugin/http/sw_requests/docker-compose.yml",
+        "num_services": 3,
+        "services": [
+            {
+                "name": "collector",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "provider",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "collector"
+                ]
+            },
+            {
+                "name": "consumer",
+                "image": "",
+                "image_full": "",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "collector",
+                    "provider"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 3,
+            "edges": 3,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "dep_graph_micro": {
+            "nodes": 3,
+            "edges": 3,
+            "avg_deps_per_service": 1.0,
+            "acyclic": true,
+            "longest_path": 2
+        },
+        "number_of_microservices": 3
+    },
+    "files": [
+        {
+            "path": "/requirements.txt",
+            "dbs": [
+                "redis"
+            ],
+            "servers": [
+                "django",
+                "flask"
+            ],
+            "buses": [
+                "kafka"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "redis"
+    ],
+    "servers": [
+        "django",
+        "flask"
+    ],
+    "buses": [
+        "kafka"
+    ],
+    "langs": [
+        "python"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 3,
+    "shared_dbs": false,
+    "num_dockers": 2,
+    "images": [
+        "python",
+        "${BASE_IMAGE}"
+    ],
+    "num_dbs": 1,
+    "num_servers": 2,
+    "num_buses": 1,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 4
+}

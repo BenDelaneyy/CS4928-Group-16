@@ -1,0 +1,1205 @@
+{
+    "url": "https://github.com/geoserver/geoserver-cloud",
+    "name": "geoserver/geoserver-cloud",
+    "dockers": [
+        {
+            "path": "/src/apps/geoserver/restconfig/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "fonts",
+                "opt",
+                "app",
+                "apt",
+                "jar"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wfs/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "opt",
+                "app",
+                "jar",
+                "mkdir",
+                "data"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/catalog/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "fonts",
+                "opt",
+                "app",
+                "apt",
+                "jar"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wms/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "fonts",
+                "opt",
+                "app",
+                "apt",
+                "jar"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wcs/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "opt",
+                "app",
+                "jar",
+                "mkdir",
+                "data"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wps/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "opt",
+                "app",
+                "jar",
+                "mkdir",
+                "data"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/webui/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "fonts",
+                "data",
+                "opt",
+                "app",
+                "apt"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/gwc/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS $JAVA_TOOL_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "java",
+                "user",
+                "opts",
+                "exec",
+                "env"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "data",
+                "opt",
+                "app",
+                "jar",
+                "directory"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/admin/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "user",
+                "java",
+                "exec",
+                "env",
+                "gid"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "jar",
+                "java",
+                "djarmode",
+                "layertools",
+                "application"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/discovery/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "user",
+                "java",
+                "exec",
+                "env",
+                "gid"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "jar",
+                "java",
+                "djarmode",
+                "layertools",
+                "application"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/config/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "user",
+                "java",
+                "exec",
+                "env",
+                "gid"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "jar",
+                "java",
+                "djarmode",
+                "layertools",
+                "application"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/gateway/Dockerfile",
+            "cmd": "exec env USER_ID=\"$(id -u)\" USER_GID=\"$(id -g)\" java $JAVA_OPTS org.springframework.boot.loader.JarLauncher",
+            "cmd_keywords": [
+                "user",
+                "java",
+                "exec",
+                "env",
+                "gid"
+            ],
+            "from": "eclipse-temurin",
+            "from_full": "eclipse-temurin:17-jre",
+            "keywords": [
+                "jar",
+                "java",
+                "djarmode",
+                "layertools",
+                "application"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "java"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": "/docker-compose.yml",
+        "num_services": 13,
+        "services": [
+            {
+                "name": "postgis",
+                "image": "postgis/postgis",
+                "image_full": "postgis/postgis:latest",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "rabbitmq",
+                "image": "rabbitmq",
+                "image_full": "rabbitmq:3.9-management",
+                "dbs": [],
+                "servers": [],
+                "buses": [
+                    "rabbitmq"
+                ],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "database",
+                "image": "postgres",
+                "image_full": "postgres:13-alpine",
+                "dbs": [
+                    "postgres"
+                ],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "discovery",
+                "image": "geoservercloud/geoserver-cloud-discovery",
+                "image_full": "geoservercloud/geoserver-cloud-discovery:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "config",
+                "image": "geoservercloud/geoserver-cloud-config",
+                "image_full": "geoservercloud/geoserver-cloud-config:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": []
+            },
+            {
+                "name": "admin",
+                "image": "geoservercloud/geoserver-cloud-admin-server",
+                "image_full": "geoservercloud/geoserver-cloud-admin-server:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config"
+                ]
+            },
+            {
+                "name": "gateway",
+                "image": "geoservercloud/geoserver-cloud-gateway",
+                "image_full": "geoservercloud/geoserver-cloud-gateway:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [
+                    "gateway"
+                ],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "config"
+                ]
+            },
+            {
+                "name": "wfs",
+                "image": "geoservercloud/geoserver-cloud-wfs",
+                "image_full": "geoservercloud/geoserver-cloud-wfs:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "wms",
+                "image": "geoservercloud/geoserver-cloud-wms",
+                "image_full": "geoservercloud/geoserver-cloud-wms:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "wcs",
+                "image": "geoservercloud/geoserver-cloud-wcs",
+                "image_full": "geoservercloud/geoserver-cloud-wcs:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "rest",
+                "image": "geoservercloud/geoserver-cloud-rest",
+                "image_full": "geoservercloud/geoserver-cloud-rest:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "webui",
+                "image": "geoservercloud/geoserver-cloud-webui",
+                "image_full": "geoservercloud/geoserver-cloud-webui:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            },
+            {
+                "name": "gwc",
+                "image": "geoservercloud/geoserver-cloud-gwc",
+                "image_full": "geoservercloud/geoserver-cloud-gwc:${TAG}",
+                "dbs": [],
+                "servers": [],
+                "buses": [],
+                "gates": [],
+                "monitors": [],
+                "discos": [],
+                "depends_on": [
+                    "rabbitmq"
+                ]
+            }
+        ],
+        "detected_dbs": {
+            "num": 1,
+            "names": [
+                "postgres"
+            ],
+            "services": [
+                "database"
+            ],
+            "shared_dbs": false
+        },
+        "dep_graph_full": {
+            "nodes": 13,
+            "edges": 8,
+            "avg_deps_per_service": 0.6153846153846154,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "dep_graph_micro": {
+            "nodes": 10,
+            "edges": 1,
+            "avg_deps_per_service": 0.1,
+            "acyclic": true,
+            "longest_path": 1
+        },
+        "number_of_microservices": 10
+    },
+    "files": [
+        {
+            "path": "/pom.xml",
+            "dbs": [
+                "nexus"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/geoserver_submodule/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/pom.xml",
+            "dbs": [
+                "oracle"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/vector-formats/pom.xml",
+            "dbs": [
+                "oracle"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/reactive/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "loadbalancer"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/starters/catalog-backend/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/event-bus/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/raster-formats/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/security/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/webmvc/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "loadbalancer"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/starters/spring-boot/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/starters/wms-extensions/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/cache/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/jackson-bindings/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/jackson-bindings/geoserver/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/jackson-bindings/geotools/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/jackson-bindings/starter/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/event-bus/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [
+                "rabbitmq",
+                "amqp"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/plugin/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/backends/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/backends/jdbcconfig/pom.xml",
+            "dbs": [
+                "postgresql"
+            ],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/backends/common/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/backends/datadir/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/backends/catalog-service/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/catalog-server/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/catalog-server/client/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/catalog/catalog-server/server/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/catalog/events/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/integration-tests/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/integration-tests/catalog-service-it/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/restconfig/pom.xml",
+            "dbs": [
+                "oracle"
+            ],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wfs/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/catalog/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wms/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wcs/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/wps/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/webui/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/geoserver/gwc/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/apps/infrastructure/admin/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "loadbalancer"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/apps/infrastructure/discovery/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/apps/infrastructure/config/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/apps/infrastructure/gateway/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [
+                "gateway"
+            ],
+            "monitors": [],
+            "discos": [
+                "eureka"
+            ]
+        },
+        {
+            "path": "/src/gwc/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/autoconfigure/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/backends/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/services/pom.xml",
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/starter/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/integration-bus/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        },
+        {
+            "path": "/src/gwc/core/pom.xml",
+            "dbs": [],
+            "servers": [
+                "spring"
+            ],
+            "buses": [],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "dbs": [
+        "postgresql",
+        "oracle",
+        "postgres",
+        "nexus"
+    ],
+    "servers": [
+        "spring"
+    ],
+    "buses": [
+        "rabbitmq",
+        "amqp"
+    ],
+    "langs": [
+        "java"
+    ],
+    "gates": [
+        "loadbalancer"
+    ],
+    "monitors": [],
+    "discos": [
+        "eureka"
+    ],
+    "num_services": 13,
+    "shared_dbs": false,
+    "num_dockers": 12,
+    "images": [
+        "eclipse-temurin"
+    ],
+    "num_dbs": 4,
+    "num_servers": 1,
+    "num_buses": 2,
+    "num_langs": 1,
+    "num_gates": 1,
+    "num_monitors": 0,
+    "num_discos": 1,
+    "num_files": 67
+}

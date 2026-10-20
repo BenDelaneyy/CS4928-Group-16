@@ -1,0 +1,67 @@
+{
+    "url": "https://github.com/Financial-Times/native-ingester",
+    "name": "Financial-Times/native-ingester",
+    "dockers": [
+        {
+            "path": "/Dockerfile",
+            "cmd": "/native-ingester",
+            "cmd_keywords": [
+                "native",
+                "ingester"
+            ],
+            "from": "golang",
+            "from_full": "golang:1.8-alpine",
+            "keywords": [
+                "path",
+                "buildinfo",
+                "package",
+                "org",
+                "project"
+            ],
+            "dbs": [],
+            "servers": [],
+            "buses": [],
+            "langs": [
+                "golang"
+            ],
+            "gates": [],
+            "monitors": [],
+            "discos": []
+        }
+    ],
+    "structure": {
+        "path": [],
+        "num_services": 0,
+        "services": [],
+        "detected_dbs": {
+            "num": 0,
+            "names": [],
+            "services": [],
+            "shared_dbs": false
+        }
+    },
+    "files": [],
+    "dbs": [],
+    "servers": [],
+    "buses": [],
+    "langs": [
+        "golang"
+    ],
+    "gates": [],
+    "monitors": [],
+    "discos": [],
+    "num_services": 0,
+    "shared_dbs": false,
+    "num_dockers": 1,
+    "images": [
+        "golang"
+    ],
+    "num_dbs": 0,
+    "num_servers": 0,
+    "num_buses": 0,
+    "num_langs": 1,
+    "num_gates": 0,
+    "num_monitors": 0,
+    "num_discos": 0,
+    "num_files": 2
+}
