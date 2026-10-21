@@ -8,7 +8,7 @@ library(plotly)
 library(nortest)
 library(fBasics)
 library("ggpubr")
-library("yarr")
+# library("yarr")  # unused, and not on CRAN
 library(xtable)
 library(lsr)
 library(dplyr)
@@ -37,7 +37,7 @@ qq_plot <- function(data, covariate_name, group_column) {
 # CRUDE ANALYSIS
 ###########################################
 
-raw_df <- read.csv('/Users/mrobredo23/OULU/docker_cohort-24/data/final_data_file.csv')
+raw_df <- read.csv('Data/final_data_file_sample.csv')  # full data: 'Data/final_data_file.csv'
 View(raw_df)
 raw_df <- subset(raw_df, select = -c(trimmed_languages))
 raw_df$velocity_mean_end <- raw_df$velocity_mean_end + 0.01

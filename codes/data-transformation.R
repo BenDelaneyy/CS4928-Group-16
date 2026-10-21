@@ -8,7 +8,7 @@ library(nortest)
 ###########################################
 # INITIAL DISTRIBUTION
 
-raw_df <- read.csv('/Users/mrobredo23/OULU/docker_cohort-24/data/final_data_file.csv')
+raw_df <- read.csv('Data/final_data_file_sample.csv')  # full data: 'Data/final_data_file.csv'
 raw_df <- subset(raw_df, select = -c(trimmed_languages))
 df <- raw_df[c(2:ncol(raw_df))] # For the modelling purposes
 cases_df <- df[df$MS.NonMS =='MS',] 
