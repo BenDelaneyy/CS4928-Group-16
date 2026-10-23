@@ -1,0 +1,82 @@
+
+> # M2 sample verification — Shakeeba Hamdam
+> # 23 October 2026
+> # Run with the working directory set to the repository root.
+> # Checks one bounded-sample test, not the full study.
+> 
+> sample_data <- read.csv("Data/final_data_file_sample.csv")
+
+> # Check sample counts, duplicate IDs and missing velocity values.
+> print(nrow(sample_data))
+[1] 12
+
+> print(table(sample_data$MS.NonMS))
+
+~MS  MS 
+  6   6 
+
+> print(sum(duplicated(sample_data$full_name)))
+[1] 0
+
+> print(colSums(is.na(sample_data[c(
++   "velocity_mean_start",
++   "velocity_mean_end"
++ )])))
+velocity_mean_start   velocity_mean_end 
+                  0                   0 
+
+> # Follow the preparation used in crude-analysis.R:
+> # add 0.01 to end velocity, then take the absolute value.
+> ms_velocity <- abs(
++   sample_data$velocity_mean_end[sample_data$MS.NonMS == "MS"] + 0.01
++ )
+
+> nonms_velocity <- abs(
++   sample_data$velocity_mean_end[sample_data$MS.NonMS == "~MS"] + 0.01
++ )
+
+> # Recalculate the one-sided Wilcoxon rank-sum test.
+> # Reference result already inspected: W = 10, p approximately 0.1201.
+> verification_result <- wilcox.test(
++   ms_velocity,
++   nonms_velocity,
++   alternative = "less",
++   conf.int = TRUE
++ )
+
+> print(verification_result)
+
+	Wilcoxon rank sum exact test
+
+data:  ms_velocity and nonms_velocity
+W = 10, p-value = 0.1201
+alternative hypothesis: true location shift is less than 0
+95.3 percent confidence interval:
+ -Inf 15.5
+sample estimates:
+difference in location 
+              -10.7295 
+
+
+> # Record the R version and session details.
+> print(sessionInfo())
+R version 4.6.1 (2026-06-24 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=English_Ireland.utf8  LC_CTYPE=English_Ireland.utf8   
+[3] LC_MONETARY=English_Ireland.utf8 LC_NUMERIC=C                    
+[5] LC_TIME=English_Ireland.utf8    
+
+time zone: Europe/Dublin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1 tools_4.6.1   
