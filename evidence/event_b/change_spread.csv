@@ -1,0 +1,76 @@
+project,style,change,ref,date,file,component,kind,added,deleted
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/behat.yml,service-api,test,3,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/config/pipeline.php,service-api,config,5,5
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/bootstrap/behat.config.php,service-api,test,0,2
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/common-logging.feature,service-api,test,17,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/Acceptance/AccountContext.php,service-api,test,109,89
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/Acceptance/BaseAcceptanceContext.php,service-api,test,24,57
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/Acceptance/CommonContext.php,service-api,test,43,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/BaseAcceptanceContextTrait.php,service-api,test,152,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/Integration/AccountContext.php,service-api,test,24,41
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/features/context/Integration/BaseIntegrationContext.php,service-api,test,35,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/ConfigProvider.php,service-api,src,3,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/DataAccess/ApiGateway/Lpas.php,service-api,src,24,5
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/DataAccess/ApiGateway/LpasFactory.php,service-api,src,3,1
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Middleware/Logging/RequestTracingMiddleware.php,service-api,src,45,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Service/ApiClient/Client.php,service-api,src,12,1
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Service/ApiClient/ClientFactory.php,service-api,src,3,1
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Service/Container/ModifiableContainerInterface.php,service-api,src,28,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Service/Container/PhpDiModifiableContainer.php,service-api,src,42,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/src/App/src/Service/Log/RequestTracing.php,service-api,src,18,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/test/AppTest/DataAccess/ApiGateway/LpasFactoryTest.php,service-api,test,9,4
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/test/AppTest/Middleware/Logging/RequestTracingMiddlewareTest.php,service-api,test,53,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/test/AppTest/Service/ApiClient/ClientTest.php,service-api,test,20,18
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/app/test/AppTest/Service/Container/PhpDiModifiableContainerTest.php,service-api,test,33,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/docker/app/Dockerfile,service-api,infra,1,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/docker/app/fpm-pool.ini,service-api,infra,7,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-api/docker/web/etc/confd/templates/nginx.conf,service-api,infra,15,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/behat.yml,service-front,test,4,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/config/pipeline.php,service-front,config,1,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/common-logging.feature,service-front,test,17,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/BaseUiContextTrait.php,service-front,test,92,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/Integration/AccountContext.php,service-front,test,14,19
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/Integration/BaseIntegrationContext.php,service-front,test,35,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/Integration/ViewerContext.php,service-front,test,7,8
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/UI/AccountContext.php,service-front,test,46,15
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/UI/{BaseUIContext.php => BaseUiContext.php},service-front,test,19,21
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/UI/CommonContext.php,service-front,test,60,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/features/context/UI/ViewerContext.php,service-front,test,4,1
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/ConfigProvider.php,service-front,src,3,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Middleware/Logging/RequestTracingMiddleware.php,service-front,src,45,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/ApiClient/Client.php,service-front,src,13,1
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/ApiClient/ClientFactory.php,service-front,src,2,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/Container/ModifiableContainerInterface.php,service-front,src,28,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/Container/PhpDiModifiableContainer.php,service-front,src,42,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/Log/RequestTracing.php,service-front,src,18,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/Pdf/PdfService.php,service-front,src,35,9
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/src/Common/src/Service/Pdf/PdfServiceFactory.php,service-front,src,2,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/test/CommonTest/Middleware/Logging/RequestTracingMiddlewareTest.php,service-front,test,53,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/test/CommonTest/Service/ApiClient/ClientTest.php,service-front,test,70,26
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/test/CommonTest/Service/Container/PhpDiModifiableContainerTest.php,service-front,test,33,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/test/CommonTest/Service/Pdf/PdfServiceFactoryTest.php,service-front,test,2,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/app/test/CommonTest/Service/Pdf/PdfServiceTest.php,service-front,test,54,4
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/docker/app/Dockerfile,service-front,infra,1,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/docker/app/fpm-pool.ini,service-front,infra,7,0
+opg-use-an-lpa,MS,initial: PR #211,7f1fbc53,2020-02-13,service-front/docker/web/etc/confd/templates/nginx.conf,service-front,infra,15,0
+opg-use-an-lpa,MS,initial: log processor,b8fb8710,2020-02-18,service-front/app/composer.lock,service-front,config,16,16
+opg-use-an-lpa,MS,initial: log processor,b8fb8710,2020-02-18,service-front/app/config/autoload/monolog.global.php,service-front,config,15,1
+opg-use-an-lpa,MS,initial: log processor,b8fb8710,2020-02-18,service-front/app/src/Common/src/Service/Log/RequestTracingLogProcessor.php,service-front,src,48,0
+opg-use-an-lpa,MS,initial: log processor,b8fb8710,2020-02-18,service-front/app/src/Common/src/Service/Log/RequestTracingLogProcessorFactory.php,service-front,src,31,0
+opg-use-an-lpa,MS,initial: log processor,7a2c7587,2020-02-18,service-api/app/src/App/src/Service/Log/RequestTracingLogProcessor.php,service-api,src,48,0
+opg-use-an-lpa,MS,initial: log processor,7a2c7587,2020-02-18,service-api/app/src/App/src/Service/Log/RequestTracingLogProcessorFactory.php,service-api,src,30,0
+shlink,~MS,initial: PR #662,86009543,2020-02-21,CHANGELOG.md,app,docs,1,0
+shlink,~MS,initial: PR #662,86009543,2020-02-21,composer.json,app,config,2,0
+shlink,~MS,initial: PR #662,86009543,2020-02-21,config/autoload/logger.global.php,app,config,4,1
+shlink,~MS,initial: PR #662,86009543,2020-02-21,config/autoload/middleware-pipeline.global.php,app,config,2,0
+shlink,~MS,initial: PR #662,86009543,2020-02-21,config/autoload/request_id.global.php,app,config,35,0
+shlink,~MS,initial: PR #662,86009543,2020-02-21,module/Core/src/Options/AppOptions.php,app,src,0,3
+shlink,~MS,initial: PR #662,86009543,2020-02-21,module/Rest/src/Entity/ApiKey.php,app,src,3,9
+shlink,~MS,later fix: apply to non-REST routes,4a1e7b8d,2021-12-19,CHANGELOG.md,app,docs,17,0
+shlink,~MS,later fix: apply to non-REST routes,4a1e7b8d,2021-12-19,config/autoload/middleware-pipeline.global.php,app,config,1,1
+shlink,~MS,later fix: apply to non-REST routes,4a1e7b8d,2021-12-19,config/autoload/swoole.global.php,app,config,1,1
+shlink,~MS,later fix: replace abandoned dependency,0f894dcd,2024-02-04,composer.json,app,config,9,10
+shlink,~MS,later fix: replace abandoned dependency,0f894dcd,2024-02-04,config/autoload/logger.global.php,app,config,4,3
+shlink,~MS,later fix: replace abandoned dependency,0f894dcd,2024-02-04,config/autoload/middleware-pipeline.global.php,app,config,1,1
+shlink,~MS,later fix: replace abandoned dependency,0f894dcd,2024-02-04,config/autoload/request_id.global.php,app,config,0,44
+shlink,~MS,later fix: replace abandoned dependency,0f894dcd,2024-02-04,module/Rest/test-api/Middleware/RequestIdTest.php,app,test,30,0
