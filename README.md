@@ -20,6 +20,11 @@ Then create a `github-token.txt` and paste your github token with public repo ac
     - [```change_spread.sh```](evidence/event_b/change_spread.sh): Reproduce with `bash evidence/event_b/change_spread.sh` (needs git and network access).
     - Main finding: the MS project changed 60 files (+1638/−345) across 2 deployables, including 28 test files; the monolith changed 7 files (+47/−13) in 1 deployable, with no tests. The prediction held, and the Week 9 decision is **partly supported**: no change to our method is needed, but no significant velocity difference does not mean no maintainability difference.
 
+### Progress log
+
+- 2026-11-12: Added an "Event B response / accepted trade-off" summary to [evidence/event_b/RESULT.md](evidence/event_b/RESULT.md) (Option A, no structural change; trade-off: keep duplicated tracing code instead of a shared library). Updated by Shakeeba Hamdam.
+- 2026-11-12: Recorded the Event B response, Event A alternatives considered, and Event A verification evidence (with GitHub links) in the group's RQs and Milestones spreadsheet (row G16 / P22). Updated by Shakeeba Hamdam.
+
 # Replication package for EMSE article: *"Does Microservice Adoption Impact the Velocity? A Cohort Study"*
 
 This replication package contains all the Python code to conduct the data collection, preprocessing and analysis of this study.

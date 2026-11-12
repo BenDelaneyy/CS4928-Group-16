@@ -73,3 +73,10 @@ replaced (2024).
 - Part of opg's test diff is refactoring of Behat contexts made necessary by the change, so test-line counts overstate the
   minimum testing effort; the file count and the need to touch shared test infrastructure are the more reliable signals.
 - The scope is not identical: opg forwards an upstream load-balancer trace ID to downstream services; shlink generates an ID and has no downstream services. That difference is itself part of the MS cost.
+
+## Event B response / accepted trade-off
+
+- **Response chosen:** Option A, no structural change. Each project adds the ID through its existing middleware pipeline.
+- **Evidence (`change_spread.csv`):** MS (opg-use-an-lpa) changed 60 files (+1638/−345) across 2 deployables (service-api, service-front), including 28 test files; the monolith (shlink) changed 7 files (+47/−13) in 1 deployable.
+- **Accepted trade-off:** in the MS project we keep the 4 duplicated tracing classes (~150 lines) in both services instead of extracting a shared library. Only 2 PHP services share the code and both are owned by one team in one repository, so keeping two copies in sync is cheaper than versioning and releasing a shared package. The accepted risk is shotgun surgery for future tracing changes. We would revisit this if a third PHP service appears or the copies start to drift.
+- **Week 9 decision:** partly supported. Our method and sample stay the same, but the same feature has a real design cost in the MS project that the velocity metric cannot see.
