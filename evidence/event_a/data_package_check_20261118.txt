@@ -1,0 +1,26 @@
+Event A data package check - 2026-11-18 13:52:39
+Script: evidence/event_a/data_package_check.py
+Search: every archive entry name, case-insensitive, for 'issue_history', for each full project name
+(owner#repo) and for each owner/repo pair written with '/'.
+
+Data/projects.zip: 53846 entries, 38398624 bytes
+  entries containing 'issue_history': 0
+  nymtech#nym: 0 matching entries
+  SrinivasanTarget#ContractTestingBoilerplate: 0 matching entries
+  topcoder-platform#tc-project-service: 0 matching entries
+  ZeroCater#zc_events: 0 matching entries
+  rero#rero-mef: 0 matching entries
+  shlinkio#shlink: 0 matching entries
+  cofacts#rumors-api: 0 matching entries
+
+Data/analyzedDataset.zip: 2123 entries, 92812780 bytes
+  entries containing 'issue_history': 0
+  nymtech#nym: 0 matching entries
+  SrinivasanTarget#ContractTestingBoilerplate: 0 matching entries
+  topcoder-platform#tc-project-service: 0 matching entries
+  ZeroCater#zc_events: 0 matching entries
+  rero#rero-mef: 0 matching entries
+  shlinkio#shlink: 0 matching entries
+  cofacts#rumors-api: 0 matching entries
+
+Conclusion: an issue history for a project exists in an archive only if it is listed above.

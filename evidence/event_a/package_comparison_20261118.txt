@@ -1,0 +1,80 @@
+Event A - comparison with the authors' replication package
+Date of check: 2026-11-18
+Purpose: find the issue-history download script and the 7 missing issue histories
+(nymtech#nym, SrinivasanTarget#ContractTestingBoilerplate, topcoder-platform#tc-project-service,
+ ZeroCater#zc_events, rero#rero-mef, shlinkio#shlink, cofacts#rumors-api).
+Nothing was copied into this repository.
+
+==========================================================================================
+A. Online: Zenodo record 14876472 (link given in the P22 project pack)
+==========================================================================================
+Record:   https://zenodo.org/records/14876472
+Title:    Official Replication Package of the EMSE Journal Article: "Does Microservice
+          Adoption Impact the Velocity? A Cohort Study"
+DOI:      10.5281/zenodo.14876472   Version: v1.0   Published: 2025-03-15
+Files:    1 file, docker_cohort_replication_package.zip, 624,766,487 bytes,
+          md5:7e1466323ffa047a56d2497cbbb2a197   (from https://zenodo.org/api/records/14876472)
+
+How the file list was read: the Zenodo preview page does not list the zip ("Too many files
+inside the ZIP file."). The zip's own file list (central directory, 30,769,773 bytes) was read
+with HTTP Range requests; the rest of the zip was not downloaded. 201,949 entries were read.
+
+Results:
+- utils.py / modules.py:            NOT in the zip.
+  codes/ contains 18 files: analyze_repo_multi_thread_per_commit.py, basic_statistics_table.py,
+  clone_projects.py, commons.py, confounder-matching.R, crude-analysis.R, data-transformation.R,
+  descriptive-analysis.R, find_ms_usage.py, format_data_for_analysis.py, get_confounders.py,
+  get_velocity.py, main.py, power_analysis.R, stat-analysis-long.R, stat-analysis.R,
+  trendAnalysis.py, tsanalysis.py. These are the same 18 file names as our codes/ folder.
+- issue_history folders:            data/cases/issue_history/ (82 files),
+                                    data/controls/issue_history/ (383 files).
+                                    Same counts as our Data/cases and Data/controls.
+- Issue histories for the 7:        NONE of the 7 projects has an issue_history file.
+- Issue histories for our other 5:  present, as in our repository:
+    data/cases/issue_history/fedspendingtransparency#usaspending-api.csv
+    data/cases/issue_history/ministryofjustice#opg-use-an-lpa.csv
+    data/controls/issue_history/openfun#richie.csv
+    data/controls/issue_history/paritytech#substrate.csv
+    data/controls/issue_history/hashgraph#hedera-mirror-node.csv
+- Nested zips listed:               data/analyzedDataset.zip (92,812,780 bytes),
+                                    data/projects.zip (38,398,624 bytes),
+                                    data/cases/results/results.zip (61,082,645 bytes).
+                                    The same three files are in our repository (same sizes); their
+                                    contents are covered in section C.
+
+==========================================================================================
+B. Local copy of the authors' package (outside this repository)
+==========================================================================================
+Location: C:\Users\hasti\Documents\CS4928_Project22  (folders codes, data, consts,
+          analysis_figures, Article_figures). File dates: 2026-10-12.
+- utils.py / modules.py, or any file defining issueCrawler or projectCrawler: NONE
+  (folders and every .py inside the zips searched).
+- data/ has cases/ only; there is no controls/ folder in this local copy.
+- data/cases/issue_history/: 82 files, none for the 4 missing MS projects. The 2 overlapping
+  projects (fedspendingtransparency, opg-use-an-lpa) are identical to ours apart from line endings.
+- Only matches for the 7 names are commit files:
+    data/cases/commits/{nymtech#nym, SrinivasanTarget#ContractTestingBoilerplate,
+                        topcoder-platform#tc-project-service, ZeroCater#zc_events}.csv
+- Files in the local codes/ and data/ missing from our repository: NONE.
+  codes/: 12 files differ only in line endings; crude-analysis.R and data-transformation.R contain
+  our group's edits (data path to Data/final_data_file_sample.csv; library("yarr") commented out).
+- Other local folders "03 PROJECT PACKS" and "Event A" (and their zips) are course instructions
+  (.docx), not data.
+
+==========================================================================================
+C. Zips inside our repository
+==========================================================================================
+- Data/projects.zip, Data/analyzedDataset.zip (and the two zips nested in it): no issue_history
+  entries, no entries for the 7 projects (see data_package_check_20261118.txt).
+- Data/cases/results/results.zip (55,874 entries): has folders for nymtech#nym,
+  SrinivasanTarget#ContractTestingBoilerplate and topcoder-platform#tc-project-service, but they
+  hold per-commit microservice-analysis JSON files (dockers, dbs, servers, ...). No issue data
+  (no "closed_at"/"issue" keys in the nymtech#nym files).
+
+==========================================================================================
+Conclusion
+==========================================================================================
+The issue-history download script (codes/utils.py, imported by codes/main.py) and the issue
+histories of the 7 projects are missing from the authors' published package (Zenodo record
+14876472, v1.0) as well as from our downloaded copy of it and from this repository.
+Event A stays blocked.
