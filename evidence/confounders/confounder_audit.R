@@ -1,6 +1,6 @@
 ###########################################
 # CONFOUNDER AUDIT on the 12-project bounded sample (P22 pack: "Audit at least two potential confounders").
-# Added after FINAL (2026-11-24). Exploratory and descriptive: it does NOT change the frozen M2 test or result.
+# Added 2026-11-24 (the FINAL tag was moved to include it). Exploratory and descriptive: it does NOT change the frozen M2 test or result.
 # Confounders are the covariates the original study adjusts for (columns of Data/final_data_file.csv,
 # used in codes/stat-analysis.R): size, n_languages, creation_year, n_commits, n_issues, n_contributors.
 # main_language is matched exactly by Data/sample.py (one ~MS project per MS project, same language).

@@ -1,8 +1,8 @@
 <!--
 Final synthesis draft — CS4928 Group 16, Project 22.
 Text for an IEEE conference-format paper (max. 6 pages excluding references).
-All evidence paths are relative to https://github.com/BenDelaneyy/CS4928-Group-16 at tag FINAL,
-except evidence/confounders/, docs/AI_USE.md and the RQ history in docs/RQS_AND_DECISION.md, which were added after FINAL (2026-11-24).
+All evidence paths are relative to https://github.com/BenDelaneyy/CS4928-Group-16 at tag FINAL.
+FINAL was moved on 2026-11-24 from cd3f416e (2026-11-18) to include evidence/confounders/, docs/AI_USE.md and the RQ history in docs/RQS_AND_DECISION.md.
 -->
 
 # Does Microservice Adoption Change Issue-Closing Velocity? A Bounded Reproduction with Two Change Events
@@ -51,7 +51,7 @@ Median end velocity was 7.20 days (MS) and 19.74 days (~MS). The location shift 
 
 No test is significant at α = 0.05. This matches the original non-significant crude result (two-sided p = 0.5987, one-sided p = 0.7013, recorded in `codes/crude-analysis.R` lines 194 and 198). **RQ1: yes — under our decision rule (p ≥ 0.05) the lack of a velocity difference reproduces on our 12-project cohort.** The independent re-run gave the same W = 10, p = 0.1201. As the verification review notes, a non-significant result does not show that the groups are equivalent.
 
-**Confounder audit** (`evidence/confounders/confounder_audit.R`, output `confounder_audit_output.txt`; exploratory, added after FINAL, does not change the frozen test). Main language is matched exactly by design (5 languages, identical in both groups). For the study's six other covariates we compared the groups (standardised mean difference, SMD) and their association with end velocity (Spearman ρ, n = 12). Two are both imbalanced and related to the outcome: MS projects have more commits (median 842 vs 415.5, SMD 0.66) and more commits goes with faster closing (ρ = −0.48), which could make MS look faster; MS projects have fewer contributors on average (SMD −0.27, medians equal at 7.5) and more contributors goes with faster closing (ρ = −0.37), which works the other way. Size, issue count and creation year are also imbalanced (|SMD| 0.29–0.54) but less related to velocity (|ρ| < 0.3). No difference is significant (all p > 0.68), but with 6 projects per group that says little. The crude comparison is therefore not adjusted for project activity, and the direction of any bias is unclear.
+**Confounder audit** (`evidence/confounders/confounder_audit.R`, output `confounder_audit_output.txt`; exploratory, added on 2026-11-24, does not change the frozen test). Main language is matched exactly by design (5 languages, identical in both groups). For the study's six other covariates we compared the groups (standardised mean difference, SMD) and their association with end velocity (Spearman ρ, n = 12). Two are both imbalanced and related to the outcome: MS projects have more commits (median 842 vs 415.5, SMD 0.66) and more commits goes with faster closing (ρ = −0.48), which could make MS look faster; MS projects have fewer contributors on average (SMD −0.27, medians equal at 7.5) and more contributors goes with faster closing (ρ = −0.37), which works the other way. Size, issue count and creation year are also imbalanced (|SMD| 0.29–0.54) but less related to velocity (|ρ| < 0.3). No difference is significant (all p > 0.68), but with 6 projects per group that says little. The crude comparison is therefore not adjusted for project activity, and the direction of any bias is unclear.
 
 **RQ2: not answered.** Testing sensitivity to the time window was the purpose of Event A, which is blocked (Section V). We ran only one project matching: same-language pairs from `Data/sample.py`. No alternative matching was tested.
 

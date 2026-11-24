@@ -42,7 +42,7 @@ python evidence/event_a/data_package_check.py
 bash evidence/event_b/change_spread.sh
 ```
 
-**6. Confounder audit (added after FINAL, exploratory).** Input: `Data/final_data_file_sample.csv`. Base R only. Output overwritten in [evidence/confounders/confounder_audit_output.txt](evidence/confounders/confounder_audit_output.txt) (only the timestamp/R-version line should differ).
+**6. Confounder audit (added 2026-11-24, exploratory).** Input: `Data/final_data_file_sample.csv`. Base R only. Output overwritten in [evidence/confounders/confounder_audit_output.txt](evidence/confounders/confounder_audit_output.txt) (only the timestamp/R-version line should differ).
 ```
 Rscript evidence/confounders/confounder_audit.R
 ```
@@ -69,7 +69,7 @@ Rscript evidence/confounders/confounder_audit.R
     - [```change_spread.sh```](evidence/event_b/change_spread.sh): Reproduce with `bash evidence/event_b/change_spread.sh` (needs git and network access).
     - Main finding: the MS project changed 60 files (+1638/−345) across 2 deployables, including 28 test files; the monolith changed 7 files (+47/−13) in 1 deployable, with no tests. The prediction held, and the Week 9 decision is **partly supported**: no change to our method is needed, but no significant velocity difference does not mean no maintainability difference.
 
-- [evidence/confounders](evidence/confounders): Confounder audit required by the P22 pack ("audit at least two potential confounders"). Added 2026-11-24, after the FINAL tag; exploratory, does not change the frozen M2 test.
+- [evidence/confounders](evidence/confounders): Confounder audit required by the P22 pack ("audit at least two potential confounders"). Added 2026-11-24; exploratory, does not change the frozen M2 test.
     - [```confounder_audit.R```](evidence/confounders/confounder_audit.R) and [output](evidence/confounders/confounder_audit_output.txt): main language matched exactly by design; of the study's other six covariates, **n_commits** (MS more, SMD 0.66, ρ with velocity −0.48) and **n_contributors** (MS fewer on average, SMD −0.27, ρ −0.37) are both imbalanced and related to velocity, pulling in opposite directions. No difference is significant (n = 6 per group).
 
 - [docs/RQS_AND_DECISION.md](docs/RQS_AND_DECISION.md): RQs, Week 9 decision, and (added 2026-11-24) the **RQ history**: earlier RQ wording from a workbook copy of 2026-10-12 and when/why it changed.
@@ -82,7 +82,7 @@ Rscript evidence/confounders/confounder_audit.R
 - 2026-11-18: Added the Reproducibility section, [docs/RQS_AND_DECISION.md](docs/RQS_AND_DECISION.md) and [final/synthesis.md](final/synthesis.md); fixed `data/` links to `Data/`. Updated by Shakeeba Hamdam.
 - 2026-11-18: Tags `M2_REPRO` and `PRE_EVENT_A` (→ `b5113ce8`, 2026-10-28) and `PRE_EVENT_B` (→ `41b467fb`, 2026-11-10) were added on 2026-11-18 and point to the original commits; the commit dates, not the tag dates, show when each record was made. There is no `M1_PLAN` tag.
 - 2026-11-18: Event A re-checked and recorded as not run / still blocked in [evidence/event_a/RESULT.md](evidence/event_a/RESULT.md), with the data package check, the comparison with the authors' Zenodo package and a new file check. Sampling deviation from the P22 project pack recorded. Updated by Shakeeba Hamdam.
-- 2026-11-24: Added the confounder audit ([evidence/confounders](evidence/confounders)), the RQ history in [docs/RQS_AND_DECISION.md](docs/RQS_AND_DECISION.md), [docs/AI_USE.md](docs/AI_USE.md), and matching updates to [final/synthesis.md](final/synthesis.md) (confounder audit in III, new Section VII on AI use, limitations, conclusion). All added after the FINAL tag. Updated by Kacper Banasik.
+- 2026-11-24: Added the confounder audit ([evidence/confounders](evidence/confounders)), the RQ history in [docs/RQS_AND_DECISION.md](docs/RQS_AND_DECISION.md), [docs/AI_USE.md](docs/AI_USE.md), and matching updates to [final/synthesis.md](final/synthesis.md) (confounder audit in III, new Section VII on AI use, limitations, conclusion). The `FINAL` tag was moved on 2026-11-24 from `cd3f416e` (2026-11-18) to include these additions. Updated by Kacper Banasik.
 
 # Replication package for EMSE article: *"Does Microservice Adoption Impact the Velocity? A Cohort Study"*
 
