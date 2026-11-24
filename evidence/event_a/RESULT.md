@@ -46,6 +46,19 @@ Four of the six MS projects are affected. A run on the remaining 5 projects (2 M
 - RQ2 (sensitivity to project/time-window matching) is not answered.
 - The Week 9 decision is unchanged: we do not have enough evidence to recommend a software design change.
 
+## Maintainability implication (added 2026-11-24)
+
+The blocked event exposed a dependency problem in the authors' pipeline. `codes/main.py` imports its collectors
+(`issueCrawler`, `projectCrawler`) from `codes/utils.py` (line 4), but that module was never published, so the data
+collection cannot be rebuilt or extended. The analysis scripts work only because the outputs of the missing code were
+shipped as data, which couples every later stage to one frozen snapshot. The velocity windows are also hard-coded in
+`getWindowDates()` (`codes/get_velocity.py` lines 46-49: months 9, 12, 21, 24), so measuring a later window means editing
+analysis code. The proportionate fix is to publish `utils.py` with the package and pass the window offsets in as
+parameters. Neither needs a design pattern, and we did not change the authors' code.
+
+For the 5 projects that do have issue histories, the velocity calculation itself reproduces exactly
+(`evidence/velocity_check/velocity_check_output.txt`).
+
 ## How to reproduce this check
 
 ```

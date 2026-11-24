@@ -1,0 +1,23 @@
+Velocity recomputation check - 2026-11-24 16:04:32 - pandas 2.3.3
+Sample: Data/final_data_file_sample.csv
+
+project                                       grp  window n_closed recomputed     file match exact_mean_days
+fedspendingtransparency#usaspending-api       MS   start       130       2.75     2.75  True           2.758
+fedspendingtransparency#usaspending-api       MS   end         187      1.667    1.667  True           1.679
+nymtech#nym                                   MS   -               no issue history
+SrinivasanTarget#ContractTestingBoilerplate   MS   -               no issue history
+topcoder-platform#tc-project-service          MS   -               no issue history
+ZeroCater#zc_events                           MS   -               no issue history
+ministryofjustice#opg-use-an-lpa              MS   start        61      7.042    7.042  True           7.069
+ministryofjustice#opg-use-an-lpa              MS   end          94      5.375    5.375  True           5.391
+rero#rero-mef                                 ~MS  -               no issue history
+openfun#richie                                ~MS  start        80     10.083   10.083  True          10.095
+openfun#richie                                ~MS  end         104      6.958    6.958  True           6.992
+paritytech#substrate                          ~MS  start       489      9.667    9.667  True           9.701
+paritytech#substrate                          ~MS  end         721     19.792   19.792  True          19.825
+hashgraph#hedera-mirror-node                  ~MS  start       179     18.417   18.417  True          18.433
+hashgraph#hedera-mirror-node                  ~MS  end         420      7.292    7.292  True           7.319
+shlinkio#shlink                               ~MS  -               no issue history
+cofacts#rumors-api                            ~MS  -               no issue history
+
+Matched 10 of 10 recomputed values exactly (to 3 decimals) for 5 projects with issue histories; 7 projects have no issue history.
