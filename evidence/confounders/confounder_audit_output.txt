@@ -1,0 +1,39 @@
+Confounder audit - 2026-11-24 15:12:02 - R version 4.3.3 (2024-02-29) 
+Data: Data/final_data_file_sample.csv (12 projects, 6 MS / 6 ~MS)
+
+1. main_language per group (should be identical multisets):
+            grp
+             MS ~MS
+  Java        1   1
+  JavaScript  1   1
+  PHP         1   1
+  Python      2   2
+  Rust        1   1
+
+2. Balance between MS and ~MS (SMD = standardised mean difference; |SMD| > 0.25 is a common imbalance threshold;
+   Wilcoxon p uses the normal approximation because of ties; with n = 6 per group it has very little power):
+     confounder median_MS median_nonMS    SMD imbalanced_SMD_gt_0.25 wilcox_p_two_sided
+           size   14218.0      11337.0 -0.286                   TRUE             0.6889
+    n_languages       3.0          3.0 -0.140                  FALSE             1.0000
+  creation_year    2017.5       2017.0  0.322                   TRUE             0.8015
+      n_commits     842.0        415.5  0.657                   TRUE             0.6889
+       n_issues     169.0        258.0 -0.536                   TRUE             0.9362
+ n_contributors       7.5          7.5 -0.270                   TRUE             1.0000
+
+3. Spearman correlation of each confounder with velocity_mean_end (n = 12):
+     confounder spearman_rho_with_end_velocity      p
+           size                         -0.294 0.3541
+    n_languages                         -0.251 0.4312
+  creation_year                          0.278 0.3813
+      n_commits                         -0.483 0.1121
+       n_issues                         -0.252 0.4299
+ n_contributors                         -0.366 0.2417
+
+4. Potential confounding (|SMD| > 0.25 and |rho| >= 0.3):
+     confounder    SMD spearman_rho_with_end_velocity potential_confounding
+  creation_year  0.322                          0.278                 FALSE
+      n_commits  0.657                         -0.483                  TRUE
+ n_contributors -0.270                         -0.366                  TRUE
+       n_issues -0.536                         -0.252                 FALSE
+    n_languages -0.140                         -0.251                 FALSE
+           size -0.286                         -0.294                 FALSE

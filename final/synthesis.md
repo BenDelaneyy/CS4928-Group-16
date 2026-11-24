@@ -1,7 +1,8 @@
 <!--
 Final synthesis draft — CS4928 Group 16, Project 22.
 Text for an IEEE conference-format paper (max. 6 pages excluding references).
-All evidence paths are relative to https://github.com/BenDelaneyy/CS4928-Group-16 at tag FINAL.
+All evidence paths are relative to https://github.com/BenDelaneyy/CS4928-Group-16 at tag FINAL,
+except evidence/confounders/, docs/AI_USE.md and the RQ history in docs/RQS_AND_DECISION.md, which were added after FINAL (2026-11-24).
 -->
 
 # Does Microservice Adoption Change Issue-Closing Velocity? A Bounded Reproduction with Two Change Events
@@ -18,6 +19,8 @@ The research questions are recorded in the group workbook (RQs and Milestones, r
 
 - **RQ1:** Can the reported lack/presence of a velocity difference be reproduced on a small cohort?
 - **RQ2:** How sensitive is the result to project/time-window matching?
+
+**RQ history.** A workbook copy from 2026-10-12 shows earlier wording (RQ1 on the study's full original sample; RQ2 on a new, more recent sample). It was replaced with the P22 pack's recommended RQs when we adopted the pack's bounded small-cohort target, before the decision rule and expected result were entered. The earlier wording and the date range of the change are recorded in `docs/RQS_AND_DECISION.md` (RQ history).
 
 **Decision rule (preregistered).** Compare issue-closing velocity (average days from issue creation to closure) between MS and monolithic projects with a Mann–Whitney test. p ≥ 0.05 means no statistically significant difference, as the original paper found (p = 0.7013 one-sided, 0.5987 two-sided). We expected to reproduce p ≥ 0.05.
 
@@ -47,6 +50,8 @@ Source: `evidence/bounded_run/bounded_results_output.txt`.
 Median end velocity was 7.20 days (MS) and 19.74 days (~MS). The location shift estimate was −10.73 days (95.3% CI −∞ to 15.5, one-sided). Cohen's d on the cube-transformed values was 0.77. MS end velocities were not normal (Shapiro-Wilk p = 0.034), which supports the rank-based test.
 
 No test is significant at α = 0.05. This matches the original non-significant crude result (two-sided p = 0.5987, one-sided p = 0.7013, recorded in `codes/crude-analysis.R` lines 194 and 198). **RQ1: yes — under our decision rule (p ≥ 0.05) the lack of a velocity difference reproduces on our 12-project cohort.** The independent re-run gave the same W = 10, p = 0.1201. As the verification review notes, a non-significant result does not show that the groups are equivalent.
+
+**Confounder audit** (`evidence/confounders/confounder_audit.R`, output `confounder_audit_output.txt`; exploratory, added after FINAL, does not change the frozen test). Main language is matched exactly by design (5 languages, identical in both groups). For the study's six other covariates we compared the groups (standardised mean difference, SMD) and their association with end velocity (Spearman ρ, n = 12). Two are both imbalanced and related to the outcome: MS projects have more commits (median 842 vs 415.5, SMD 0.66) and more commits goes with faster closing (ρ = −0.48), which could make MS look faster; MS projects have fewer contributors on average (SMD −0.27, medians equal at 7.5) and more contributors goes with faster closing (ρ = −0.37), which works the other way. Size, issue count and creation year are also imbalanced (|SMD| 0.29–0.54) but less related to velocity (|ρ| < 0.3). No difference is significant (all p > 0.68), but with 6 projects per group that says little. The crude comparison is therefore not adjusted for project activity, and the direction of any bias is unclear.
 
 **RQ2: not answered.** Testing sensitivity to the time window was the purpose of Event A, which is blocked (Section V). We ran only one project matching: same-language pairs from `Data/sample.py`. No alternative matching was tested.
 
@@ -96,19 +101,23 @@ The ratios are about 9× the files and about 35× the lines. Individual MS class
 
 **Response and accepted trade-off.** We chose Option A (Section IV). We accept duplicated tracing code in two MS services, and the shotgun-surgery risk that comes with it, in exchange for avoiding a shared, co-versioned dependency. **Week 9 decision: partly supported.** No change to our method or sample is needed, but Event B shows a real design cost that time-to-close velocity cannot measure.
 
-## VII. Limitations and Threats to Validity
+## VII. AI-Assisted Engineering
+
+AI tools were used to read code, plan the events, write analysis scripts and draft text; material contributions are listed in `docs/AI_USE.md`. AI output was not used as evidence: every number comes from a committed script or output. Checks changed what we did in three cases: the assistant first worked from the wrong event card (P16 instead of P22) until we compared it with our repository; when our attempt to run the authors' `codes/main.py` failed, it traced the failure to a missing `codes/utils.py` (later part of the Event A evidence) and we used the R script instead; and a shared tracing package for Event B was rejected as over-engineering for two services. The Event B counts were produced by `change_spread.sh` from public git history, and the Event A data gap was confirmed independently by a group member's own script.
+
+## VIII. Limitations and Threats to Validity
 
 - **Statistical power (most serious).** There are only 6 projects per group. Cohen's d of 0.77 (cube-transformed) was still non-significant, so the test is unlikely to detect even moderate differences. A non-significant result is not evidence of equivalence. We did not run a power analysis on our sample.
-- **Sample.** The 12 projects come from one seeded sample (`Data/sample.py`). Representativeness was not established (verification review). The sampling also deviates from the P22 project pack, which asks for the first 12 eligible items in stable order. A different but equally valid sample could give a different p-value, which we did not test.
+- **Sample.** The 12 projects come from one seeded sample (`Data/sample.py`). Representativeness was not established (verification review). The sampling also deviates from the P22 project pack, which asks for the first 12 eligible items in stable order. A different but equally valid sample could give a different p-value, which we did not test. The crude test is not adjusted for confounders; the audit (Section III) shows imbalance in commits and contributors, both related to velocity.
 - **Event A not run.** Our conclusion rests on one time window, stability over time is untested, and RQ2 stays open.
 - **Missing collection script.** The script that downloaded the issue histories (`codes/utils.py`, imported by `codes/main.py`) is missing from our downloaded copy of the authors' package (Zenodo record 14876472) and is not in the online file list of that record. The missing histories therefore cannot be re-collected with the original method, and the existing histories cannot be regenerated or checked against their source.
 - **Event B is n = 1 per style.** The two projects have different teams (a government team with heavy acceptance tests versus a mostly single maintainer). Part of opg's test diff is refactoring, so test-line counts overstate the minimum effort. The scope also differs: opg forwards an upstream ID, while shlink has no downstream services.
 - **Construct validity.** Issue time-to-close measures responsiveness, not change effort or maintainability (shown by Event B).
-- **Records.** The RQs and Week 9 alternatives live in the external workbook and were copied into the repository on 2026-11-18. The original Event A data check (2026-10-30) has no generating script; the 2026-11-18 re-check (`evidence/event_a/file_check.py`) reproduces it exactly. Tags `M2_REPRO`, `PRE_EVENT_A` and `PRE_EVENT_B` were added on 2026-11-18 to the original commits, so commit dates are the timing evidence. The Event B result was committed 7 minutes after its prediction. The bounded-run output did not record its R version; R 4.6.1 comes from the verification run.
+- **Records.** The RQ wording was changed in the workbook between 2026-10-12 and 2026-10-28 without keeping the earlier wording visible there; it is now recorded in `docs/RQS_AND_DECISION.md`. The RQs and Week 9 alternatives live in the external workbook and were copied into the repository on 2026-11-18. The original Event A data check (2026-10-30) has no generating script; the 2026-11-18 re-check (`evidence/event_a/file_check.py`) reproduces it exactly. Tags `M2_REPRO`, `PRE_EVENT_A` and `PRE_EVENT_B` were added on 2026-11-18 to the original commits, so commit dates are the timing evidence. The Event B result was committed 7 minutes after its prediction. The bounded-run output did not record its R version; R 4.6.1 comes from the verification run.
 
-## VIII. Conclusion
+## IX. Conclusion
 
-On our 12-project sample, the original finding reproduces: there is no significant difference in issue-closing velocity between MS and ~MS projects (one-sided W = 10, p = 0.1201). The later-window check (Event A) was not run. Seven issue histories are missing, and neither they nor the original download script are in the authors' package (Zenodo record 14876472, both our downloaded copy and the online file list), so Event A has no result. Event B shows that the same cross-cutting feature cost the MS project about 9× the files and 2 deployables versus 1. Velocity alone therefore cannot support a claim about maintainability. **We do not have enough evidence to recommend a software design change.** For the observed concern we keep the smallest response (no structural change) and accept duplicated tracing code. RQ2 (sensitivity to project/time-window matching) remains open. Future work: obtain the original collection script or the 7 issue histories from the original authors and run Event A as preregistered, and measure change spread on more than one pair.
+On our 12-project sample, the original finding reproduces: there is no significant difference in issue-closing velocity between MS and ~MS projects (one-sided W = 10, p = 0.1201). The later-window check (Event A) was not run. Seven issue histories are missing, and neither they nor the original download script are in the authors' package (Zenodo record 14876472, both our downloaded copy and the online file list), so Event A has no result. Event B shows that the same cross-cutting feature cost the MS project about 9× the files and 2 deployables versus 1. Velocity alone therefore cannot support a claim about maintainability. **We do not have enough evidence to recommend a software design change.** For the observed concern we keep the smallest response (no structural change) and accept duplicated tracing code. RQ2 (sensitivity to project/time-window matching) remains open, and the crude result is not adjusted for the project-activity confounders found in our audit. Future work: obtain the original collection script or the 7 issue histories from the original authors and run Event A as preregistered, and measure change spread on more than one pair.
 
 ## References
 
