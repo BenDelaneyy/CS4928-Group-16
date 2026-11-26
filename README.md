@@ -81,6 +81,12 @@ python evidence/velocity_check/recompute_velocity.py
 
 - [docs/RQS_AND_DECISION.md](docs/RQS_AND_DECISION.md): RQs, Week 9 decision, and (added 2026-11-24) the **RQ history**: earlier RQ wording from a workbook copy of 2026-10-12 and when/why it changed.
 - [docs/AI_USE.md](docs/AI_USE.md): Material AI contributions, how each was checked, and what was rejected.
+  Shakeeba Hamdam
+- I used AI to help me understand the project instructions and check the files needed for Event A.
+It helped me use RStudio to check which commit and issue-history files were available.
+Our check found all 12 commit files, but only 5 of the 12 issue-history files in the folders checked.
+I checked the AI’s guidance against the RStudio output and GitHub files, and used it to help explain the findings in plain English for the tracker.
+At one point, AI assumed the file-check CSV was uploaded to GitHub without confirming this, so that claim needed checking.
 
 ### Progress log
 
