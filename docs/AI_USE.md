@@ -16,3 +16,7 @@ The brief asks for short notes only where AI changed a decision, a result, or ho
 # Killian Murnane
 
 I used AI to help with some basic code generation including assisting to generate the script used to select the data used in M2, and to help in debugging when errors occured. Also helped in explaining the R code in the repo and how to run it. Any AI comments or suggestions were double checked and/or tested including checking it's implementation worked as the repo needed and that it didn't interfere with other aspects of the project previously completed or future tasks.
+
+# Ben Delaney
+
+I used AI throughout the project to help me understand the original research paper and some of the statistical tests we were using. I also used it to help interpret our results and make sure we were meeting the requirements of the brief. Towards the end of the project, I used AI to review our code and report to check for any inconsistencies or areas we could improve. Any suggestions made by AI were considered before being used rather than just accepting everything it suggested.
